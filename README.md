@@ -1,4 +1,4 @@
 GXC-CMS-2
 =========
 
-GXC CMS Version 2
+Hello and welcome to the new version of GXC-CMS.
