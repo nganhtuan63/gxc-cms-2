@@ -77,7 +77,7 @@ class AuthItemController extends RController
 	*/
 	public function actionGenerateFile(){
 		
-		// Delete old cach
+		// Delete old cache
 		Yii::app()->cache->delete('permission-cache');			
 		// Generate new cache				
 		$rdb_auth_manager=new RDbAuthManager;		
@@ -123,7 +123,9 @@ class AuthItemController extends RController
 						$permissions[$item['name']]['users'][$a_user['userid']]['bizrule']=$a_user['bizrule'];
 						$permissions[$item['name']]['users'][$a_user['userid']]['data']=$a_user['data'];
 
-						//Get child Items of current items 
+						// Get child Items of current items 
+						// to make sure if the user is assigned to parent item,
+						// it must be assigned to all children items of this parent
 						$child_items=$this->getChildItemsRecursive($item['name']);
 						if($child_items and count($child_items)>0){
 							foreach($child_items as $key=>$value){

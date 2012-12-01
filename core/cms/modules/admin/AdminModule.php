@@ -3,9 +3,6 @@
 class AdminModule extends CWebModule
 {
 
-	
-
-
 	/**
 	* @property string the base url to Admin. Override when module is nested.
 	*/
@@ -14,17 +11,7 @@ class AdminModule extends CWebModule
 	/**
 	* @property string the path to the layout file to use for displaying Admin CMS
 	*/
-	public $main_layout='admin.views.layouts.main';
-
-	/**
-	* @property string the path to the layout file to use for displaying Admin CMS
-	*/
-	public $login_layout='admin.views.layouts.login';
-
-	/**
-	* @property string the path to the layout file to use for displaying Admin CMS
-	*/
-	public $error_layout='admin.views.layouts.error';
+	public $appLayout='admin.views.layouts.main';
 
 	/**
 	* @property string menu for Admin
@@ -54,13 +41,7 @@ class AdminModule extends CWebModule
 		$this->setImport(array(
 			'admin.models.*',
 			'admin.components.*',
-			
-			'cms.models.*',
-			'cms.models.user.*',
-			'cms.models.object.*',
-			'cms.models.page.*',
-			'cms.models.resource.*',
-			'cms.models.settings.*'
+						
 		));
 
 	}

@@ -12,9 +12,9 @@
 		<div class="wrap">
 				<ul class="right">				
 					<li><?php echo t('cms','Welcome'); ?>, <strong><?php echo user()->getModel('display_name'); ?></strong>&nbsp;|&nbsp;</li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl?>/admin/user/updatesettings"><?php echo t('cms','Settings'); ?></a>&nbsp;|&nbsp;</li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl?>/admin/user/changepass"><?php echo t('cms','Change Password'); ?></a>&nbsp;|&nbsp;</li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl?>/admin/default/logout"><?php echo t('cms','Sign out'); ?></a></li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl?>/user/manage/updatesettings"><?php echo t('cms','Settings'); ?></a>&nbsp;|&nbsp;</li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl?>/user/manage/changepass"><?php echo t('cms','Change Password'); ?></a>&nbsp;|&nbsp;</li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl?>/site/logout"><?php echo t('cms','Sign out'); ?></a></li>
 				</ul>
 				
 		</div>

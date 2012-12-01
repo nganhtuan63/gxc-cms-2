@@ -139,7 +139,7 @@ class Environment {
     				'name'=> 'Admin Board CMS' ,            
     				'sourceLanguage'=>'en_us',				
     				
-    				'defaultController'=>'admin',
+    				'defaultController'=>'site',
 
             // Preloading 'log' component
             'preload'=>array('log'),
@@ -159,19 +159,29 @@ class Environment {
     		        'cms.modules.*',
     				        
     						//Import Specific CMS classes for CMS 
-    						'cms.models.user.*',
-				        'cms.components.user.*',
     				    'cmswidgets.*',
 
-                //Import Rights Modules
-                'cms.modules.rights.*',
-                'cms.modules.rights.models.*',
+                //Import User Module       
+                'cms.modules.user.components.*',                                        
+                'cms.modules.user.models.*',  
+                'cms.modules.user.UserModule',                 
+
+                //Import Rights Module                
                 'cms.modules.rights.components.*',
                 'cms.modules.rights.RightsModule', 
 
-                //Import Rights Modules                
+                //Import Admin Module                           
                 'cms.modules.admin.components.*',
                 'cms.modules.admin.AdminModule', 
+
+                //Import Setting Module                               
+                'cms.modules.setting.components.*',
+                'cms.modules.setting.SettingModule', 
+
+
+                //Import Error Module                                               
+                'cms.modules.error.ErrorModule', 
+
 				      
             ),
 
@@ -179,13 +189,24 @@ class Environment {
                 'admin'=>array(
                     'class'=>'cms.modules.admin.AdminModule',
                     'css_files'=>array('css/custom.css'),                    
-                    ),
+                ),
+                'user'=>array(
+                    'class'=>'cms.modules.user.UserModule',                    
+                ),                
                 'rights'=>array(
                     'class'=>'cms.modules.rights.RightsModule',
                      'install'=>false,  // Enables the installer.
                      'appLayout'=>'admin.views.layouts.main',
                      'superuserName'=>'Admin',                     
                 ),
+                'setting'=>array(
+                    'class'=>'cms.modules.setting.SettingModule',
+                    'data_folder'=>'common.settings'
+                ),
+                'error'=>array(
+                    'class'=>'cms.modules.error.ErrorModule',                    
+                ),
+                
           ),
 				
             // Application components
@@ -197,11 +218,11 @@ class Environment {
       							
        			        //User Componenets
       							'user'=>array(
-      		            	'class'=>'cms.components.user.GxcUser',
+      		            	'class'=>'cms.modules.user.components.GxcUser',
       						       // enable cookie-based authentication      						      
                         'allowAutoLogin'=>true,     
                         'autoRenewCookie'=>true,
-                        'loginUrl'=>array('admin/default/login'), 			            
+                        'loginUrl'=>array('site/login'), 			            
       			            'stateKeyPrefix'=>'gxc_u_', //Should Change for Different Apps
 
       							),
@@ -214,7 +235,7 @@ class Environment {
 
                      // Error Handler
                      'errorHandler'=>array(
-                        'errorAction'=>'admin/error',
+                        'errorAction'=>'error',
                       ),
 
                      // URLs in path-format
@@ -238,7 +259,7 @@ class Environment {
       					
       			        //Use the Settings Extension and Store value in Database
       		            'settings'=>array(
-      		                'class'     => 'cms.extensions.settings.CmsSettings',
+      		                'class'     => 'cms.modules.setting.components.CmsSettings',
       		                'cacheId'   => 'global_website_settings',
       		                'cacheTime' => 84000,
       		            ),

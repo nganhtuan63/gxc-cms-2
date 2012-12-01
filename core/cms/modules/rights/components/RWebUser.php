@@ -17,6 +17,9 @@ class RWebUser extends CWebUser
 	{
 		parent::afterLogin($fromCookie);
 
+		// Set User Roles here
+        $this->setState('current_roles', Rights::getArrayRoles($this->getId()));
+        
 		// Mark the user as a superuser if necessary.
 		if( Rights::getAuthorizer()->isSuperuser($this->getId())===true )
 			$this->isSuperuser = true;

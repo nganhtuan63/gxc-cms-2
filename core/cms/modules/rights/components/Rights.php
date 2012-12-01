@@ -60,6 +60,25 @@ class Rights
 	 	$authorizer = self::getAuthorizer();
 	 	return $authorizer->getAuthItems(CAuthItem::TYPE_ROLE, $userId, null, $sort);
 	}
+	
+	/**
+     * Static Function retrun Array Roles of the User
+     * @param bigint $uid
+     * @return string
+     */
+	public static function getArrayRoles($uid=0)
+	{
+			$res=array();
+			if($uid){
+				$roles=Rights::getAssignedRoles($uid,true);
+		        $res=array();
+				foreach($roles as $r){
+					$res[]=$r->name;
+				}		                		
+			} 			
+			return $res;
+		
+	}
 
 
 	/**

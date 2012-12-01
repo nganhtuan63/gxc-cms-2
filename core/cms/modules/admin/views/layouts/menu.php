@@ -9,7 +9,7 @@ $this->widget('zii.widgets.CMenu',array(
 		//Dasboard Menu 
 		array(
 			'label'=>'<span id="menu_dashboard" class="micon"></span>'.t('cms','Dashboard'), 
-			'url'=>array('/admin/default/index') ,'linkOptions'=>array('class'=>'menu_0'),
+			'url'=>array('/site/index') ,'linkOptions'=>array('class'=>'menu_0'),
 			'active'=> ((Yii::app()->controller->id=='default') && (in_array(Yii::app()->controller->action->id,array('index'))) ? true : false)
 			),                               
 
@@ -197,13 +197,13 @@ $this->widget('zii.widgets.CMenu',array(
       	'items'=>array(
       		array(
       			'label'=>t('cms','General'), 
-      			'url'=>array('/admin/settings/?type=general'),
-      			'active'=>Yii::app()->controller->id=='settings' && isset($_GET['type']) && $_GET['type']=='general'
+      			'url'=>array('/setting/manage?type=general'),
+      			'active'=>isset(Yii::app()->controller->module->id) && Yii::app()->controller->module->id=='setting' && isset($_GET['type']) && $_GET['type']=='general'
       		),
       		array(
       			'label'=>t('cms','System'), 
-      			'url'=>array('/admin/settings/?type=system'),
-      			'active'=>Yii::app()->controller->id=='settings' && isset($_GET['type']) && $_GET['type']=='system'
+      			'url'=>array('/setting/manage?type=system'),
+      		      'active'=>isset(Yii::app()->controller->module->id) && Yii::app()->controller->module->id=='setting' && isset($_GET['type']) && $_GET['type']=='system'
       		),
 
       	),
