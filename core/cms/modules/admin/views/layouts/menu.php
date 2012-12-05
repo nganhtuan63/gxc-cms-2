@@ -137,18 +137,18 @@ $this->widget('zii.widgets.CMenu',array(
       		'items'=>array(
       			array(
       				'label'=>t('cms','Create Resource'), 
-      				'url'=>array('/admin/resource/create'),
-      				'active'=>Yii::app()->controller->id=='resource' && Yii::app()->controller->action->id=='create'      				
+      				'url'=>array('/resource/manage/create'),
+      				'active'=>isset(Yii::app()->controller->module->id) && (Yii::app()->controller->module->id=='resource') && Yii::app()->controller->action->id=='create'
       			),
       			array(
       				'label'=>t('cms','Manage Resource'), 
-      				'url'=>array('/admin/resource/admin'),
-      				'active'=> ((Yii::app()->controller->id=='resource') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index')))) ? true : false
+      				'url'=>array('/resource/manage/admin'),
+      				'active'=> isset(Yii::app()->controller->module->id) && (Yii::app()->controller->module->id=='resource') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false
       			)
       		)
       ),
 
-      //Resource Menu 
+      //Comment Menu 
       array(
       		'label'=>'<span id="menu_manage" class="micon"></span>'.t('cms','Manage'), 
       		'url'=>'javascript:void(0);',
@@ -172,13 +172,13 @@ $this->widget('zii.widgets.CMenu',array(
       	'items'=>array(
       		array(
       			'label'=>t('cms','Create User'), 
-      			'url'=>array('/admin/user/create'),
-      			'active'=>Yii::app()->controller->id=='user' && Yii::app()->controller->action->id=='create'
+      			'url'=>array('/user/manage/create'),
+      			'active'=>isset(Yii::app()->controller->module->id) && (Yii::app()->controller->module->id=='user') && Yii::app()->controller->action->id=='create'
       		),
       		array(
       			'label'=>t('cms','Manage Users'), 
-      			'url'=>array('/admin/user/admin'),
-      			'active'=> ((Yii::app()->controller->id=='user') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index')))) ? true : false
+      			'url'=>array('/user/manage/admin'),
+      			'active'=> isset(Yii::app()->controller->module->id) && (Yii::app()->controller->module->id=='user') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false
       		),
       		array(
       			'label'=>t('cms','Permission'), 

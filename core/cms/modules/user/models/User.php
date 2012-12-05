@@ -258,7 +258,7 @@ class User extends CActiveRecord
         public static function convertUserState($data)
 		{               
 	         $image= ($data->status==ConstantDefine::USER_STATUS_ACTIVE) ? 'active' : 'disabled';					
-		     $backend_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('admin.assets'),false,-1,YII_DEBUG);
+		     $backend_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('cms.assets'),false,-1,YII_DEBUG);
 			 return $backend_asset.'/images/'.$image.'.png'; 
 		}
         

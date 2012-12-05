@@ -20,12 +20,22 @@ if (get_magic_quotes_gpc())
     array_walk_recursive($_COOKIE, 'stripslashes_gpc');
 }
 
+// Define EMAIL INFORMATION
+define('AMAZON_SES_ACCESS_KEY','');  
+define('AMAZON_SES_SECRET_KEY','');
+define('AMAZON_SES_EMAIL','');
+define('SUPPORT_EMAIL','');
 
-//You need to specify the path to CORE FOLDER CORRECTLY
+// You need to specify the path to CORE FOLDER CORRECTLY
 define('CORE_FOLDER',dirname(dirname(dirname(dirname(dirname(__FILE__))))).DIRECTORY_SEPARATOR.'core');
 define('CMS_FOLDER',CORE_FOLDER.DIRECTORY_SEPARATOR.'cms');
 define('CMS_WIDGETS',CMS_FOLDER.DIRECTORY_SEPARATOR.'widgets');
 define('COMMON_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'common');
+
+
+// Define Related to Upload File Size
+define('UPLOAD_MAX_SIZE',10485760); //10mb
+define('UPLOAD_MIN_SIZE',1); // 1 byte
 
 
 /**
@@ -178,6 +188,9 @@ class Environment {
                 'cms.modules.setting.components.*',
                 'cms.modules.setting.SettingModule', 
 
+                //Import Resource Module                                               
+                'cms.modules.resource.SettingModule', 
+
 
                 //Import Error Module                                               
                 'cms.modules.error.ErrorModule', 
@@ -203,9 +216,13 @@ class Environment {
                     'class'=>'cms.modules.setting.SettingModule',
                     'data_folder'=>'common.settings'
                 ),
+                'resource'=>array(
+                    'class'=>'cms.modules.resource.ResourceModule',                    
+                ),
                 'error'=>array(
                     'class'=>'cms.modules.error.ErrorModule',                    
                 ),
+
                 
           ),
 				
@@ -264,6 +281,11 @@ class Environment {
       		                'cacheTime' => 84000,
       		            ),
 
+                      'request' => array(
+                          'enableCsrfValidation' => true,
+                          'enableCookieValidation'=>true,
+                      ),
+
                ),
 
                // Application-level parameters
@@ -286,6 +308,9 @@ class Environment {
 
 			// Define hosts of all web apps
 		   define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
+         
            
 		   return array(
 
@@ -357,6 +382,8 @@ class Environment {
 	
 			// Define hosts of all web apps
 		   define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
 		
            return array(
 
@@ -416,6 +443,8 @@ class Environment {
 	
 			// Define hosts of all web apps
 		   define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
 		
            return array(
 
@@ -456,15 +485,17 @@ class Environment {
 	
 			// Define hosts of all web apps
 		   define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
 		
            return array(
 
                    // Application components
                    'components' => array(
 
-                           // Database
-                           'db'=>array(
-                            'connectionString' => 'mysql:host=localhost;dbname=gxc_cms2',
+                      // Database
+                      'db'=>array(
+                      'connectionString' => 'mysql:host=localhost;dbname=gxc_cms2',
 			                'schemaCachingDuration' => 3600,
 			                'emulatePrepare' => true,
 			                'username' => 'root',

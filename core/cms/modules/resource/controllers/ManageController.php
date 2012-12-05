@@ -1,35 +1,32 @@
 <?php
-
 /**
- * This is the Widget for create new Resource.
+ * Backend Resource Manage Controller.
  * 
  * @author Tuan Nguyen <nganhtuan63@gmail.com>
  * @version 1.0
- * @package cmswidgets.resource
+ * @package cms.modules.resource.controllers
  *
  */
-class ResourceCreateWidget extends CWidget
-{
-    
-    public $visible=true; 
- 
-    public function init()
-    {
-        
-    }
- 
-    public function run()
-    {
-        if($this->visible)
-        {
-            $this->renderContent();
-        }
-    }
- 
-    protected function renderContent()
-    { 
-                                      
-        $model=new ResourceUploadForm;
+
+class ManageController extends BeController{      
+
+	public function __construct($id,$module=null)
+	{
+		 parent::__construct($id,$module);
+                 $this->menu=array(
+                        array('label'=>t('cms','Manage Resource'), 'url'=>array('admin'),'linkOptions'=>array('class'=>'button')),
+                        array('label'=>t('cms','Add Resource'), 'url'=>array('create'),'linkOptions'=>array('class'=>'button')),
+                );
+		 
+	}
+                 
+    /**
+	 * The function that do Create new Resource
+	 * 
+	 */
+	public function actionCreate()
+	{		                
+		$model=new ResourceUploadForm;
  		$is_new=true;     
 		$process=true;   
 		$types_array=ConstantDefine::fileTypes();
@@ -46,23 +43,16 @@ class ResourceCreateWidget extends CWidget
 				$model->attributes=$_POST['ResourceUploadForm'];												
             	$model->upload=CUploadedFile::getInstance($model,'upload');		
 				$allow_types=array();		
-				$max_size=ConstantDefine::UPLOAD_MAX_SIZE;
-				$min_size=ConstantDefine::UPLOAD_MIN_SIZE;
+				$max_size=UPLOAD_MAX_SIZE;
+				$min_size=UPLOAD_MIN_SIZE;
                 
 				$resource = new Resource;        
                
-			   //Is it has content type and resource type params?
-			   
-			    
-			   
+			   //Is it has content type and resource type params?			   			    			   
                 $content_type_param=isset($_GET['content_type']) ? trim($_GET['content_type']) : '';
 				$resource_type_param=isset($_GET['type']) ? trim($_GET['type']) : '';
-				
-								
-																
-				if(($content_type_param!='')&&($resource_type_param!='')){
-					
-					  
+
+				if(($content_type_param!='')&&($resource_type_param!='')){  
 					//Get content type	
 					$types=GxcHelpers::getAvailableContentType();
 					if(isset($types[$content_type_param])){						
@@ -79,11 +69,6 @@ class ResourceCreateWidget extends CWidget
 					}					
 
 				}
-				
-				
-							 
-               
-			   
 			    $resource->resource_type=$model->type;                                               
                 if($model->link!=''){
                     $temp_ext=strtolower(substr($model->link, -4));
@@ -150,7 +135,7 @@ class ResourceCreateWidget extends CWidget
                     $resource->resource_body=trim($model->body);  										                  
                     if($resource->save()){
                     	if((isset($_GET['parent_call']))){
-                    		$this->render('cmswidgets.views.resource.resource_upload_iframe_return',array('resource'=>$resource));
+                    		$this->render('resource_upload_iframe_return',array('resource'=>$resource));
 							Yii::app()->end();
                     	} else {
                     		user()->setFlash('success',t('cms','Create new Resource Successfully!'));
@@ -164,6 +149,103 @@ class ResourceCreateWidget extends CWidget
 				
         }
 
-        $this->render('cmswidgets.views.resource.resource_form_widget',array('model'=>$model,'is_new'=>$is_new,'types_array'=>$types_array));
-    }   
+        $this->render('resource_create',array('model'=>$model,'is_new'=>$is_new,'types_array'=>$types_array));
+	}
+        
+		
+	/**
+	 * The function that do Create new Resource
+	 * 
+	 */
+	public function actionCreateFrame()
+	{
+		$this->layout='clean';		                
+		$this->actionCreate();
+	}
+        	
+       
+        
+        /**
+	 * The function that do Manage Resource
+	 * 
+	 */
+	public function actionAdmin()
+	{                
+		GxcHelpers::renderManageModel('Resource');
+	}
+        
+        /**
+	 * The function that view Resource details
+	 * 
+	 */
+	public function actionView()
+	{         
+              $id=isset($_GET['id']) ? (int) ($_GET['id']) : 0 ;
+              $this->menu=array_merge($this->menu,                       
+                        array(
+                            array('label'=>t('cms','Update this Resource'), 'url'=>array('update','id'=>$id),'linkOptions'=>array('class'=>'button')),
+                            array('label'=>t('cms','View this Resource'), 'url'=>array('view','id'=>$id),'linkOptions'=>array('class'=>'button'))
+                        )
+                    );
+		GxcHelpers::renderViewModel('Resource');
+	}
+        
+     /**
+	 * The function that update Resrouce
+	 * 
+	 */
+	public function actionUpdate()
+	{                
+        $id=isset($_GET['id']) ? (int) ($_GET['id']) : 0 ;                
+        $this->menu=array_merge($this->menu,                       
+                        array(
+                            array('label'=>t('cms','Update this Resource'), 'url'=>array('update','id'=>$id),'linkOptions'=>array('class'=>'button')),
+                            array('label'=>t('cms','View this Resource'), 'url'=>array('view','id'=>$id),'linkOptions'=>array('class'=>'button'))
+                        )
+                    );
+                $model=new ResourceUploadForm;
+ 		$is_new=false;     
+		$process=true;   
+		$types_array=ConstantDefine::fileTypes();
+		
+		$id=isset($_GET['id']) ? (int)$_GET['id'] : 0;
+        $resource= GxcHelpers::loadDetailModel('Resource', $id);
+		
+		if($resource){
+			$model->name=$resource->resource_name;
+			$model->body=$resource->resource_body;
+			$model->where=$resource->where;
+			$model->type=$resource->resource_type;    
+		}
+        // if it is ajax validation request
+        if(isset($_POST['ajax']) && $_POST['ajax']==='resource-form')
+        {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+        }
+        // collect user input data
+        if(isset($_POST['ResourceUploadForm']))
+        {                
+				$model->attributes=$_POST['ResourceUploadForm'];	
+				$resource->resource_name=$model->name;															            
+				$resource->resource_body=$model->body;
+				$resource->resource_type=$model->type;
+				if($resource->save()){
+					user()->setFlash('success',t('cms','Update Resource Successfully!'));
+				}
+				
+        }
+
+        $this->render('resource_update',array('model'=>$model,'is_new'=>$is_new,'types_array'=>$types_array));
+	}
+        
+        
+        /**
+	 * The function is to Delete Menu
+	 * 
+	 */
+	public function actionDelete($id)
+	{                            
+          GxcHelpers::deleteModel('Resource', $id);          
+	}
 }

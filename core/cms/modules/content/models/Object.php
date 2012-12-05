@@ -645,8 +645,8 @@ class Object extends CActiveRecord
             return array(
               'thumbnail'=>array('type'=>'thumbnail',
               'name'=>'Thumbnail',
-              'maxSize'=>ConstantDefine::UPLOAD_MAX_SIZE, 
-              'minSize'=>ConstantDefine::UPLOAD_MIN_SIZE,
+              'maxSize'=>UPLOAD_MAX_SIZE, 
+              'minSize'=>UPLOAD_MIN_SIZE,
               'max'=>1,
               'allow'=>array('jpeg',
                              'jpg',

@@ -369,3 +369,272 @@ function replaceTags($startPoint, $endPoint, $newText, $source) {
     return preg_replace('#('.preg_quote($startPoint).')(.*)('.preg_quote($endPoint).')#si', '${1}'.$newText.'${3}', $source);
 }
 
+
+/**
+ * Encode the text into a string which all white spaces will be replaced by $rplChar
+ * @param string $text  text to be encoded
+ * @param Char $rplChar character to replace all the white spaces
+ * @param boolean upWords   set True to uppercase the first character of each word, set False otherwise
+ */
+function encode($text, $rplChar='', $upWords=true)
+{
+    $encodedText = null;
+    if($upWords)
+    {
+        $encodedText = ucwords($text);
+    }
+    else 
+    {
+        $encodedText = strtolower($text);
+    }
+
+    if($rplChar=='')
+    {
+        $encodedText = preg_replace('/\s[\s]+/','',$encodedText);    // Strip off multiple spaces
+        $encodedText = preg_replace('/[\s\W]+/','',$encodedText);    // Strip off spaces and non-alpha-numeric
+    }
+    else
+    {
+        $encodedText = preg_replace('/\s[\s]+/',$rplChar, $encodedText);    // Strip off multiple spaces
+        $encodedText = preg_replace('/[\s\W]+/',$rplChar, $encodedText);    // Strip off spaces and non-alpha-numeric
+        $encodedText = preg_replace('/^[\\'.$rplChar.']+/','', $encodedText); // Strip off the starting $rplChar
+        $encodedText = preg_replace('/[\\'.$rplChar.']+$/','',$encodedText); // // Strip off the ending $rplChar
+    }
+    return $encodedText;
+
+}
+
+// Query Filter String from Litpi.com   
+ function queryFilterString($str)
+{
+    //Use RegEx for complex pattern
+    $filterPattern = array(
+                            '/select.*(from|if|into)/i',  // select table query, 
+                            '/0x[0-9a-f]*/i',               // hexa character
+                            '/\(.*\)/',                     // call a sql function
+                            '/union.*select/i',             // UNION query
+                            '/insert.*values/i',        // INSERT query
+                            '/order.*by/i'              // ORDER BY injection
+                            );
+    $str = preg_replace($filterPattern, '', $str);
+
+    //Use normal replace for simple replacement
+    $filterHaystack = array(
+                            '--',   // query comment
+                            '||',   // OR operator
+                            '\*',   // OR operator
+                            );
+
+    $str = str_replace($filterHaystack, '', $str);
+    return $str;
+}
+
+
+//XSS Clean Data Input from Litpi.com
+ function xss_clean($data)
+{
+    return $data;
+    // Fix &entity\n;
+    $data = str_replace(array('&amp;','&lt;','&gt;'), array('&amp;amp;','&amp;lt;','&amp;gt;'), $data);
+    $data = preg_replace('/(&#*\w+)[\x00-\x20]+;/u', '$1;', $data);
+    $data = preg_replace('/(&#x*[0-9A-F]+);*/iu', '$1;', $data);
+    $data = html_entity_decode($data, ENT_COMPAT, 'UTF-8');
+
+    // Remove any attribute starting with "on" or xmlns
+    $data = preg_replace('#(<[^>]+?[\x00-\x20"\'])(?:on|xmlns)[^>]*+>#iu', '$1>', $data);
+
+    // Remove javascript: and vbscript: protocols
+    $data = preg_replace('#([a-z]*)[\x00-\x20]*=[\x00-\x20]*([`\'"]*)[\x00-\x20]*j[\x00-\x20]*a[\x00-\x20]*v[\x00-\x20]*a[\x00-\x20]*s[\x00-\x20]*c[\x00-\x20]*r[\x00-\x20]*i[\x00-\x20]*p[\x00-\x20]*t[\x00-\x20]*:#iu', '$1=$2nojavascript...', $data);
+    $data = preg_replace('#([a-z]*)[\x00-\x20]*=([\'"]*)[\x00-\x20]*v[\x00-\x20]*b[\x00-\x20]*s[\x00-\x20]*c[\x00-\x20]*r[\x00-\x20]*i[\x00-\x20]*p[\x00-\x20]*t[\x00-\x20]*:#iu', '$1=$2novbscript...', $data);
+    $data = preg_replace('#([a-z]*)[\x00-\x20]*=([\'"]*)[\x00-\x20]*-moz-binding[\x00-\x20]*:#u', '$1=$2nomozbinding...', $data);
+
+    // Only works in IE: <span style="width: expression(alert('cms','Ping!'));"></span>
+    $data = preg_replace('#(<[^>]+?)style[\x00-\x20]*=[\x00-\x20]*[`\'"]*.*?expression[\x00-\x20]*\([^>]*+>#i', '$1>', $data);
+    $data = preg_replace('#(<[^>]+?)style[\x00-\x20]*=[\x00-\x20]*[`\'"]*.*?behaviour[\x00-\x20]*\([^>]*+>#i', '$1>', $data);
+    $data = preg_replace('#(<[^>]+?)style[\x00-\x20]*=[\x00-\x20]*[`\'"]*.*?s[\x00-\x20]*c[\x00-\x20]*r[\x00-\x20]*i[\x00-\x20]*p[\x00-\x20]*t[\x00-\x20]*:*[^>]*+>#iu', '$1>', $data);
+
+    // Remove namespaced elements (we do not need them)
+    $data = preg_replace('#</*\w+:\w[^>]*+>#i', '', $data);
+
+    do
+    {
+        // Remove really unwanted tags
+        $old_data = $data;
+        $data = preg_replace('#</*(?:applet|b(?:ase|gsound|link)|frame(?:set)?|i(?:frame|layer)|l(?:ayer|ink)|meta|s(?:cript|tyle)|title|xml)[^>]*+>#i', '', $data);
+    }
+    while ($old_data !== $data);
+
+    // we are done...
+    return $data;
+}
+
+ 
+
+ function curl_post_async($url, $params)
+{
+   foreach ($params as $key => &$val) {
+     if (is_array($val)) $val = implode(',', $val);
+       $post_params[] = $key.'='.urlencode($val);
+   }
+   $post_string = implode('&', $post_params);
+
+   $parts=parse_url($url);
+
+   $fp = fsockopen($parts['host'],
+       isset($parts['port'])?$parts['port']:80,
+       $errno, $errstr, 30);
+
+   $out = "POST ".$parts['path']." HTTP/1.1\r\n";
+   $out.= "Host: ".$parts['host']."\r\n";
+   $out.= "Content-Type: application/x-www-form-urlencoded\r\n";
+   $out.= "Content-Length: ".strlen($post_string)."\r\n";
+   $out.= "Connection: Close\r\n\r\n";
+   if (isset($post_string)) $out.= $post_string;
+
+   fwrite($fp, $out);
+   fclose($fp);
+}
+    
+ function curl_get_async($url, $params)
+{
+    foreach ($params as $key => &$val) {
+      if (is_array($val)) $val = implode(',', $val);
+        $post_params[] = $key.'='.urlencode($val);
+    }
+    $post_string = implode('&', $post_params);
+
+    $parts=parse_url($url);
+
+    $fp = fsockopen($parts['host'],
+        isset($parts['port'])?$parts['port']:80,
+        $errno, $errstr, 30);
+
+    $out = "GET ".$parts['path']." HTTP/1.1\r\n";
+    $out.= "Host: ".$parts['host']."\r\n";
+    $out.= "Content-Type: application/x-www-form-urlencoded\r\n";
+    $out.= "Content-Length: ".strlen($post_string)."\r\n";
+    $out.= "Connection: Close\r\n\r\n";
+    if (isset($post_string)) $out.= $post_string;
+
+    fwrite($fp, $out);
+    fclose($fp);
+}
+    
+ function plaintext($s)
+{
+    $s = strip_tags($s);
+    $s = xss_clean($s);
+    return $s;
+}
+
+ function isValidURL($url)
+{
+    return preg_match('|^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(/.*)?$|i', $url);
+}
+        
+
+/**
+* Generate a random number between floor and ceiling
+*
+* @param int $floor
+* @param int $ceiling
+* @return int
+*/
+ function RandomNumber($floor, $ceiling) 
+{
+    srand((double)microtime() * 1000000);
+    return rand($floor, $ceiling);
+}
+
+/**
+* Format string of filesize
+*
+* @param string $s
+* @return string
+*/
+ function formatFileSize($s) 
+{
+    if($s >= "1073741824")
+    { 
+        $s = number_format($s / 1073741824, 2) . " GB"; 
+    }
+    elseif($s >= "1048576") 
+    { 
+        $s  = number_format($s / 1048576, 2) . " MB"; 
+    }
+    elseif($s >= "1024") 
+    { 
+        $s = number_format($s / 1024, 2) . " KB"; 
+    }
+    elseif($s >= "1") 
+    {  
+        $s = $s . " bytes"; 
+    }
+    else 
+    { 
+        $s = "-"; 
+    }
+
+return $s;
+}
+
+ function stripslashes_deep($value)
+{
+       $value = is_array($value) ?
+                   array_map('stripslashes_deep', $value) :
+                   stripslashes($value);
+
+       return $value;
+}
+
+
+/**
+* Fix back button on IE6 (stupid) browser
+* @author khanhdn
+*/
+ function fixBackButtonOnIE() 
+{
+    //drupal_set_header("Expires: Sat, 27 Oct 1984 08:52:00 GMT GMT");  // Always expired (1)
+    //drupal_set_header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified (2)
+    header("Cache-Control: no-store, no-cache, must-revalidate");   // HTTP/1.1 (3)
+    header("Cache-Control: public");    //(4)
+    header("Pragma: no-cache"); // HTTP/1.0   (5)
+    ini_set('cms','session.cache_limiter', 'private');   // (6)
+}
+
+
+/**
+* Get Alphabet only
+*/
+function alphabetonly($string = '')
+{
+        $output = $string;
+        //replace no alphabet character
+        $output = preg_replace("/[^a-zA-Z0-9]/","-", $output);   
+        $output = preg_replace("/-+/","-", $output);   
+        $output = trim($output, '-');
+
+        return $output;
+}
+
+/**
+* Convert date string in format 'dd/mm/yyyy' and time string in format 'hh:mm'to timestamp                      
+* @param string $datestring
+* @param string $timestring  
+*/
+function datedmyToTimestamp($datestring = '01/01/1970', $timestring = '00:01')
+{
+    $timegroup = explode(':', $timestring); 
+    $dategroup = explode('/', $datestring);
+    return mktime((int)trim($timegroup[0]), (int)trim($timegroup[1]), 1, (int)trim($dategroup[1]), (int)trim($dategroup[0]), (int)trim($dategroup[2]));
+}
+
+function truncate($phrase, $max_words)
+{
+        $phrase_array = explode(' ',$phrase);
+        if(count($phrase_array) > $max_words && $max_words > 0)
+            $phrase = implode(' ',array_slice($phrase_array, 0, $max_words)).'...';
+
+        return $phrase;
+}
+

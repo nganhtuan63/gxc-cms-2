@@ -1,3 +1,7 @@
+<?php 
+$this->pageTitle=t('cms','Manage Resource');
+$this->pageHint=t('cms','Here you can manage your Resource'); 
+?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'resource-grid',
 	'dataProvider'=>$model->search(),
@@ -58,7 +62,7 @@
 			(
 			    'label'=>t('cms','Edit'),
 			    'imageUrl'=>false,
-			    'url'=>'Yii::app()->createUrl("admin/'.app()->controller->id.'/update", array("id"=>$data->resource_id))',
+			    'url'=>'Yii::app()->createUrl("resource/'.app()->controller->id.'/update", array("id"=>$data->resource_id))',
 			),
 		    ),
 		),

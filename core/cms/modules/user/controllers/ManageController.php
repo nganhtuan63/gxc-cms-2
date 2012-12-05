@@ -164,7 +164,7 @@ class ManageController extends BeController{
 	 */
 	public function actionAdmin()
 	{                
-		$this->render('user_admin');
+		GxcHelpers::renderManageModel('User');
 	}
         
         /**
@@ -173,14 +173,14 @@ class ManageController extends BeController{
 	 */
 	public function actionView()
 	{         
-              $id=isset($_GET['id']) ? (int) ($_GET['id']) : 0 ;
-              $this->menu=array_merge($this->menu,                       
-                        array(
-                            array('label'=>t('cms','Update this user'), 'url'=>array('update','id'=>$id),'linkOptions'=>array('class'=>'button')),
-                            array('label'=>t('cms','View this user'), 'url'=>array('view','id'=>$id),'linkOptions'=>array('class'=>'button'))
-                        )
-                    );
-		$this->render('user_view');
+        $id=isset($_GET['id']) ? (int) ($_GET['id']) : 0 ;
+        $this->menu=array_merge($this->menu,                       
+                array(
+                    array('label'=>t('cms','Update this user'), 'url'=>array('update','id'=>$id),'linkOptions'=>array('class'=>'button')),
+                    array('label'=>t('cms','View this user'), 'url'=>array('view','id'=>$id),'linkOptions'=>array('class'=>'button'))
+                )
+            );
+		GxcHelpers::renderViewModel('User');
 	}
         
         /**

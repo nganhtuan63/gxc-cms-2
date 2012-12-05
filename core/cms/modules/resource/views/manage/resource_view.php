@@ -1,3 +1,6 @@
+<?php 
+$this->pageTitle=t('cms','Resource details');
+?>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(

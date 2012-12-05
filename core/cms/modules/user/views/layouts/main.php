@@ -11,7 +11,7 @@
         $cs->registerCoreScript('jquery.ui');
         $cs->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');                
 
-        $AssetsUrl=GxcHelpers::publishAsset(Yii::getPathOfAlias('cms.modules.user.assets'),false,-1,YII_DEBUG);
+        $AssetsUrl=GxcHelpers::publishAsset(Yii::getPathOfAlias('cms.assets'),false,-1,YII_DEBUG);
 
 ?>
 <!-- blueprint CSS framework -->

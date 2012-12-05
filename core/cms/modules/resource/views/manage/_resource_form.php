@@ -1,5 +1,6 @@
+
 <div class="form">
-<?php $this->render('cmswidgets.views.notification'); ?>
+<?php $this->renderPartial('cmswidgets.views.notification'); ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'resource-form',
         'enableAjaxValidation'=>true,
@@ -7,10 +8,7 @@
         )); 
 ?>
 
-<?php echo $form->errorSummary($model); ?>
-
-        
-        	
+<?php echo $form->errorSummary($model); ?>                	
         <div>
 	        <div class="row" style="float:left">
 	                <?php echo $form->labelEx($model,'type'); ?>

@@ -365,7 +365,7 @@ class AuthItemController extends RController
 					{
 						//Tuan Implement to add App ID here
 						//Get App ID
-						$app=isset($_GET['app'])? strtolower(GxcHelpers::plaintext($_GET['app'])) : strtolower(Yii::app()->id);
+						$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : strtolower(Yii::app()->id);
 						if( strpos($itemname, '*')!==false )
 							$items['tasks'][] = $app.'.'.$itemname;
 						else

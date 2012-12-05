@@ -5,7 +5,7 @@ class SettingModule extends CWebModule
 		
 	public $baseUrl = '/setting';
 	public $appLayout = 'cms.modules.admin.views.layouts.main';
-	public $data_folder = 'cms.settings';
+	public $data_folder = 'common.settings';
 
 	public function init()
 	{

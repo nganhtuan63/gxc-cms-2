@@ -12,7 +12,7 @@
  */
 class Language extends CActiveRecord
 {
-        private static $_items=array();
+    private static $_items=array();
         
 	/**
 	 * Returns the static model of the specified AR class.

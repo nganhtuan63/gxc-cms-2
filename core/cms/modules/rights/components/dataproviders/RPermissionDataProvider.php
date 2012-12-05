@@ -152,7 +152,7 @@ class RPermissionDataProvider extends CDataProvider
 		
 		//Tuan implement to show Item based on App only
 		//Get App Path
-		$app=isset($_GET['app'])? strtolower(GxcHelpers::plaintext($_GET['app'])) : strtolower(app()->id);
+		$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : strtolower(app()->id);
 		foreach($data as $key=>$item){			
 			if(strpos($item['description'],$app)===false){
 				//Strip Item that is not based on current app

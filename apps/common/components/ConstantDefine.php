@@ -12,20 +12,7 @@
 class ConstantDefine{
     	
 	
-	const AMAZON_SES_ACCESS_KEY='';
-	const AMAZON_SES_SECRET_KEY='';
-	
-	const AMAZON_SES_EMAIL='';	
-	const SUPPORT_EMAIL='';
-	
-	const PAGING_SIZE=20;
-	
-	
-	/**
-     * Constant related to Upload File Size
-     */   
-	const UPLOAD_MAX_SIZE=10485760; //10mb
-    const UPLOAD_MIN_SIZE=1; //1 byte
+
     
     public static function fileTypes(){
         return array(

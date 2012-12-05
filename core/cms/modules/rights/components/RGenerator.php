@@ -144,7 +144,7 @@ class RGenerator extends CApplicationComponent
 		$items['modules']=array();
 
 		//Get App Path
-		$app=isset($_GET['app'])? strtolower(GxcHelpers::plaintext($_GET['app'])) : false;
+		$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : false;
 
 		// Tuan Implement to look for module controllers in common and cms folder also
 		//If there is no $_GET['app'], we will use the current app

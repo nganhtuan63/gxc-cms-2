@@ -6,7 +6,7 @@
 <div id="permissions">
 
 	<?php 
-	$app=isset($_GET['app'])? strtolower(GxcHelpers::plaintext($_GET['app'])) : strtolower(app()->id);
+	$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : strtolower(app()->id);
 	Yii::app()->controller->pageTitle = Rights::t('core', 'Permissions').' - '.ucfirst($app).' Application' ; ?>
 
 	<?php 

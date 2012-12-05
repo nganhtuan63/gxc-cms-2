@@ -27,7 +27,7 @@ class ManageController extends BeController{
 		$this->pageHint=t('cms','Here you can manage all Site Settings'); 
 
 		$settings=GxcHelpers::getAvailableSettings();
-        $type=isset($_GET['type']) ? strtolower(GxcHelpers::plaintext($_GET['type'])) : 'general';
+        $type=isset($_GET['type']) ? strtolower(plaintext($_GET['type'])) : 'general';
         
         if(array_key_exists($type, $settings)){
             //Import the Setting Class

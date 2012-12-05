@@ -66,7 +66,7 @@ class AdminModule extends CWebModule
 	{
 		if( $this->_assetsUrl===null )
 		{			
-			$this->_assetsUrl=GxcHelpers::publishAsset(Yii::getPathOfAlias('admin.assets'),false,-1,YII_DEBUG);
+			$this->_assetsUrl=GxcHelpers::publishAsset(Yii::getPathOfAlias('cms.assets'),false,-1,YII_DEBUG);
 		}
 
 		return $this->_assetsUrl;
