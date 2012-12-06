@@ -3,17 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2012 at 05:19 PM
+-- Generation Time: Dec 06, 2012 at 05:13 PM
 -- Server version: 5.5.9
 -- PHP Version: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `gxc_cms2`
@@ -100,6 +94,7 @@ CREATE TABLE `gxc_autologin_tokens` (
 -- Dumping data for table `gxc_autologin_tokens`
 --
 
+INSERT INTO `gxc_autologin_tokens` VALUES(1, 'c7e000bb39fcdd89fdf28cd445d12b1c020f4e54');
 
 -- --------------------------------------------------------
 
@@ -116,7 +111,7 @@ CREATE TABLE `gxc_block` (
   `updated` int(11) NOT NULL,
   `params` text NOT NULL,
   PRIMARY KEY (`block_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `gxc_block`
@@ -135,12 +130,13 @@ CREATE TABLE `gxc_content_list` (
   `value` text NOT NULL,
   `created` int(11) NOT NULL,
   PRIMARY KEY (`content_list_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `gxc_content_list`
 --
 
+INSERT INTO `gxc_content_list` VALUES(1, 'Test', 'a:9:{s:4:"type";s:1:"2";s:4:"lang";a:1:{i:0;s:1:"1";}s:12:"content_type";a:1:{i:0;s:7:"article";}s:5:"terms";a:1:{i:0;s:1:"1";}s:4:"tags";s:0:"";s:6:"paging";s:1:"0";s:6:"number";s:2:"10";s:8:"criteria";s:1:"1";s:11:"manual_list";a:0:{}}', 1354788099);
 
 -- --------------------------------------------------------
 
@@ -203,7 +199,7 @@ CREATE TABLE `gxc_menu_item` (
   `parent` int(10) NOT NULL DEFAULT '0',
   `order` int(11) NOT NULL,
   PRIMARY KEY (`menu_item_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `gxc_menu_item`
@@ -342,6 +338,7 @@ CREATE TABLE `gxc_page` (
   `allow_index` tinyint(1) NOT NULL DEFAULT '1',
   `allow_follow` tinyint(1) NOT NULL DEFAULT '1',
   `display_type` varchar(50) NOT NULL DEFAULT 'main',
+  `display_device` varchar(50) NOT NULL DEFAULT 'web',
   PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
@@ -349,9 +346,9 @@ CREATE TABLE `gxc_page` (
 -- Dumping data for table `gxc_page`
 --
 
-INSERT INTO `gxc_page` VALUES(1, 'home', 'Homepage', 'Homepage', 0, 'default', 'home', 2, '4f3373e0a0648', 1, 'Homepage', 1, 1, 'main');
-INSERT INTO `gxc_page` VALUES(2, 'Error', 'Error', 'Error Notification', 0, 'default', 'error', 2, '4f34d20be0f79', 1, 'Error Notification', 1, 1, 'empty');
-INSERT INTO `gxc_page` VALUES(3, 'Post Detail View', 'Post Detail View', 'Post Detail View', 1, 'default', 'post', 2, '4f34da1b41620', 1, 'Post Detail View', 1, 1, 'main');
+INSERT INTO `gxc_page` VALUES(1, 'home', 'Homepage', 'Homepage', 0, 'default', 'home', 2, '4f3373e0a0648', 1, 'Homepage', 1, 1, 'main', 'web');
+INSERT INTO `gxc_page` VALUES(2, 'Error', 'Error', 'Error Notification', 0, 'default', 'error', 2, '4f34d20be0f79', 1, 'Error Notification', 1, 1, 'empty', 'web');
+INSERT INTO `gxc_page` VALUES(3, 'Post Detail View', 'Post Detail View', 'Post Detail View', 1, 'default', 'post', 2, '4f34da1b41620', 1, 'Post Detail View', 1, 1, 'main', 'web');
 
 -- --------------------------------------------------------
 
@@ -390,7 +387,7 @@ CREATE TABLE `gxc_resource` (
   `creator` bigint(20) NOT NULL,
   `where` varchar(50) NOT NULL,
   PRIMARY KEY (`resource_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `gxc_resource`
@@ -432,6 +429,7 @@ CREATE TABLE `gxc_session` (
 -- Dumping data for table `gxc_session`
 --
 
+INSERT INTO `gxc_session` VALUES('921c721e7873ac49bf82b99e732c3922', 1354790021, 'gxc_u_autoLoginToken|s:40:"9c093f27c632f42fd035752cc153d30a3ff34316";gxc_u___id|s:1:"1";gxc_u___name|s:5:"admin";gxc_u___states|a:1:{s:14:"autoLoginToken";b:1;}gxc_u_current_user|a:8:{s:8:"username";s:5:"admin";s:8:"user_url";s:5:"admin";s:12:"display_name";s:5:"Admin";s:5:"email";s:19:"admin@localhost.com";s:5:"fbuid";N;s:6:"status";s:1:"1";s:12:"recent_login";s:10:"1354780715";s:6:"avatar";N;}gxc_u_current_roles|a:1:{i:0;s:5:"Admin";}gxc_u_Rights_isSuperuser|b:1;');
 
 -- --------------------------------------------------------
 
@@ -650,7 +648,7 @@ CREATE TABLE `gxc_user` (
 -- Dumping data for table `gxc_user`
 --
 
-INSERT INTO `gxc_user` VALUES(1, 'admin', 'admin', 'Admin', 'b8b19ad7133fc9e145dd153aac6c2267:OWNhMzM2ODNhN2QxZWQ5N2U5YTViMmFlNTA0NThkYTkyM21zODIwN3g=', 'admin@localhost.com', NULL, 1, 1328777092, 1354003385, 1354003385, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL);
+INSERT INTO `gxc_user` VALUES(1, 'admin', 'admin', 'Admin', 'b8b19ad7133fc9e145dd153aac6c2267:OWNhMzM2ODNhN2QxZWQ5N2U5YTViMmFlNTA0NThkYTkyM21zODIwN3g=', 'admin@localhost.com', NULL, 1, 1328777092, 1354780715, 1354780715, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL);
 INSERT INTO `gxc_user` VALUES(3, 'reporter', '', 'Reporter', 'b8b19ad7133fc9e145dd153aac6c2267:OWNhMzM2ODNhN2QxZWQ5N2U5YTViMmFlNTA0NThkYTkyM21zODIwN3g=', 'reporter@localhost.com', NULL, 1, 1353488915, 1354001807, 1354001807, '', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL);
 
 -- --------------------------------------------------------
