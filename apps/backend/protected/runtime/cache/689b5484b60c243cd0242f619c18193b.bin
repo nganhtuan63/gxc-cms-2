@@ -1,1 +1,0 @@
-a:2:{i:0;a:2:{s:7:"article";a:5:{s:2:"id";s:7:"article";s:4:"name";s:7:"Article";s:7:"version";s:3:"1.0";s:5:"class";s:13:"ArticleObject";s:4:"icon";s:12:"richtext.png";}s:5:"event";a:5:{s:2:"id";s:5:"event";s:4:"name";s:5:"Event";s:7:"version";s:3:"1.0";s:5:"class";s:11:"EventObject";s:4:"icon";s:12:"calendar.png";}}i:1;N;}

@@ -204,36 +204,36 @@ class ContentList extends CActiveRecord
             $type=isset($_POST['q']) ? $_POST['q'] : array('0') ;	   
             $lang=isset($_POST['lang']) ? $_POST['lang'] : array('0') ;
             
-	    if(in_array('all',$type)){
-                if (in_array('0',$lang)) {
-                    $data=Term::model()->findAll();
-                }
-                else {
-                    $data=Term::model()->with('taxonomy')->findAll('lang IN ('.implode(",",$lang).')');
-                }
-	    } else {
-		$str=(implode("','",$type));
-		$str="'".$str."'";	
-                if (in_array('0',$lang)) {
-                    $data=Term::model()->with('taxonomy')->findAll('type IN ('.$str.')',array());
-                } else {
-                     $data=Term::model()->with('taxonomy')->findAll('type IN ('.$str.') and lang IN ('.implode(",",$lang).')',array());
-                }
-	    }	  
-	 
-	    $data=CHtml::listData($data,'term_id','name');
-	    if(count($data)<0){
-		echo CHtml::tag('option',
-			   array('value'=>0,'selected'=>'selected'),t('All'),true);
-	    } else {
-                    echo CHtml::tag('option',
-                    array('value'=>0,'selected'=>'selected'),t('All'),true);
-		foreach($data as $value=>$name)
-		{
-                    echo CHtml::tag('option',
-                    array('value'=>$value),CHtml::encode($name),true);
-		}
-	    }
+		    if(in_array('all',$type)){
+	                if (in_array('0',$lang)) {
+	                    $data=Term::model()->findAll();
+	                }
+	                else {
+	                    $data=Term::model()->with('taxonomy')->findAll('lang IN ('.implode(",",$lang).')');
+	                }
+		    } else {
+			$str=(implode("','",$type));
+			$str="'".$str."'";	
+	                if (in_array('0',$lang)) {
+	                    $data=Term::model()->with('taxonomy')->findAll('type IN ('.$str.')',array());
+	                } else {
+	                     $data=Term::model()->with('taxonomy')->findAll('type IN ('.$str.') and lang IN ('.implode(",",$lang).')',array());
+	                }
+		    }	  
+		 
+		    $data=CHtml::listData($data,'term_id','name');
+		    if(count($data)<0){
+			echo CHtml::tag('option',
+				   array('value'=>0,'selected'=>'selected'),t('cms','All'),true);
+		    } else {
+	                echo CHtml::tag('option',
+	                array('value'=>0,'selected'=>'selected'),t('cms','All'),true);
+				foreach($data as $value=>$name)
+				{
+		                    echo CHtml::tag('option',
+		                    array('value'=>$value),CHtml::encode($name),true);
+				}
+		    }
         }
         
         

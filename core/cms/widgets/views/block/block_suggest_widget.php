@@ -12,7 +12,7 @@
                             if(item!==undefined) {           
                                 \$('#block_title').val(item[0]);
                                 \$('#block_id').val(item[1]);
-                                
+                                \$('#block_type').val(item[2]);                                
                             }
 
 
@@ -20,6 +20,7 @@
                 )); ?>
             <input type="hidden" id="block_title" value="" />
             <input type="hidden" id="block_id" value="" />
+            <input type="hidden" id="block_type" value="" />
         <input type="button" class="button" value="<?php echo('Save'); ?>" onClick="addBlock(window.parent.document.getElementById('<?php echo $_GET['iframe_id']; ?>'));" />
         <input type="button" class="button" value="<?php echo('Cancel'); ?>" onClick="window.parent.cancelOnAddBlock(window.parent.document.getElementById('<?php echo $_GET['iframe_id']; ?>'));" />
         </div>
@@ -32,7 +33,8 @@
                 } else {
                     var title=$('#block_title').val();
                     var id=$('#block_id').val();
-                    window.parent.updateOnAddBlock(object,title,id);
+                    var type=$('#block_type').val();
+                    window.parent.updateOnAddBlock(object,title,id,type);
                 }
             }
         </script>

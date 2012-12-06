@@ -33,11 +33,9 @@ class BlockRenderWidget extends CWidget
  
     protected function renderContent()
     {       
-        if (isset($this->page)) {
-                        
+        if (isset($this->page)) {                       
 			$blocks=Yii::app()->cache->get($this->page->page_id.'-'.$this->region);
-			if($blocks===false){				
-					//var_dump($this->page->page_id.'-'.$this->region);
+			if($blocks===false){								
 				   //get all blocks of current region, order by 'order'
 		            $blocks = PageBlock::model()->findAll(array(
 		                'condition'=>'page_id=:paramId and region=:regionId and status=:status',
@@ -52,38 +50,36 @@ class BlockRenderWidget extends CWidget
 					}
 			} else {
 				$this->workWithBlocks($blocks);
-			}
-                            	                
-	   	 
+			}                            	                	   	 
         }
         
     }   
 
 	public function workWithBlocks($blocks){
-				foreach($blocks as $page_block) {
-					$block=Yii::app()->cache->get('block-render-'.$page_block->block_id);
-					if($block===false){
-						$block =GxcHelpers::loadDetailModel('Block', $page_block->block_id);                                                                		
-						if($block){
-							Yii::app()->cache->set('block-render-'.$page_block->block_id,$block,300);
-							$this->blockRender($block);
-						}						
-					} else {
-						$this->blockRender($block);
-					}
-					
-				                                       	                        
-				}
+		foreach($blocks as $page_block) {
+			$block=Yii::app()->cache->get('block-render-'.$page_block->block_id);
+			if($block===false){
+				$block =GxcHelpers::loadDetailModel('Block', $page_block->block_id);                                                                		
+				if($block){
+					Yii::app()->cache->set('block-render-'.$page_block->block_id,$block,300);
+					$this->blockRender($block);
+				}						
+			} else {
+				$this->blockRender($block);
+			}
+			
+		                                       	                        
+		}
 	}
 	
 	public function blockRender($block){
-							$block_ini=parse_ini_file(Yii::getPathOfAlias('common.blocks.'.$block->type).DIRECTORY_SEPARATOR.'info.ini');                                                   
-		                //Include the class            
-		                Yii::import('common.blocks.'.$block->type.'.'.$block_ini['class']);                                        					
-		                if($this->data!=null)
-		                	$this->widget('common.blocks.'.$block->type.'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset,'data'=>$this->data));
-						else  	     
-							$this->widget('common.blocks.'.$block->type.'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset));
+		$block_ini=parse_ini_file(Yii::getPathOfAlias('common.blocks.'.$block->type).DIRECTORY_SEPARATOR.'info.ini');                                                   
+        //Include the class            
+        Yii::import('common.blocks.'.$block->type.'.'.$block_ini['class']);                                        					
+        if($this->data!=null)
+        	$this->widget('common.blocks.'.$block->type.'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset,'data'=>$this->data));
+		else  	     
+			$this->widget('common.blocks.'.$block->type.'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset));
 			
 	}
     
@@ -92,11 +88,11 @@ class BlockRenderWidget extends CWidget
             // layout                
         	$name=(strpos($obj->id,'.')===false) ? $obj->id : substr($obj->id, strrpos($obj->id, '.' )+1);	
             $render='common.blocks.'.$obj->id.'.'.$name.'_block_output';
-			/*Delete for optimize		if(file_exists(Yii::getPathOfAlias('common.front_layouts.'.$obj->page->layout.'.blocks').'/'.$obj->id.'_block_output.php')){                
+			/*Delete for optimize		
+			if(file_exists(Yii::getPathOfAlias('common.front_layouts.'.$obj->page->layout.'.blocks').'/'.$obj->id.'_block_output.php')){                
                 $render='common.front_layouts.'.$obj->page->layout.'.blocks.'.$obj->id.'_block_output';                
-            }
-            
+            }            
 			Delete for optimize */
             return $render;
-        }
+    }
 }

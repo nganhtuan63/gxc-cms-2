@@ -48,7 +48,7 @@ class ContentListCreateWidget extends CWidget
                     if($model->type==ConstantDefine::CONTENT_LIST_TYPE_MANUAL){                                         
                         $model->manual_list=(isset($_POST['content_list_id']) && (is_array($_POST['content_list_id'])) ) ? $_POST['content_list_id'] : array();                                        
                         if(empty($model->manual_list)){                             
-                            $model->addError('type',t('Please add content for manual queue'));
+                            $model->addError('type',t('cms','Please add content for manual queue'));
                         }
                     } else {
                         $model->manual_list= array();

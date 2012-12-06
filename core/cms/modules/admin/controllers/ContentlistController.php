@@ -83,7 +83,7 @@ class ContentlistController extends BeController{
 	}
         
         
-        public function actionDynamicTerms()
+    public function actionDynamicTerms()
 	{
 	    ContentList::getDynamicTerms();
 	   

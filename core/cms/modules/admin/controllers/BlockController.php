@@ -83,15 +83,15 @@ class BlockController extends BeController{
 	}
         
         
-        public function actionSuggestBlock()
-        {
-            $this->render('block_suggest',array());   
-        }
-        
-        
-        public function actionSuggestBlocks(){
-              Block::suggestBlocks();
-        }
+    public function actionSuggestBlock()
+    {
+        $this->render('block_suggest',array());   
+    }
+    
+    
+    public function actionSuggestBlocks(){
+          Block::suggestBlocks();
+    }
         
       
                     

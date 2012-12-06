@@ -32,14 +32,14 @@
 <div id="params-<?php echo ConstantDefine::CONTENT_LIST_TYPE_MANUAL; ?>" style="display:none">
 <div class="content-box ">
         <div class="content-box-header">
-        <h3><?php echo t('cms','Params');?></h3>                                
+        <h3><?php echo t('Params');?></h3>                                
         </div> 
 
         <div class="content-box-content" style="display: block; padding: 0 0 15px 0">
                 <div class="tab-content default-tab">
                          <div class="row">
                                 <div style="padding:15px">
-                                <?php echo CHtml::label(t('cms','Add content'),''); ?>
+                                <?php echo CHtml::label(t('Add content'),''); ?>
                                 <?php $this->widget('CAutoComplete', array(
                                 'mustMatch'=>true,
                                 'name'=>'manual_list_name',
@@ -118,7 +118,7 @@
     
 <div class="closed-box content-box ">
         <div class="content-box-header">
-        <h3><?php echo t('cms','Params');?></h3>                                
+        <h3><?php echo t('Params');?></h3>                                
         </div> 
         <div class="content-box-content" style="display: block;">
                 <div class="tab-content default-tab">
@@ -190,18 +190,18 @@
                                    
                             <?php echo $form->error($model,'terms'); ?>
                             </div>
-                            <div class="left" style="margin-left:20px">
-                                <?php echo $form->labelEx($model,'tags'); ?>
-                                <?php $this->widget('CAutoComplete', array(
-                                        'model'=>$model,
-                                        'mustMatch'=>true,
-                                        'attribute'=>'tags',
-                                        'url'=>array('suggestTags'),
-                                        'multiple'=>true,
-                                        'htmlOptions'=>array('size'=>50,'style'=>'width:300px'),
-                                )); ?>
+                            <div class="left">
+                            <?php echo $form->labelEx($model,'tags'); ?>
+                            <?php $this->widget('CAutoComplete', array(
+                                    'model'=>$model,
+                                    'mustMatch'=>true,
+                                    'attribute'=>'tags',
+                                    'url'=>array('suggestTags'),
+                                    'multiple'=>true,
+                                    'htmlOptions'=>array('size'=>50,'style'=>'width:300px'),
+                            )); ?>
 
-                                <?php echo $form->error($model,'tags'); ?>
+                            <?php echo $form->error($model,'tags'); ?>
                             </div>
                             <div class="clear"></div>
                             </div>
@@ -232,11 +232,11 @@
 	
 	<?php if(isset($_GET['type'])) : ?>
 	<div class="row">
-        <?php echo CHtml::submitButton(isset($_GET['action']) ? t('cms','Save') : t('cms','Add'), array('class'=>'button')); ?>
+        <?php echo CHtml::submitButton(isset($_GET['action']) ? t('Save') : t('Add'), array('class'=>'button')); ?>
 	</div>
 	<?php else : ?>
 	<div class="row">
-		<?php echo CHtml::submitButton($model->isNewRecord ? t('cms','Create') : t('cms','Save'), array('class'=>'button')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? t('Create') : t('Save'), array('class'=>'button')); ?>
 		<div class="clear"></div>
 	</div>
 	<?php endif; ?>

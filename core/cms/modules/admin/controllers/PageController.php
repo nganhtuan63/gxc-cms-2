@@ -84,20 +84,18 @@ class PageController extends BeController{
         
         
         
-        public function actionChangeLayout(){
-              Page::changeLayout();
-        }
-            
-        public function actionInheritParent(){
-              Page::inheritParent();
-        }
+    public function actionChangeLayout(){
+          Page::changeLayout();
+    }
         
-        public function actionChangeParent(){
-              Page::changeParent();
-        }
-            
-                       
-        
+    public function actionInheritParent(){
+          Page::inheritParent();
+    }
+    
+    public function actionChangeParent(){
+          Page::changeParent();
+    }
+             
         /**
 	 * This function sugget the Pages
 	 * 

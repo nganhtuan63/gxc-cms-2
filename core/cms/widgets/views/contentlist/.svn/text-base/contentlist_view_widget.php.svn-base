@@ -2,7 +2,7 @@
 	'data'=>$model,
 	'attributes'=>array(
             
-        array('name'=>'content_list_id',
+                array('name'=>'content_list_id',
 			'type'=>'raw',			
 			'value'=>$model->content_list_id,
 		    ),

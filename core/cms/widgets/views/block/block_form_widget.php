@@ -1,7 +1,7 @@
 <?php if ((Yii::app()->user->hasFlash('success')) && (isset($_GET['embed'])) ) : ?>
     <script type="text/javascript">      	 
          window.parent.updateOnAddBlock(window.parent.document.getElementById('<?php echo $_GET['iframe_id']; ?>'),
-         '<?php echo CHtml::encode($model->name); ?>','<?php echo $model->block_id ?>');
+         '<?php echo CHtml::encode($model->name); ?>','<?php echo $model->block_id ?>','<?php echo $model->type ?>');
     </script>
 <?php endif; ?>
     

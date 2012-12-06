@@ -32,8 +32,7 @@ class ContentListUpdateWidget extends CWidget
     {       
             $content_list_id=isset($_GET['id']) ? (int)$_GET['id'] : 0;     
             $model=GxcHelpers::loadDetailModel('ContentList', $content_list_id); 
-            
-            
+                  
             // if it is ajax validation request
             if(isset($_POST['ajax']) && $_POST['ajax']==='contentlist-form')
             {
@@ -62,12 +61,15 @@ class ContentListUpdateWidget extends CWidget
                    if(!$model->hasErrors()){
                         if($model->validate()){
                           if($model->save()){                        
-                                user()->setFlash('success',t('cms','Update Content list Successfully!'));                                                                
+                                user()->setFlash('success',t('Update Content list Successfully!'));                                                                
                             }
                         }
                    }
-            }
-                        
+            }       
+               
+
+            //var_dump($model->terms);
+            
             Yii::app()->controller->layout=isset($_GET['embed']) ? 'clean' : 'main';
             $this->render('cmswidgets.views.contentlist.contentlist_form_widget',array('model'=>$model));            
     }   

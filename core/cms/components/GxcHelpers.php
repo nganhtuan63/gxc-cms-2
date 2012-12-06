@@ -420,6 +420,152 @@ class GxcHelpers {
 			return null;
 		}
 	}
+
+	/**
+	* Function to get Object Content List
+	**/
+	public static function getContentList($model, $max=null, $paging=null, $return_type=ConstantDefine::CONTENT_LIST_RETURN_ACTIVE_RECORD) {
+        		
+			//Find the content list model first	
+        		$condition = 't.object_status = :status and t.object_date < :time';
+			$params = array(':status'=>ConstantDefine::OBJECT_STATUS_PUBLISHED, ':time'=>time()) ;
+			if($paging == 0) $page_number = 1;
+			else $page_number = $model->paging;
+
+				if (isset($model)) {
+					if ($model->type == ConstantDefine::CONTENT_LIST_TYPE_AUTO) {    //auto
+
+						$criteria_field = 'object_date DESC';                                                                         
+
+						//object_type
+						if (isset($model->content_type)) {
+							$content_types = $model->content_type;
+
+							if ($content_types[0] != 'all') {	                        
+								$condition .= ' AND (0';
+								foreach ($content_types as $type) {
+									$condition .= ' or object_type="'.$type.'"';
+								}
+								$condition .= ')';    
+							}                         
+						}
+
+						//terms
+						if (isset($model->terms)) {
+							$content_terms = $model->terms;
+							if ($content_terms[0] != '0') {	                        
+								$condition .= ' AND (0';
+								foreach ($content_terms as $term) {
+									$condition .= ' or (object_id in (select object_id from `{{object_term}}` where term_id='.$term.'))';
+								}
+								$condition .= ')';    
+							}    
+						}
+
+						//tags
+						if (isset($model->tags) && $model->tags != '') {
+							$tags = $model->tags;
+							$tag_list = explode(',', $tags);
+                                                
+							$tag_id_list = '';
+							foreach ($tag_list as $k => $tag_name) {
+								if ($tag_name == ' ') {
+									unset($tag_list[$k]);
+								}
+							}
+                                                
+							foreach ($tag_list as $k => $tag_name) {
+								if ($tag_name != ' ') {
+									$id = Yii::app()->db->createCommand()->select('id')->from('gxc_tag')->where('name=:name', array(':name'=>trim($tag_name)))->queryRow();
+									$tag_id_list .= $id['id'];
+
+									if ($k != sizeof($tag_list) - 1) {
+										$tag_id_list .= ',';
+									}
+								}
+							}
+							
+							$condition .= ' or (object_id in (select object_id from `{{tag_relationships}}` where tag_id in (' . $tag_id_list . ')))';
+						}
+                                                
+						//criteria not newest
+						if ($model->criteria != ConstantDefine::CONTENT_LIST_CRITERIA_NEWEST) {
+							$criteria_field = 'object_view DESC';                                             
+						}      
+
+						if ($return_type == ConstantDefine::CONTENT_LIST_RETURN_DATA_PROVIDER && $model->number >=1) { 
+
+							$sort = new CSort('Object');
+							$sort->defaultOrder='t.object_date DESC';
+							$sort->attributes = array('object_view' => array('asc'=>'object_view ASC',
+													  						 'desc'=>'object_view DESC',
+																			),
+													  'object_date'=>array('asc'=>'t.object_date ASC',
+                                                                    	   'desc'=>'t.object_date DESC',
+                                                            			  ),
+                                                    );                    
+
+							return new CActiveDataProvider('Object',array('criteria'=>array('condition'=>$condition,
+                                                                          					'order'=>$criteria_field,
+                                                                          					'params'=>$params,
+                                                                          					'limit'=>isset($max)?$max:$model->number,                                
+                                                                		 				   ),
+			                                                               'pagination'=>array('pageSize'=>isset($max)?$max:$model->number*$page_number, 
+			                                                                        		   'pageVar'=>'page'
+			                                                                				  ),
+																		   'sort'=>$sort,));                
+						}
+
+						return Object::model()->findAll(array('condition'=>$condition,
+                                                              'params'=>$params,
+                                                              'order'=>$criteria_field,
+                                                              'limit'=>isset($max)?$max:$model->number));
+					}
+					else {
+						//manual
+
+						if (isset($model->manual_list)) {							
+							$condition = '';
+							$manual_list = $model->manual_list;
+							$count = 0;
+							$max=count($manual_list);
+
+							foreach ($manual_list as $manual_id) {	                    
+								if ($count == 0) {
+									$condition_string = $manual_id;
+								} else 
+								$condition_string .= ','.$manual_id;
+
+								if (isset($max) && $count == $max)
+									break;
+									$count++;
+								}
+
+								$condition = 'object_id IN ('.$condition_string.')';
+
+								if ($return_type == ConstantDefine::CONTENT_LIST_RETURN_DATA_PROVIDER && count($manual_list)>=1) { 
+									
+																			return new CActiveDataProvider('Object',array('criteria'=>array('condition'=>$condition,
+                                                                       				  					'params'=>$params,
+                                                                       				  					'order'=>'FIELD(t.object_id, '.$condition_string.')'
+                                                               						 				   ),
+                                                               		   				  'pagination'=>array('pageSize'=>isset($max)?$max:$model->number*$page_number, 
+                                                                       					   'pageVar'=>'page'
+
+                                                               							  			),
+                                                           							 )
+																	 );
+								} 
+
+								return Object::model()->findAll(array('condition'=>$condition,                                        
+                                                                      'params'=>$params,
+                                                                      'order'=>'FIELD(t.object_id, '.$condition_string.')'
+                                                                     ));
+						}
+					}
+				}
+				return null;              
+		}
    
 
 

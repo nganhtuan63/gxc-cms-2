@@ -44,8 +44,9 @@ class Page extends CActiveRecord
 			array('lang, status, allow_index, allow_follow', 'numerical', 'integerOnly'=>true),
 			array('name, title, description, layout, slug, keywords', 'length', 'max'=>255),
 			array('parent', 'length', 'max'=>20),
-                        array('guid','safe'),
-                        array('display_type','safe'),
+            array('guid','safe'),
+            array('display_type','safe'),
+            array('display_device','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('page_id, name, title, description, parent, layout, slug, lang', 'safe', 'on'=>'search'),
@@ -59,9 +60,9 @@ class Page extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		 return array(                    
+		return array(                    
                     'language' => array(self::BELONGS_TO, 'Language', 'lang'),
-                ); 
+        ); 
 	}
 
 	/**
@@ -78,12 +79,13 @@ class Page extends CActiveRecord
 			'layout' =>  t('cms','Layout'),
 			'slug' =>  t('cms','Slug'),
 			'lang' =>  t('cms','Language'),
-                        'guid' =>  t('cms','Guid'),
-                        'status' =>  t('cms','Status'),
-                        'keywords' =>  t('cms','Keywords'),
-                        'allow_index' =>  t('cms','Allow index page'),
-                        'allow_follow' =>  t('cms','Allow follow page'),
-                        'display_type' =>  t('cms','Display type'),
+            'guid' =>  t('cms','Guid'),
+            'status' =>  t('cms','Status'),
+            'keywords' =>  t('cms','Keywords'),
+            'allow_index' =>  t('cms','Allow index page'),
+            'allow_follow' =>  t('cms','Allow follow page'),
+            'display_type' =>  t('cms','Display type'),
+            'display_device' => t('cms','Display device')
 		);
 	}
 
@@ -260,6 +262,7 @@ class Page extends CActiveRecord
                             $temp['id']=$pb->block_id;
                             $temp['status']=$pb->status;
                             $temp['title']=$pb->block->name; 
+                            $temp['type']=$pb->type; 
                             
                             $result['blocks'][]=$temp;
                         }

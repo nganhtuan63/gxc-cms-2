@@ -2,14 +2,14 @@
 	'id'=>'contentlist-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-        'summaryText'=>t('cms','Displaying').' {start} - {end} '.t('cms','in'). ' {count} '.t('cms','results'),
+        'summaryText'=>t('Displaying').' {start} - {end} '.t('in'). ' {count} '.t('results'),
 	'pager' => array(
-		'header'=>t('cms','Go to page:'),
-		'nextPageLabel' => t('cms','Next'),
-		'prevPageLabel' => t('cms','previous'),
-		'firstPageLabel' => t('cms','First'),
-		'lastPageLabel' => t('cms','Last'),
-                'pageSize'=> Yii::app()->settings->get('cms','system', 'page_size')
+		'header'=>t('Go to page:'),
+		'nextPageLabel' => t('Next'),
+		'prevPageLabel' => t('previous'),
+		'firstPageLabel' => t('First'),
+		'lastPageLabel' => t('Last'),
+                'pageSize'=> Yii::app()->settings->get('system', 'page_size')
 	),
 	'columns'=>array(
 		array('name'=>'content_list_id',
@@ -31,9 +31,9 @@
 		    (
 			'update' => array
 			(
-			    'label'=>t('cms','Edit'),
+			    'label'=>t('Edit'),
 			    'imageUrl'=>false,
-			    'url'=>'Yii::app()->createUrl("admin/'.app()->controller->id.'/update", array("id"=>$data->content_list_id))',
+			    'url'=>'Yii::app()->createUrl("'.app()->controller->id.'/update", array("id"=>$data->content_list_id))',
 			),
 		    ),
 		),
@@ -45,7 +45,7 @@
 		    (
 			'delete' => array
 			(
-                            'label'=>t('cms','Delete'),
+                            'label'=>t('Delete'),
 			    'imageUrl'=>false,
 			),
 

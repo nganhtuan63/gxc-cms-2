@@ -97,7 +97,7 @@ $this->widget('zii.widgets.CMenu',array(
       			array(
       				'label'=>t('cms','Create Queue'), 
       				'url'=>array('/admin/contentlist/create'),
-      				'active'=>Yii::app()->controller->id=='queue' && Yii::app()->controller->action->id=='create'
+      				'active'=>Yii::app()->controller->id=='contentlist' && Yii::app()->controller->action->id=='create'
       				
       			),
       			array(
@@ -148,7 +148,7 @@ $this->widget('zii.widgets.CMenu',array(
       		)
       ),
 
-      //Resource Menu 
+      //Manage Menu 
       array(
       		'label'=>'<span id="menu_manage" class="micon"></span>'.t('cms','Manage'), 
       		'url'=>'javascript:void(0);',
@@ -197,12 +197,12 @@ $this->widget('zii.widgets.CMenu',array(
       	'items'=>array(
       		array(
       			'label'=>t('cms','General'), 
-      			'url'=>array('/admin/settings/?type=general'),
+      			'url'=>array('/admin/settings/index/type/general'),
       			'active'=>Yii::app()->controller->id=='settings' && isset($_GET['type']) && $_GET['type']=='general'
       		),
       		array(
       			'label'=>t('cms','System'), 
-      			'url'=>array('/admin/settings/?type=system'),
+      			'url'=>array('/admin/settings/index/type/system'),
       			'active'=>Yii::app()->controller->id=='settings' && isset($_GET['type']) && $_GET['type']=='system'
       		),
 

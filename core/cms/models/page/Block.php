@@ -157,7 +157,7 @@ class Block extends CActiveRecord
                         ));
                         $names=array();
                         foreach($blocks as $block){
-                            $names[]=$block->name.'|'.$block->block_id;
+                            $names[]=$block->name.'|'.$block->block_id.'|'.$block->type;
 
                         }
                                                 

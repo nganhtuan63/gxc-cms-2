@@ -124,7 +124,8 @@
         </script>
         
     </div>
-    <div class="row">
+    
+     <div class="row">
        <?php echo $form->labelEx($model,'layout'); ?>
        <?php echo $form->dropDownList($model,'layout',  GxcHelpers::getAvailableLayouts(true),
                       array('id'=>'layout_select', 'options' => $model->layout===null ?  array('default'=>array('selected'=>true)) : array($model->layout=>array('selected'=>true)) )                                            
@@ -134,16 +135,28 @@
       
     </div>
     
-       
-    <div class="row">
-       
-                <?php echo $form->labelEx($model,'display_type',array()); ?>
-                <?php echo $form->dropDownList($model,'display_type',  array(),
-                       array('id'=>'display_type_option')
-                        ); ?>
-                <?php echo $form->error($model,'display_type'); ?>
-       
-   </div> 
+     <div>  
+        <div class="left">
+           
+                    <?php echo $form->labelEx($model,'display_type',array()); ?>
+                    <?php echo $form->dropDownList($model,'display_type',  array(),
+                           array('id'=>'display_type_option')
+                            ); ?>
+                    <?php echo $form->error($model,'display_type'); ?>
+           
+       </div> 
+       <div class="left" style="margin-left:20px">
+           
+                    <?php echo $form->labelEx($model,'display_device',array()); ?>
+                    <?php echo $form->dropDownList($model,'display_device', ConstantDefine::getPageDisplayDevice(),
+                           array('id'=>'display_device_option')
+                            ); ?>
+                    <?php echo $form->error($model,'display_device'); ?>
+           
+       </div> 
+       <div class="clear"></div>
+    </div>
+   
     
       <?php if(!$model->isNewRecord) : ?>
         <input onClick="return turnBack();" type="button" class="button" name="btnturnBack" value="<?php echo  t('cms','Turn back');?>" />                      
@@ -269,7 +282,7 @@
                     if(key_parent=='blocks'){               
                             $('#ul_region_'+current_region).empty();
                             $.each(val_parent, function(k,v) {                                 
-                                 setBlocksForRegion(v.region,v.title,v.id,v.status);              
+                                 setBlocksForRegion(v.region,v.title,v.id,v.status,v.type);              
                             });
                     }
                 });
@@ -300,7 +313,7 @@
          $.each(data, function(key_parent, val_parent){                       
                 if(key_parent=='blocks'){                    
                         $.each(val_parent, function(k,v) {                                 
-                             setBlocksForRegion(v.region,v.title,v.id,v.status);              
+                             setBlocksForRegion(v.region,v.title,v.id,v.status,v.type);              
                         });
                 }
         });
@@ -325,18 +338,19 @@
             ));?>
     }
     
-    function setBlocksForRegion(region,title,id,status){
+    function setBlocksForRegion(region,title,id,status,type){
         var span_html='<input type="checkbox" class="checkbox_region" id="checkbox_'+block_count+'_'+region+'_'+id+'"/><span class="span_block">'+title+'</span> - <span><select name="Page[regions]['+region+'][status][]" id="select_region_'+block_count+'_'+region+'_'+id+'"><option value="<?php echo ConstantDefine::PAGE_BLOCK_ACTIVE; ?>"><?php echo PageBlock::convertPageBlockStatus(ConstantDefine::PAGE_BLOCK_ACTIVE);?></option><option value="<?php echo ConstantDefine::PAGE_BLOCK_DISABLE; ?>"><?php echo PageBlock::convertPageBlockStatus(ConstantDefine::PAGE_BLOCK_DISABLE);?></option></select> </span> <br /><a onClick="changeAnotherBlock('+region+','+id+','+block_count+')" href="javascript:void(0);"><?php echo  t('cms','Change');?></a>&nbsp;<a onClick="editBlock('+region+','+id+','+block_count+')" href="javascript:void(0);"><?php echo  t('cms','Edit');?></a>&nbsp;<a onClick="deleteBlockFromRegion(this)" href="javascript:void(0);"><?php echo  t('cms','Delete');?></a>';
         var input_id_html='<input type="hidden" value="'+id+'" name="Page[regions]['+region+'][id][]" />';
         var input_status_html='<input type="hidden" value="<?php echo ConstantDefine::PAGE_BLOCK_ACTIVE; ?>" />';
+        var input_type=' - '+type;
         var iframe_html='<div style="display:none" class="li_region_iframe"><iframe rel="'+region+'" id="iframe_region_'+block_count+'_'+region+'_'+id+'" src="<?php echo $this->add_existed_block_url; ?>&iframe_id=iframe_region_'+block_count+'_'+region+'_'+id+'" width="100%" onLoad="autoResize(this)" height="30px" /></div>';
-        var li_html='<li class="li_region" id="li_region_'+block_count+'_'+region+'_'+id+'">'+span_html+input_id_html+input_status_html+iframe_html+'</li>';                
+        var li_html='<li class="li_region" id="li_region_'+block_count+'_'+region+'_'+id+'">'+span_html+input_id_html+input_status_html+input_type+iframe_html+'</li>';                
         $('#ul_region_'+region).append(li_html); 
         $('#select_region_'+block_count+'_'+region+'_'+id).val(status);
         block_count++;
     }
     
-    function updateBlock(region,title,id,old_object){
+    function updateBlock(region,title,id,old_object,type){
         
         var old_id=$(old_object).attr('id');        
         var old_block_count=old_id.split('_');
@@ -344,8 +358,9 @@
         var span_html='<input type="checkbox" class="checkbox_region" id="checkbox_'+old_block_count+'_'+region+'_'+id+'"/><span class="span_block">'+title+'</span> - <span><select name="Page[regions]['+region+'][status][]" id="select_region_'+old_block_count+'_'+region+'_'+id+'"><option value="<?php echo ConstantDefine::PAGE_BLOCK_ACTIVE; ?>"><?php echo PageBlock::convertPageBlockStatus(ConstantDefine::PAGE_BLOCK_ACTIVE);?></option><option value="<?php echo ConstantDefine::PAGE_BLOCK_DISABLE; ?>"><?php echo PageBlock::convertPageBlockStatus(ConstantDefine::PAGE_BLOCK_DISABLE);?></option></select> </span> <br /><a onClick="changeAnotherBlock('+region+','+id+','+old_block_count+')" href="javascript:void(0);"><?php echo  t('cms','Change');?></a>&nbsp;<a onClick="editBlock('+region+','+id+','+old_block_count+')" href="javascript:void(0);"><?php echo  t('cms','Edit');?></a>&nbsp;<a onClick="deleteBlockFromRegion(this)" href="javascript:void(0);"><?php echo  t('cms','Delete');?></a>';
         var input_id_html='<input type="hidden" value="'+id+'" name="Page[regions]['+region+'][id][]" />';
         var input_status_html='<input type="hidden" value="<?php echo ConstantDefine::PAGE_BLOCK_ACTIVE; ?>" name="Page[regions]['+region+'][status][]" />';
+        var input_type=' - '+type;
         var iframe_html='<div style="display:none" class="li_region_iframe"><iframe rel="'+region+'" id="iframe_region_'+old_block_count+'_'+region+'_'+id+'" src="<?php echo $this->add_existed_block_url; ?>&iframe_id=&iframe_id=iframe_region_'+block_count+'_'+region+'_'+id+'" width="100%" onLoad="autoResize(this)" height="30px" /></div>';       
-        $(old_object).empty().append(span_html+input_id_html+input_status_html+iframe_html).attr('id','li_region_'+old_block_count+'_'+region+'_'+id);
+        $(old_object).empty().append(span_html+input_id_html+input_status_html+input_type+iframe_html).attr('id','li_region_'+old_block_count+'_'+region+'_'+id);
     }
         
     function deleteBlockFromRegion(object){               
@@ -372,7 +387,7 @@
         $(object).parent().hide();
     }
     
-    function updateOnAddBlock(object,title,id){        
+    function updateOnAddBlock(object,title,id,type){                
         var current_region=$(object).attr('rel');
         $(object).attr('src','');
         $(object).attr('height','30px');
@@ -380,9 +395,9 @@
         
         //We will check if this is a new Block or Change Block
         if ($(object).parent().attr('class')=='region_iframe'){
-            setBlocksForRegion(current_region,title,id,<?php echo ConstantDefine::PAGE_BLOCK_ACTIVE; ?>);                
+            setBlocksForRegion(current_region,title,id,<?php echo ConstantDefine::PAGE_BLOCK_ACTIVE; ?>,type);                
         } else {
-            updateBlock(current_region,title,id,$(object).parent().parent());
+            updateBlock(current_region,title,id,$(object).parent().parent(),type);
         }
         
     }
@@ -487,6 +502,7 @@
                                 $count=$i+1;
                                 $blocks['item_'.$count.'_'.$temp_block->block_id]['region']=$key;
                                 $blocks['item_'.$count.'_'.$temp_block->block_id]['id']=$temp_block->block_id;
+                                $blocks['item_'.$count.'_'.$temp_block->block_id]['type']=$temp_block->type;
                                 $blocks['item_'.$count.'_'.$temp_block->block_id]['title']=$temp_block->name;
                                 $blocks['item_'.$count.'_'.$temp_block->block_id]['status']=$obj_blocks['status'][$i];
                             }
@@ -498,7 +514,7 @@
                         
                         echo '$.each(block_list_region_'.$key.', function(k,v) { 
                              
-                             setBlocksForRegion(v.region,v.title,v.id,v.status);              
+                             setBlocksForRegion(v.region,v.title,v.id,v.status,v.type);              
                         });' ;
 
                        
