@@ -330,22 +330,12 @@ class Environment {
                        'log'=>array(
                                'class'=>'CLogRouter',
                                'routes'=>array(
-                               		// Save log messages on file
+                                       array('class'=>'cms.extensions.yii-debug-toolbar.YiiDebugToolbarRoute'),
+                               		     // Save log messages on file
                                        array(
                                               'class'=>'CFileLogRoute',
                                               'levels'=>'error, warning,trace, info',
-                                       ),
-                                       // Show log messages on web pages
-                                       array(
-                                              'class'=>'CWebLogRoute',
-                                              'levels'=>'error, warning, trace, info',
-                                       ),
-                  										// Show PhpQuickProfiler
-                  										array(
-              							                	'class' => 'cms.extensions.pqp.PQPLogRoute',
-              							                	'categories' => 'application.*, exception.*, system.*',
-              							                	'levels'=>'error, warning, info',
-                  							     )
+                                       ),                                       
 
                                ),
                        ),

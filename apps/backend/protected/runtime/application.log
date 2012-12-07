@@ -421,3 +421,757 @@ in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/user/user_manage_widget
 in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
 in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
 in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:06:37 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:06:37 [trace] [system.caching.CFileCache] Saving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" to cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:06:39 [trace] [system.caching.CFileCache] Saving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:06:44 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:06:44 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:06:44 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:07:17 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:17 [trace] [system.caching.CFileCache] Saving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" to cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:17 [trace] [system.caching.CFileCache] Saving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:07:30 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:30 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:31 [trace] [system.caching.CFileCache] Saving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:07:32 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:32 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:32 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:07:53 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:53 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:07:53 [trace] [system.caching.CFileCache] Saving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:12:03 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AuthItemController.php (67)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:12:04 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:12:05 [trace] [system.caching.CFileCache] Saving "gxchelpers-apps" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (191)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/authItem/permissions.php (13)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AuthItemController.php (261)
+2012/12/07 18:12:11 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/layouts/main.php (59)
+2012/12/07 18:16:25 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AuthItemController.php (67)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:25 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:26 [trace] [system.caching.CFileCache] Serving "gxchelpers-apps" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (182)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/authItem/permissions.php (13)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:26 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:39 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AuthItemController.php (67)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:39 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:39 [trace] [system.caching.CFileCache] Serving "gxchelpers-apps" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (182)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/authItem/permissions.php (13)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:39 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:41 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AuthItemController.php (67)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:41 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:41 [trace] [system.caching.CFileCache] Serving "gxchelpers-apps" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (182)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/authItem/permissions.php (13)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:41 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:45 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RAuthorizer.php (295)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/controllers/AuthItemController.php (67)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:45 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:16:45 [trace] [system.caching.CFileCache] Serving "gxchelpers-apps" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (182)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/views/authItem/permissions.php (13)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:16:45 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/layouts/main.php (14)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:17:43 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ObjectController.php (16)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:17:43 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:17:43 [trace] [system.caching.CFileCache] Saving "gxchelpers-content-types-false" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (235)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectCreateWidget.php (42)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectCreateWidget.php (25)
+2012/12/07 18:17:49 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ObjectController.php (16)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:17:49 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:17:49 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{object}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectManageStatusWidget.php (41)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectManageStatusWidget.php (33)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectManageStatusWidget.php (27)
+2012/12/07 18:17:49 [trace] [system.caching.CFileCache] Saving "system_global_website_settings" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (260)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/object/object_manage_widget.php (12)
+2012/12/07 18:17:52 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ObjectController.php (16)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:17:52 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:17:52 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{object}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectManageStatusWidget.php (45)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectManageStatusWidget.php (33)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/object/ObjectManageStatusWidget.php (27)
+2012/12/07 18:17:52 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/object/object_manage_widget.php (12)
+2012/12/07 18:17:52 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:18:20 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/MenuController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:18:20 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:18:20 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{menu}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/MenuCreateWidget.php (33)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/MenuCreateWidget.php (27)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/menu/menu_create.php (5)
+2012/12/07 18:18:20 [trace] [system.caching.CFileCache] Saving "gxchelpers-available-languages-false" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (443)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_form_widget.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:18:20 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_form_widget.php (24)
+2012/12/07 18:18:20 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:18:25 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/MenuController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:18:25 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:18:25 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{menu}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/menu/menu_admin.php (5)
+2012/12/07 18:18:25 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_manage_widget.php (12)
+2012/12/07 18:18:25 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:19:17 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/MenuController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:17 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:17 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{menu}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/menu/menu_admin.php (5)
+2012/12/07 18:19:17 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_manage_widget.php (12)
+2012/12/07 18:19:17 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:19:19 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/MenuController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:19 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:19 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{menu}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/menu/menu_admin.php (5)
+2012/12/07 18:19:19 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_manage_widget.php (12)
+2012/12/07 18:19:19 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:19:21 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/MenuController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:21 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:21 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{menu}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/menu/menu_admin.php (5)
+2012/12/07 18:19:21 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_manage_widget.php (12)
+2012/12/07 18:19:21 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:19:23 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/MenuController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:23 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:23 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{menu}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/menu/menu_admin.php (5)
+2012/12/07 18:19:23 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/menu/menu_manage_widget.php (12)
+2012/12/07 18:19:23 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:19:25 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:25 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:25 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_admin.php (5)
+2012/12/07 18:19:25 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:19:27 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/BlockController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:27 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:27 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{block}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/block/block_create.php (5)
+2012/12/07 18:19:27 [trace] [system.caching.CFileCache] Saving "gxchelpers-available-blocks" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (147)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/block/block_start_widget.php (10)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:19:29 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:29 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:29 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_create.php (5)
+2012/12/07 18:19:29 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (455)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (198)
+2012/12/07 18:19:29 [trace] [system.caching.CFileCache] Serving "gxchelpers-content-types-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (224)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (187)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (143)
+2012/12/07 18:19:29 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{term}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/object/Term.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (260)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (187)
+2012/12/07 18:19:44 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:44 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:19:44 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_create.php (5)
+2012/12/07 18:19:44 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (455)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (198)
+2012/12/07 18:19:44 [trace] [system.caching.CFileCache] Serving "gxchelpers-content-types-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (224)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (187)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (143)
+2012/12/07 18:19:44 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{term}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/object/Term.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (260)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (187)
+2012/12/07 18:20:12 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:12 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:12 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_admin.php (5)
+2012/12/07 18:20:12 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:20:13 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:13 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:13 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_create.php (5)
+2012/12/07 18:20:13 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (455)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (198)
+2012/12/07 18:20:13 [trace] [system.caching.CFileCache] Serving "gxchelpers-content-types-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (224)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (187)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (143)
+2012/12/07 18:20:13 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{term}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/object/Term.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (260)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (187)
+2012/12/07 18:20:14 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/BlockController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:14 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:14 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{block}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/block/block_create.php (5)
+2012/12/07 18:20:14 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-blocks" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (127)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/block/block_start_widget.php (10)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:20:15 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/BlockController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:15 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:15 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{block}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/block/block_admin.php (5)
+2012/12/07 18:20:15 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/block/block_manage_widget.php (12)
+2012/12/07 18:20:15 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageCreateWidget.php (36)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageCreateWidget.php (30)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/page/page_create.php (16)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (27)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (27)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Saving "gxchelpers-available-layouts" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (87)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (130)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:17 [trace] [system.caching.CFileCache] Saving "gxchelpers-available-layouts-false" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (87)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/Page.php (183)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (88)
+2012/12/07 18:20:18 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:18 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:18 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/page/page_admin.php (5)
+2012/12/07 18:20:18 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (12)
+2012/12/07 18:20:18 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:20:19 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (78)
+2012/12/07 18:20:19 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (78)
+2012/12/07 18:20:19 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (78)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageCreateWidget.php (36)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageCreateWidget.php (30)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/page/page_create.php (16)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (27)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (27)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-layouts" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (73)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (130)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:21 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-layouts-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (73)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/Page.php (183)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (88)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/page/page_admin.php (5)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (12)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (78)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (78)
+2012/12/07 18:20:24 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_manage_widget.php (78)
+2012/12/07 18:20:28 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:28 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:28 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/Page.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (17)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelViewWidget.php (35)
+2012/12/07 18:20:29 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (484)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_view_widget.php (19)
+2012/12/07 18:20:32 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:32 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:32 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/Page.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (17)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageUpdateWidget.php (37)
+2012/12/07 18:20:32 [trace] [system.caching.CFileCache] Saving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page_block}}" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/PageBlock.php (20)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageUpdateWidget.php (61)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageUpdateWidget.php (30)
+2012/12/07 18:20:32 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-layouts" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (73)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (130)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:20:33 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:33 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:20:33 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-layouts-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (73)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/Page.php (183)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (88)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{page}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageCreateWidget.php (36)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/PageCreateWidget.php (30)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/page/page_create.php (16)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (27)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (27)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-layouts" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (73)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/page/page_form_widget.php (130)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:34 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-layouts-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (73)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/Page.php (183)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/PageController.php (88)
+2012/12/07 18:22:35 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/BlockController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:35 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:35 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{block}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/block/block_create.php (5)
+2012/12/07 18:22:35 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-blocks" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (127)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/block/block_start_widget.php (10)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:22:36 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:36 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:37 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_admin.php (5)
+2012/12/07 18:22:37 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)
+2012/12/07 18:22:39 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/BlockController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:39 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:39 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{block}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/BlockCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/block/block_create.php (5)
+2012/12/07 18:22:39 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-blocks" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (127)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/block/block_start_widget.php (10)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/yii-debug-toolbar/components/YiiDebugViewRenderer.php (47)
+2012/12/07 18:22:41 [trace] [system.caching.CFileCache] Serving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/ContentlistController.php (17)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:41 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 18:22:41 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{content_list}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (34)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/page/ContentListCreateWidget.php (28)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/contentlist/content_list_create.php (5)
+2012/12/07 18:22:41 [trace] [system.caching.CFileCache] Serving "gxchelpers-available-languages-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (430)
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (455)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (198)
+2012/12/07 18:22:41 [trace] [system.caching.CFileCache] Serving "gxchelpers-content-types-false" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/components/GxcHelpers.php (224)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (187)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (143)
+2012/12/07 18:22:41 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{term}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/models/object/Term.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/models/page/ContentList.php (260)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/contentlist/contentlist_form_widget.php (187)
