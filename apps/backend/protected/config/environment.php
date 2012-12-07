@@ -250,7 +250,7 @@ class Environment {
       									'sessionName'=>'gxc_session_id' //Should Change for Different Apps
       					     ),
       					
-      			        //Use the Settings Extension and Store value in Database
+      			          //Use the Settings Extension and Store value in Database
       		            'settings'=>array(
       		                'class'     => 'cms.extensions.settings.CmsSettings',
       		                'cacheId'   => 'global_website_settings',
@@ -258,6 +258,7 @@ class Environment {
       		            ),
 
                       'request' => array(
+                          'class'=>'cms.components.HttpRequest',
                           'enableCsrfValidation' => true,
                           'enableCookieValidation'=>true,
                       ),

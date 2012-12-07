@@ -96,18 +96,16 @@ class Language extends CActiveRecord
 		));
 	}
         
-        public static function items($exclude=array(),$desc=true)
+    public static function items($exclude=array(),$desc=true)
 	{
 		return self::loadItems($exclude,$desc);
 	       
 	}
-        
-        
-        
-        /**
-         * Load Items Language
-         * @param type $exclude 
-         */
+                    
+    /**
+     * Load Items Language
+     * @param type $exclude 
+     */
 	public static function loadItems($exclude=array(),$desc=true)
 	{
 	    
@@ -143,7 +141,7 @@ class Language extends CActiveRecord
 		
 	}
         
-        public static function mainLanguage()
+    public static function mainLanguage()
 	{
 		$criteria = new CDbCriteria;
 		$criteria->condition='lang_active=1';
@@ -156,12 +154,12 @@ class Language extends CActiveRecord
 			return 0;
 	}
         
-        public static function convertLanguage($id){
+    public static function convertLanguage($id){
                 $model=Language::model()->findByPk($id);
                 if($model){
                     return $model->lang_desc;
                 }
                 
                 return '';
-        }
+    }
 }

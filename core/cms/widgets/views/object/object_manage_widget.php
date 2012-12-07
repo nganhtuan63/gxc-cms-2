@@ -38,7 +38,7 @@
                 array(
                         'name'=>'lang',
 			'type'=>'raw',			
-			'value'=>'Language::convertLanguage($data->lang)',                   
+			'value'=>'GxcHelpers::convertLanguage($data->lang)',                   
                 ),
                 array
 		(

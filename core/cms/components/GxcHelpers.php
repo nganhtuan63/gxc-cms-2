@@ -422,6 +422,72 @@ class GxcHelpers {
 	}
 
 	/**
+	* Function to Get Available Settings
+	**/    
+    public static function getAvailableLanguages($render_view=false){
+    	
+			$cache_id= $render_view ? 'gxchelpers-available-languages' : 'gxchelpers-available-languages-false';
+    		$langs=Yii::app()->cache->get($cache_id);	    		 		
+			
+			if($langs===false)
+			{			                
+	            $layouts = array();            
+	            $folders = get_subfolders_name(Yii::getPathOfAlias('common.languages')) ;    
+	            foreach($folders as $folder){
+	                $temp=parse_ini_file(Yii::getPathOfAlias('common.languages.'.$folder.'').DIRECTORY_SEPARATOR.'info.ini');
+	                 if($render_view)
+	                    $langs[$temp['id']]=$temp['name'];	                	
+	                 else 
+	                    $langs[$temp['id']]=$temp;
+	            }  
+			    Yii::app()->cache->set($cache_id,$langs,7200);
+			}
+            return $langs;            
+    }	
+
+	/**
+     * Load Items Language
+     * @param type $exclude 
+     */
+	public static function loadLanguageItems($exclude=array(),$desc=true)
+	{
+
+		$langs=self::getAvailableLanguages();
+		if(count($exclude)>0){
+			foreach ($exclude as $e) {
+				if (isset($langs[$e])) unset($langs[$e]);
+			}
+		} 		
+		if(count($langs)>0){
+			$items=array();
+			foreach ($langs as $key => $value) {
+				if($desc)
+					$items[$key]=$value['name'];
+				else
+					$items[$key]=$value['lang'];
+			}		
+			return $items;
+		} else {
+			Yii::app()->getController()->redirect('admin');				
+		}	    	 	    	   
+		
+	}
+    
+
+    public static function mainLanguage()
+	{
+		// We return the first language ID
+		return 1;
+	}
+        
+    public static function convertLanguage($id){
+    	$langs=self::getAvailableLanguages();
+    	if(isset($langs[$id]))
+    		return $langs[$id]['name'];
+    	else 
+    		return '';
+    }
+	/**
 	* Function to get Object Content List
 	**/
 	public static function getContentList($model, $max=null, $paging=null, $return_type=ConstantDefine::CONTENT_LIST_RETURN_ACTIVE_RECORD) {

@@ -27,8 +27,7 @@ class SystemSettingsForm extends CFormModel
 			// username and password are required
 			array('support_email, page_size, language_number, keep_file_name_upload', 'required'),
             array('support_email', 'email'),
-            array('language_number, page_size','numerical','integerOnly'=>true,'min'=>1),
-            array('language_number','checkAvailableLanguage')			
+           	
 		);
 	}
 
@@ -39,29 +38,11 @@ class SystemSettingsForm extends CFormModel
 	{
 		return array(
 			'support_email'=>t('cms','Support email'),
-            'page_size'=>t('cms','Items per page'),
-            'language_number'=>t('cms','Number of Language Available'),                                           
+            'page_size'=>t('cms','Items per page'),            
             'keep_file_name_upload'=>t('cms','Keep file name when uploading'),
 		);
 	}
-        
-        /**
-	 * Check available Languages of the Current System
-	 * 
-	 */
-	public function checkAvailableLanguage($attribute,$params)
-	{
-		if(!$this->hasErrors())
-		{                    
-                //First we need to check all the Active Languages of the CMS
-                $languages=Language::loadItems();
-                if($this->language_number>count($languages)){
-                    $this->addError('language_number',t('cms','Site currently supports only ').count($languages).' '.t('cms','Languages'));
-	    			return false;
-                }
-			
-		}
-	}
+             
 	
 	public static function filenameUpload(){
 		return array(

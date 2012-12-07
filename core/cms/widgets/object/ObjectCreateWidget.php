@@ -112,8 +112,11 @@ class ObjectCreateWidget extends CWidget
                         
                         $model->guid=$guid;
                         
-                                                
-                        $get_languages=Language::items($lang_exclude);
+                                       
+                        
+                        $get_languages=GxcHelpers::loadLanguageItems($lang_exclude);
+
+
                         $available_languages=array();
                         foreach($get_languages as $key=>$value){
                             $available_languages[]=$key;

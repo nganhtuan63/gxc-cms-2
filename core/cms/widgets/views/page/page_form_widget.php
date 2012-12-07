@@ -14,7 +14,7 @@
 <?php if($model->isNewRecord) : ?>
     <?php if(count($versions)>0) : ?>
     <div class="row">
-            <?php echo "<strong style='color:#DD4B39'>".t("Translated Version of :")."</strong><br />" ?>    
+            <?php echo "<strong style='color:#DD4B39'>".t("cms","Translated Version of :")."</strong><br />" ?>    
 
                 <?php foreach($versions as $version) :?>
                 <?php  echo "<br /><b>- ".$version."</b>"; ?>
@@ -24,17 +24,17 @@
             <br />
     </div>
      <?php endif; ?>
-     <?php if((int)settings()->get('system','language_number')>1) : ?>
+     <?php $lang_number= GxcHelpers::getAvailableLanguages() ; if((int)settings()->get('system','language_number')>1) : ?>
     <div class="row">
             <?php echo $form->labelEx($model,'lang'); ?>	    
-            <?php echo $form->dropDownList($model,'lang',Language::items($lang_exclude),
-                    array('options' => array(array_search(Yii::app()->language,Language::items($lang_exclude,false))=>array('selected'=>true)))
+            <?php echo $form->dropDownList($model,'lang',GxcHelpers::loadLanguageItems($lang_exclude),
+                    array('options' => array(array_search(Yii::app()->language,GxcHelpers::loadLanguageItems($lang_exclude,false))=>array('selected'=>true)))
                     ); ?>
             <?php echo $form->error($model,'lang'); ?>
             <div class="clear"></div>
     </div>
     <?php else : ?>
-        <?php echo $form->hiddenField($model,'lang',array('value'=>Language::mainLanguage())); ?>
+        <?php echo $form->hiddenField($model,'lang',array('value'=>GxcHelpers::mainLanguage())); ?>
     <?php endif; ?>
 <?php endif; ?>
 </div>

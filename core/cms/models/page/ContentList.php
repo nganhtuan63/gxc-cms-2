@@ -195,7 +195,7 @@ class ContentList extends CActiveRecord
         
         public static function getContentLang(){                           
             $result=array('0'=>t('cms','All'));
-            $result=CMap::mergeArray($result,  Language::items());          
+            $result=CMap::mergeArray($result,  GxcHelpers::loadLanguageItems());          
             return $result;    
         }
         

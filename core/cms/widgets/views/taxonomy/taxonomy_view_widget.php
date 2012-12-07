@@ -22,7 +22,7 @@
 		array(
                         'name'=>'lang',
 			'type'=>'raw',			
-			'value'=>Language::convertLanguage($model->lang),                   
+			'value'=>GxcHelpers::convertLanguage($model->lang),                   
                 )
 	),
 )); ?>
