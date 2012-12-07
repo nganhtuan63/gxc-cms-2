@@ -1,0 +1,423 @@
+2012/12/07 17:08:59 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:09:27 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:09:28 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:09:31 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:09:37 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:09:52 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:10:24 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:10:32 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:10:41 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:11:11 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:11:12 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'What do you wan...', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'What do you wan...', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'What do you wan...', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/default/index.php(4): t('cms', 'What do you wan...')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3124): require('/Applications/M...')
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3103): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3527): CBaseController->renderFile('/Applications/M...', NULL, true)
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3495): CController->renderPartial('cms.modules.adm...', NULL, true)
+#11 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/components/actions/index.php(9): CController->render('cms.modules.adm...')
+#12 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3722): Index->run()
+#13 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3275): CAction->runWithParams(Array)
+#14 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6176): CController->runAction(Object(Index))
+#15 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6185): CFilterChain->run()
+#16 /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php(39): CFilter->filter(Object(CFilterChain))
+#17 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6218): RController->filterRights(Object(CFilterChain))
+#18 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(6173): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3265): CFilterChain->run()
+#20 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(3250): CController->runActionWithFilters(Object(Index), Array)
+#21 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1689): CController->run('')
+#22 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('')
+#23 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#24 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#25 {main}
+REQUEST_URI=/cms2/apps/backend/
+---
+2012/12/07 17:17:16 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'Manage User', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'Manage User', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'Manage User', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/UserController.php(18): t('cms', 'Manage User')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1738): UserController->__construct('user', Object(AdminModule))
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1722): CWebApplication->createController('user/updatesett...', Object(AdminModule))
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1683): CWebApplication->createController('admin/user/upda...')
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('admin/user/upda...')
+#11 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#13 {main}
+REQUEST_URI=/cms2/apps/backend/admin/user/updatesettings
+HTTP_REFERER=http://localhost/cms2/apps/backend/
+---
+2012/12/07 17:17:37 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(35): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'Manage User', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'Manage User', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'Manage User', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/UserController.php(18): t('cms', 'Manage User')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1738): UserController->__construct('user', Object(AdminModule))
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1722): CWebApplication->createController('user/updatesett...', Object(AdminModule))
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1683): CWebApplication->createController('admin/user/upda...')
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('admin/user/upda...')
+#11 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#13 {main}
+REQUEST_URI=/cms2/apps/backend/admin/user/updatesettings
+HTTP_REFERER=http://localhost/cms2/apps/backend/
+---
+2012/12/07 17:17:50 [error] [exception.CException] exception 'CException' with message 'Property "PhpMessageSource._files" is not defined.' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:587
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/cms/components/PhpMessageSource.php(25): CComponent->__get('_files')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CPhpMessageSource.php(114): PhpMessageSource->getMessageFile('cms', 'vi_vn')
+#2 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(104): CPhpMessageSource->loadMessages('cms', 'vi_vn')
+#3 /Applications/MAMP/htdocs/cms2/core/yii/framework/i18n/CMessageSource.php(86): CMessageSource->translateMessage('cms', 'Manage User', 'vi_vn')
+#4 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(302): CMessageSource->translate('cms', 'Manage User', NULL)
+#5 /Applications/MAMP/htdocs/cms2/core/cms/globals.php(83): YiiBase::t('cms', 'Manage User', Array, NULL, NULL)
+#6 /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/UserController.php(18): t('cms', 'Manage User')
+#7 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1738): UserController->__construct('user', Object(AdminModule))
+#8 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1722): CWebApplication->createController('user/updatesett...', Object(AdminModule))
+#9 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1683): CWebApplication->createController('admin/user/upda...')
+#10 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('admin/user/upda...')
+#11 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#13 {main}
+REQUEST_URI=/cms2/apps/backend/admin/user/updatesettings
+HTTP_REFERER=http://localhost/cms2/apps/backend/
+---
+2012/12/07 17:20:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:1693
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('gii')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms2/apps/backend/gii
+---
+2012/12/07 17:21:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii/index".' in /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php:1693
+Stack trace:
+#0 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1609): CWebApplication->runController('gii/index')
+#1 /Applications/MAMP/htdocs/cms2/core/yii/framework/yiilite.php(1135): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/cms2/apps/backend/index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms2/apps/backend/gii/index
+---
+2012/12/07 17:21:20 [trace] [system.caching.CFileCache] Saving "Yii.CPhpMessageSource./Applications/MAMP/htdocs/cms2/apps/common/messages/vi_vn/cms.php" to cache
+in /Applications/MAMP/htdocs/cms2/core/cms/globals.php (83)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/controllers/UserController.php (18)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 17:21:20 [trace] [system.caching.CFileCache] Serving "Yii.CStatePersister./Applications/MAMP/htdocs/cms2/apps/backend/protected/runtime/state.bin" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RightsFilter.php (24)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/rights/components/RController.php (39)
+in /Applications/MAMP/htdocs/cms2/apps/backend/index.php (23)
+2012/12/07 17:21:20 [trace] [system.caching.CFileCache] Serving "yii:dbschemamysql:host=localhost;dbname=gxc_cms2:root:{{user}}" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (35)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/ModelManageWidget.php (26)
+in /Applications/MAMP/htdocs/cms2/core/cms/modules/admin/views/user/user_admin.php (5)
+2012/12/07 17:21:20 [trace] [system.caching.CFileCache] Serving "system_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (243)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (96)
+in /Applications/MAMP/htdocs/cms2/core/cms/widgets/views/user/user_manage_widget.php (12)
+2012/12/07 17:21:20 [trace] [system.caching.CFileCache] Serving "__cache_registry_global_website_settings" from cache
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (170)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (189)
+in /Applications/MAMP/htdocs/cms2/core/cms/extensions/settings/CmsSettings.php (245)

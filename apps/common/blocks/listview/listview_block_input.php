@@ -9,7 +9,7 @@
 <div class="row">
 <div class="content-box ">
         <div class="content-box-header">
-        <h3><?php echo t('cms','Content list');?></h3>                                
+        <h3><?php echo t('site','Content list');?></h3>                                
         </div> 
 
         <div class="content-box-content" style="display: block; padding: 0 0 15px 0">
@@ -24,7 +24,7 @@
 </div>	
  
 </div>
-<p><?php echo '<b>'.t('cms','Note:').'</b> '.t('cms','When you create a content list here, it will appear on the above Content list box'); ?></p>
+<p><?php echo '<b>'.t('site','Note:').'</b> '.t('site','When you create a content list here, it will appear on the above Content list box'); ?></p>
 <div class="row" style="border:1px dotted #CCC">
         
       <iframe id='contentlist_iframe'  src="<?php echo Yii::app()->request->baseUrl;?>/admin/contentlist/create/embed/iframe" frameborder="0" onLoad="autoResize(this);" height="30px" width="100%"></iframe>

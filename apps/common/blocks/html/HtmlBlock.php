@@ -49,7 +49,7 @@ class HtmlBlock extends CWidget
     
     public function validate(){
 	if($this->html==""){
-		$this->errors['html']=t('cms','HTML content is required');
+		$this->errors['html']=t('site','HTML content is required');
                 return false ;
 	}
 	else
@@ -59,7 +59,7 @@ class HtmlBlock extends CWidget
     public function params()
     {
             return array(
-                    'html' => t('cms','Html Content'),                   
+                    'html' => t('site','Html Content'),                   
             );
     }
     

@@ -432,9 +432,9 @@ class GxcHelpers {
 			if($langs===false)
 			{			                
 	            $layouts = array();            
-	            $folders = get_subfolders_name(Yii::getPathOfAlias('common.languages')) ;    
+	            $folders = get_subfolders_name(Yii::getPathOfAlias('common.messages')) ;    
 	            foreach($folders as $folder){
-	                $temp=parse_ini_file(Yii::getPathOfAlias('common.languages.'.$folder.'').DIRECTORY_SEPARATOR.'info.ini');
+	                $temp=parse_ini_file(Yii::getPathOfAlias('common.messages.'.$folder.'').DIRECTORY_SEPARATOR.'info.ini');
 	                 if($render_view)
 	                    $langs[$temp['id']]=$temp['name'];	                	
 	                 else 
@@ -457,7 +457,7 @@ class GxcHelpers {
 			foreach ($exclude as $e) {
 				if (isset($langs[$e])) unset($langs[$e]);
 			}
-		} 		
+		} 				
 		if(count($langs)>0){
 			$items=array();
 			foreach ($langs as $key => $value) {

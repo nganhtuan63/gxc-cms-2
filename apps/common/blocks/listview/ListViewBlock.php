@@ -59,8 +59,8 @@ class ListViewBlock extends CWidget
     public function params()
     {
             return array(
-                    'content_list' => t('cms','Content list'),                   
-                    'display_type' => t('cms','Display type'),
+                    'content_list' => t('site','Content list'),                   
+                    'display_type' => t('site','Display type'),
             );
     }
     

@@ -148,6 +148,7 @@ class Environment {
     				'id'=> 'backend',	
     				'name'=> 'Admin Board CMS' ,            
     				'sourceLanguage'=>'en_us',				
+            'language'=>'vi_vn',        
     				
     				'defaultController'=>'site',
 
@@ -262,6 +263,13 @@ class Environment {
                           'enableCsrfValidation' => true,
                           'enableCookieValidation'=>true,
                       ),
+
+                      'messages' => array(
+                          'class'=>'cms.components.PhpMessageSource',
+                          'cachingDuration'=>86400,
+                          //'basePath'=>'/Applications/MAMP/htdocs/cms2/apps/common/messages'
+                          //'basePath'=>dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.
+                      )
 
                ),
 

@@ -71,7 +71,7 @@ class CPhpMessageSource extends CMessageSource
 	 */
 	public function init()
 	{
-		parent::init();
+		parent::init();		
 		if($this->basePath===null)
 			$this->basePath=Yii::getPathOfAlias('application.messages');
 	}
