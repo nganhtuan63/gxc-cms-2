@@ -55,9 +55,8 @@ class Taxonomy extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		 return array(                    
-                    'language' => array(self::BELONGS_TO, 'Language', 'lang'),
-                ); 
+		 return array(                             
+         ); 
 	}
 
 	/**
@@ -113,8 +112,8 @@ class Taxonomy extends CActiveRecord
 			if($this->isNewRecord)
 			{				
 				if($this->guid==''){
-                                    $this->guid=uniqid();
-                                }                             
+                    $this->guid=uniqid();
+                }                             
                                 
 			} 
 			return true;
@@ -124,12 +123,12 @@ class Taxonomy extends CActiveRecord
 	}
         
         public static function getTaxonomy(){
-            $taxonomy=Taxonomy::model()->with('language')->findAll();
-                        
+            $taxonomy=Taxonomy::model()->findAll();        
+            $langs= GxcHelpers::getAvailableLanguages();             
             $data=array(0=>t('cms',"None"));
             if($taxonomy && count($taxonomy) > 0 ){
                foreach($taxonomy as $t){
-                    $data[$t->taxonomy_id]=$t->name.' - '.$t->language->lang_desc ;
+                    $data[$t->taxonomy_id]=$t->name.' - '.$langs[$t->lang]['name'] ;
                 }
             }
             

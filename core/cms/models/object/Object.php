@@ -385,8 +385,7 @@ class Object extends CActiveRecord
                 // NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		 return array(
-                    'author' => array(self::BELONGS_TO, 'User', 'object_author'),
-                    'language' => array(self::BELONGS_TO, 'Language', 'lang'),
+                    'author' => array(self::BELONGS_TO, 'User', 'object_author'),                  
                     
                 );  
         }

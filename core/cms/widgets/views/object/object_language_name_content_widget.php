@@ -12,7 +12,7 @@
                     <br />
             </div>
              <?php endif; ?>
-             <?php $lang_number= GxcHelpers::getAvailableLanguages() ; if((int)settings()->get('system','language_number')>1) : ?>
+             <?php $lang_number= GxcHelpers::getAvailableLanguages() ; if(count($lang_number)>1) :  ?>
             <div class="row odd border-left-silver">
                     <?php echo $form->labelEx($model,'lang'); ?>	    
                     <?php echo $form->dropDownList($model,'lang',GxcHelpers::loadLanguageItems($lang_exclude),

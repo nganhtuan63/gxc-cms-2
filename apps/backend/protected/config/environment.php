@@ -148,7 +148,7 @@ class Environment {
     				'id'=> 'backend',	
     				'name'=> 'Admin Board CMS' ,            
     				'sourceLanguage'=>'en_us',				
-            'language'=>'vi_vn',        
+            'language'=>'en_us',        
     				
     				'defaultController'=>'site',
 
@@ -205,7 +205,7 @@ class Environment {
            'components' => array(
 							
                     'cache'=>array(
-                        'class'=>'system.caching.CFileCache'
+                        'class'=>'system.caching.CApcCache'
                     ),
       							
        			        //User Componenets

@@ -21,8 +21,9 @@
             <br />
     </div>
      <?php endif; ?>
-     <?php $lang_number= GxcHelpers::getAvailableLanguages() ; if((int)settings()->get('system','language_number')>1) : ?>
-    <div class="row">
+     <?php $lang_number= GxcHelpers::getAvailableLanguages() ; 
+     if(count($lang_number)>1) :  ?>
+    <div class="row">    
             <?php echo $form->labelEx($model,'lang'); ?>	    
             <?php echo $form->dropDownList($model,'lang',GxcHelpers::loadLanguageItems($lang_exclude),
                     array('options' => array(array_search(Yii::app()->language,GxcHelpers::loadLanguageItems($lang_exclude,false))=>array('selected'=>true)))
