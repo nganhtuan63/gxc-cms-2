@@ -25,3 +25,4 @@ Yii::createWebApplication($environment->getConfig())->run();
 // Stop checking script execution time
 //$end = (float) array_sum(explode(' ',microtime()));
 //echo "Processing time: ". sprintf("%.4f", ($end-$start))." seconds";  
+//echo memory_get_usage() . "\n"; 
