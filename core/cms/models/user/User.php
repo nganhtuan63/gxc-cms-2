@@ -175,17 +175,17 @@ class User extends CActiveRecord
 		{
 			if(parent::beforeSave())
 			{
-	                        $this->email=strtolower($this->email);
-	                        $this->username=strtolower($this->username);
-	                        $this->user_url=strtolower($this->user_url);
-							if($this->isNewRecord)
-							{				
-								$this->created_time=$this->updated_time=$this->recent_login=time();		
-								$this->password = VieHashing::hash($this->password);    
-							}
-							else {        
-								$this->updated_time=time();
-				            }
+                $this->email=strtolower($this->email);
+                $this->username=strtolower($this->username);
+                $this->user_url=strtolower($this->user_url);
+				if($this->isNewRecord)
+				{				
+					$this->created_time=$this->updated_time=$this->recent_login=time();		
+					$this->password = VieHashing::hash($this->password);    
+				}
+				else {        
+					$this->updated_time=time();
+	            }
                        
 				return true;
 			}
@@ -197,11 +197,11 @@ class User extends CActiveRecord
         protected function afterSave()
 		{
 			parent::afterSave();	                	       
-	        if($this->user_id==user()->id){
+	        if(($this->user_id==user()->id) && ($this->scenario=='update')){
 	 			//If this user updated his own settings, changed the session of him	            
 	 			$command = Yii::app()->db->createCommand();
 	            $command->select('username,user_url,display_name,email,fbuid,status,recent_login,avatar')->from('{{user}} u')
-	            ->where('user_id='.(int)$this->user_id())     
+	            ->where('user_id='.(int)$this->user_id)     
 	            ->limit(1);                             
 	            $user=$command->queryRow();                 
 	            //Add only some neccessary field

@@ -50,13 +50,7 @@ class ConstantDefine{
             self::USER_STATUS_DISABLED=>t("cms","Disabled"),
             self::USER_STATUS_ACTIVE=>t("cms","Active"));
     }
-                                     
-    
-    
-    const USER_GROUP_ADMIN='Admin';
-    const USER_GROUP_EDITOR='Editor';
-    const USER_GROUP_REPORTER='Reporter';
-    
+                                    
     
     
     /**

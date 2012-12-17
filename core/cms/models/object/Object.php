@@ -656,7 +656,7 @@ class Object extends CActiveRecord
         
         public static function Permissions(){
             return array(
-                ConstantDefine::USER_GROUP_ADMIN=>array(
+                'Admin'=>array(
                     'allowedObjectStatus'=>array(
                                            ConstantDefine::OBJECT_STATUS_DRAFT=>array('condition'=>''),
                                            ConstantDefine::OBJECT_STATUS_PENDING=>array('condition'=>''),
@@ -664,15 +664,15 @@ class Object extends CActiveRecord
                                            ConstantDefine::OBJECT_STATUS_HIDDEN=>array('condition'=>''),
                                            ),
                     'allowedTransferto'=>array(
-                                           ConstantDefine::USER_GROUP_EDITOR=>array('condition'=>''),
-                                           ConstantDefine::USER_GROUP_REPORTER=>array('condition'=>''),                                           
+                                           'Editor'=>array('condition'=>''),
+                                           'Reporter'=>array('condition'=>''),                                           
                                            ), 
                     
                     'allowedToCreateContent'=>true,
                     
                     'allowedToUpdateContent'=>''
                 ),
-                ConstantDefine::USER_GROUP_EDITOR=>array(
+                'Editor'=>array(
                     'allowedObjectStatus'=>array(
                                            ConstantDefine::OBJECT_STATUS_DRAFT=>array('condition'=>'return $params["new_content"]==true;'),
                                            ConstantDefine::OBJECT_STATUS_PENDING=>array('condition'=>''),
@@ -680,8 +680,8 @@ class Object extends CActiveRecord
                                            ConstantDefine::OBJECT_STATUS_HIDDEN=>array('condition'=>'return $params["new_content"]==false;'),
                                            ),
                     'allowedTransferto'=>array(
-                                           ConstantDefine::USER_GROUP_EDITOR=>array('condition'=>''),
-                                           ConstantDefine::USER_GROUP_REPORTER=>array('condition'=>''),                                          
+                                           'Editor'=>array('condition'=>''),
+                                           'Reporter'=>array('condition'=>''),                                          
                                            ),
 
                     'allowedToCreateContent'=>true,
@@ -694,7 +694,7 @@ class Object extends CActiveRecord
                                         ||(($params["content_status"]==ConstantDefine::OBJECT_STATUS_PENDING)&&($params["trans_type"]==ConstantDefine::TRANS_ROLE)&&(array_key_exists($params["trans_note"],Rights::getAssignedRoles(user()->id,true))))
                                         ));'
                 ),
-                ConstantDefine::USER_GROUP_REPORTER=>array(
+                'Reporter'=>array(
                            'allowedObjectStatus'=>array(
                                                   ConstantDefine::OBJECT_STATUS_DRAFT=>array('condition'=>
                                                     'return
@@ -713,8 +713,8 @@ class Object extends CActiveRecord
                                                   ),
                                                  
                            'allowedTransferto'=>array(
-                                                  ConstantDefine::USER_GROUP_EDITOR=>array('condition'=>''),
-                                                  ConstantDefine::USER_GROUP_REPORTER=>array('condition'=>''), 
+                                                  'Editor'=>array('condition'=>''),
+                                                  'Reporter'=>array('condition'=>''), 
                                                   ),
                             'allowedToCreateContent'=>true,
                     

@@ -39,7 +39,7 @@ class EventObject extends Object {
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels() {
-		return CMap::mergeArray(array('start_date' => t('cms','common','Start date'), 'end_date' => t('cms','common','End date'), ), Object::extraLabel());
+		return CMap::mergeArray(array('start_date' => t('site','Start date'), 'end_date' => t('site','End date'), ), Object::extraLabel());
 	}
 
 	/**
