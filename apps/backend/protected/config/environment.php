@@ -191,18 +191,20 @@ class Environment {
 				      
             ),
 
-				   'modules'=>array(
-                                        
+				   'modules'=>array(                                        
                 'rights'=>array(
                     'class'=>'cms.modules.rights.RightsModule',
                      'install'=>false,  // Enables the installer.
                      'appLayout'=>'application.views.layouts.main',
                      'superuserName'=>'Admin',                     
-                ),                          
-                                     
+                ),                                                               
                 'error'=>array(
                     'class'=>'cms.modules.error.ErrorModule',                    
-                ),                                            
+                ),     
+                'cache'=>array(
+                    'class'=>'cms.modules.cache.CacheModule',
+                    'password'=>'123456',                    
+                ),                                     
           ),
 				
             // Application components
@@ -302,10 +304,7 @@ class Environment {
                                    'ipFilters'=>array('127.0.0.1','::1'),
                                    'newFileMode'=>0666,
                                    'newDirMode'=>0777,
-                           ),
-                           'cache'=>array(
-                                'class'=>'cms.modules.cache.CacheModule',                    
-                           ), 
+                           ),                          
                    ),
 
                    // Application components
