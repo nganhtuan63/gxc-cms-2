@@ -1,10 +1,7 @@
 <?php
- 	if(YII_DEBUG)
-    	$layout_asset=Yii::app()->assetManager->publish(Yii::getPathOfAlias('common.layouts.default.assets'), false, -1, true);
-	else 
-		$layout_asset=Yii::app()->assetManager->publish(Yii::getPathOfAlias('common.layouts.default.assets'), false, -1, false);
+	$layout_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('common.layouts.default.assets')); 	
 ?>
-<?php $this->renderPartial('common.front_layouts.default.header',array('page'=>$page,'layout_asset'=>$layout_asset)); ?>      
+<?php $this->renderPartial('common.layouts.default.header',array('page'=>$page,'layout_asset'=>$layout_asset)); ?>      
 	<body>
 		
 		<div class="container" id="page">

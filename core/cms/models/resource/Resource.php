@@ -150,10 +150,10 @@ class Resource extends CActiveRecord
 				$storages = Yii::app()->cache->get('get-storages-cache'); //get cache
 				if(false===$storages) {
 					$storages=GxcHelpers::getStorages(true);	
-					Yii::app()->cache->set('get-storages-cache',$storages,360000);	
+					Yii::app()->cache->set('get-storages-cache',$storages,0);	
 				}		    	
 				$class_storage=$storages[$this->where];	    
-				Yii::app()->cache->set('get-storages-cache-'.$this->where,$class_storage,360000);									
+				Yii::app()->cache->set('get-storages-cache-'.$this->where,$class_storage,0);									
 			}	
 			return $class_storage::getFilePath($this->resource_path);
 	}

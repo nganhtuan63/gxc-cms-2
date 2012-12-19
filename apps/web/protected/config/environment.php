@@ -8,6 +8,9 @@ define('SALT','23ms8207x');
 define('SECURITY_STRING','cxzjczxhy2mbalsywn2987mxmxzcczxc');
 define('SALT_SEPERATOR',':');
 
+// Clear Cache Key
+define('CLEAR_CACHE_KEY','dfsw21zc');
+
 //StripSlashes all GET, POST, COOKIE
 if (get_magic_quotes_gpc()) 
 {
@@ -20,12 +23,25 @@ if (get_magic_quotes_gpc())
     array_walk_recursive($_COOKIE, 'stripslashes_gpc');
 }
 
+// Define EMAIL INFORMATION
+define('ADMIN_EMAIL','admin@localhost.com'); // 1 byte
 
-//You need to specify the path to CORE FOLDER CORRECTLY
+
+define('AMAZON_SES_ACCESS_KEY','');  
+define('AMAZON_SES_SECRET_KEY','');
+define('AMAZON_SES_EMAIL','');
+define('SUPPORT_EMAIL','');
+
+// You need to specify the path to CORE FOLDER CORRECTLY
 define('CORE_FOLDER',dirname(dirname(dirname(dirname(dirname(__FILE__))))).DIRECTORY_SEPARATOR.'core');
 define('CMS_FOLDER',CORE_FOLDER.DIRECTORY_SEPARATOR.'cms');
 define('CMS_WIDGETS',CMS_FOLDER.DIRECTORY_SEPARATOR.'widgets');
 define('COMMON_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'common');
+
+
+// Define Related to Upload File Size
+define('UPLOAD_MAX_SIZE',10485760); //10mb
+define('UPLOAD_MIN_SIZE',1); // 1 byte
 
 
 /**
@@ -136,8 +152,9 @@ class Environment {
             // Project Name                    
             'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
             'id'=> 'web', 
-            'name'=> 'Website Application' ,            
+            'name'=> 'Frontend' ,            
             'sourceLanguage'=>'en_us',        
+            'language'=>'en_us',        
             
             'defaultController'=>'site',
 
@@ -146,76 +163,83 @@ class Environment {
 
             // autoloading model and component classes
             'import' => array(
+                //Import from Application folder
                 'application.models.*',
                 'application.components.*',
 
-
+                //Import from Common folder
                 'common.components.*',
                 'common.storages.*',
         
+                //Import from CMS
                 'cms.components.*',
-                'cms.extensions.*',
-                'cms.models.*',
-                'cms.modules.*',
-                    
-                //Import Specific CMS classes for CMS 
-                'cms.models.user.*',
                 'cms.components.user.*',
+                'cms.extensions.*',                
                 'cmswidgets.*',
 
-                //Import Rights Modules
-                'cms.modules.rights.*',
-                'cms.modules.rights.models.*',
+                //Import from CMS Models
+                'cms.models.user.*',                                                                    
+                'cms.models.object.*',  
+                'cms.models.resource.*',  
+                'cms.models.page.*',  
+
+                //Import MODULES
+
+                //Import Rights Module                
                 'cms.modules.rights.components.*',
-                'cms.modules.rights.RightsModule', 
-                
+                'cms.modules.rights.RightsModule',                 
               
             ),
 
-           'modules'=>array(
+           'modules'=>array(                                        
                 'rights'=>array(
                     'class'=>'cms.modules.rights.RightsModule',
                      'install'=>false,  // Enables the installer.
-                     'appLayout'=>'admin.views.layouts.main',
+                     'appLayout'=>'application.views.layouts.main',
                      'superuserName'=>'Admin',                     
-                ),
+                ),                                                               
+                'error'=>array(
+                    'class'=>'cms.modules.error.ErrorModule',                    
+                ),     
+                'cache'=>array(
+                    'class'=>'cms.modules.cache.CacheModule',
+                    'password'=>'123456',                    
+                ),                                     
           ),
         
             // Application components
            'components' => array(
               
                     'cache'=>array(
-                        'class'=>'system.caching.CFileCache'
-                    ),                    
+                        'class'=>'system.caching.CApcCache'
+                    ),
+                    
                     //User Componenets
                     'user'=>array(
                         'class'=>'cms.components.user.GxcUser',
-                         // enable cookie-based authentication
+                         // enable cookie-based authentication                        
                         'allowAutoLogin'=>true,     
-                        'loginUrl'=>array('site/login'),                   
+                        'autoRenewCookie'=>true,
+                        'loginUrl'=>array('site/login'),                  
                         'stateKeyPrefix'=>'gxc_u_front_', //Should Change for Different Apps
+
                     ),
 
                     //Auth Manager
                     'authManager'=>array(
                         'class'=>'cms.modules.rights.components.RDbAuthManager',  
-                        'defaultRoles'=>'Guest'                          
+                        'defaultRoles'=>array()                          
                     ),
 
                      // Error Handler
                      'errorHandler'=>array(
-                        'errorAction'=>'admin/error',
+                        'errorAction'=>'error',
                       ),
 
                      // URLs in path-format
                      'urlManager'=>array(
-                        'urlFormat'=>'path',
-                        'showScriptName'=>false,
-                         'rules'=>array(
-                                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
-                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-                                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>'
-                         ),
+                        'urlFormat'=>'path',                        
+                        'showScriptName'=>false,                        
                      ),
                   
                      'session' => array(
@@ -223,15 +247,26 @@ class Environment {
                         'connectionID' => 'db',
                         'autoCreateSessionTable'=>false,
                         'sessionTableName'=>'gxc_session',
-                        'sessionName'=>'gxc_session_id_front_' //Should Change for Different Apps
+                        'sessionName'=>'gxc_session_id_front' //Should Change for Different Apps
                      ),
                 
-                    //Use the Settings Extension and Store value in Database
+                      //Use the Settings Extension and Store value in Database
                       'settings'=>array(
                           'class'     => 'cms.extensions.settings.CmsSettings',
                           'cacheId'   => 'global_website_settings',
                           'cacheTime' => 84000,
                       ),
+
+                      'request' => array(
+                          'class'=>'cms.components.HttpRequest',
+                          'enableCsrfValidation' => true,
+                          'enableCookieValidation'=>true,
+                      ),
+
+                      'messages' => array(
+                          'class'=>'cms.components.PhpMessageSource',
+                          'cachingDuration'=>86400,                          
+                      )
 
                ),
 
@@ -254,7 +289,10 @@ class Environment {
        private function _development () {
 
       // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
+       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
+         
            
        return array(
 
@@ -266,7 +304,7 @@ class Environment {
                                    'ipFilters'=>array('127.0.0.1','::1'),
                                    'newFileMode'=>0666,
                                    'newDirMode'=>0777,
-                           ),
+                           ),                          
                    ),
 
                    // Application components
@@ -289,22 +327,12 @@ class Environment {
                        'log'=>array(
                                'class'=>'CLogRouter',
                                'routes'=>array(
-                                  // Save log messages on file
+                                       array('class'=>'cms.extensions.yii-debug-toolbar.YiiDebugToolbarRoute'),
+                                       // Save log messages on file
                                        array(
                                               'class'=>'CFileLogRoute',
                                               'levels'=>'error, warning,trace, info',
-                                       ),
-                                       // Show log messages on web pages
-                                       array(
-                                              'class'=>'CWebLogRoute',
-                                              'levels'=>'error, warning, trace, info',
-                                       ),
-                                      // Show PhpQuickProfiler
-                                      array(
-                                              'class' => 'cms.extensions.pqp.PQPLogRoute',
-                                              'categories' => 'application.*, exception.*, system.*',
-                                              'levels'=>'error, warning, info',
-                                     )
+                                       ),                                       
 
                                ),
                        ),
@@ -325,7 +353,9 @@ class Environment {
        private function _test() {
   
       // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
+       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
     
            return array(
 
@@ -384,7 +414,9 @@ class Environment {
        private function _stage() {
   
       // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
+       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
     
            return array(
 
@@ -422,44 +454,41 @@ class Environment {
         * - Standard production error pages (404,500, etc.)
         */
        private function _production() {
-  
       // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
-    
+       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
+       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');   
            return array(
-
                    // Application components
                    'components' => array(
 
-                           // Database
-                           'db'=>array(
-                            'connectionString' => 'mysql:host=localhost;dbname=gxc_cms2',
+                      // Database
+                      'db'=>array(
+                      'connectionString' => 'mysql:host=localhost;dbname=gxc_cms2',
                       'schemaCachingDuration' => 3600,
                       'emulatePrepare' => true,
                       'username' => 'root',
                       'password' => 'root',
                       'charset' => 'utf8',
                       'tablePrefix' => 'gxc_'
-                           ),
+                      ),
+                      // Application Log
+                       'log'=>array(
+                               'class'=>'CLogRouter',
+                               'routes'=>array(
+                                       array(
+                                               'class'=>'CFileLogRoute',
+                                               'levels'=>'error, warning',
+                                       ),
 
-
-                           // Application Log
-                           'log'=>array(
-                                   'class'=>'CLogRouter',
-                                   'routes'=>array(
-                                           array(
-                                                   'class'=>'CFileLogRoute',
-                                                   'levels'=>'error, warning',
-                                           ),
-
-                                           // Send errors via email to the system admin
-                                           array(
-                                                   'class'=>'CEmailLogRoute',
-                                                   'levels'=>'error, warning',
-                                                   'emails'=>'admin@example.com',
-                                           ),
-                                   ),
-                           ),
+                                       // Send errors via email to the system admin
+                                       array(
+                                               'class'=>'CEmailLogRoute',
+                                               'levels'=>'error, warning',
+                                               'emails'=>ADMIN_EMAIL,
+                                       ),
+                               ),
+                       ),
                    ),
            );
        }

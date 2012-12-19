@@ -3,7 +3,7 @@
 //$start = (float) array_sum(explode(' ',microtime()));
 
 require_once(dirname(__FILE__).'/protected/config/environment.php');
-$environment = new Environment(Environment::DEVELOPMENT) ;
+$environment = new Environment(Environment::PRODUCTION) ;
  
 // change the following paths if necessary
 $yii=CORE_FOLDER.'/yii/framework/yii.php';
@@ -20,7 +20,10 @@ Yii::setPathOfAlias('common',COMMON_FOLDER);
 Yii::setPathOfAlias('cms',CMS_FOLDER);
 Yii::setPathOfAlias('cmswidgets',CMS_WIDGETS);
 	
+
 Yii::createWebApplication($environment->getConfig())->run();
+
+echo(memory_get_usage());
 
 // Stop checking script execution time
 //$end = (float) array_sum(explode(' ',microtime()));

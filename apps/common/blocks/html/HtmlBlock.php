@@ -36,15 +36,14 @@ class HtmlBlock extends CWidget
  
     protected function renderContent()
     {
-	if(isset($this->block) && ($this->block!=null)){	    
+    	if(isset($this->block) && ($this->block!=null)){	    
             //Set Params from Block Params
-            $params=unserialize($this->block->params);
-	    $this->setParams($params);                            
-            $this->render(BlockRenderWidget::setRenderOutput($this),array());
-	} else {
-	    echo '';
-	}
-       
+            $params=unserialize($this->block['params']);
+    	    $this->setParams($params);                                        
+            $this->render(BlockRenderWidget::setRenderOutput($this),array());                
+    	} else {
+    	    echo '';
+    	}       
     }
     
     public function validate(){

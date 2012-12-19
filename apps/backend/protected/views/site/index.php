@@ -7,7 +7,7 @@ $this->pageTitle=Yii::app()->name;
 <ul class="shortcut-buttons-set">
 <?php foreach($types as $type) : ?>
 <li>
-<a href="<?php echo bu().'/admin/object/create/type/'.$type['id']; ?>" class="shortcut-button">
+<a href="<?php echo bu().'/object/create/type/'.$type['id']; ?>" class="shortcut-button">
 <span>
 <img alt="icon" src="<?php 
 $icon_asset=Yii::app()->assetManager->publish(Yii::getPathOfAlias('common.content_type.'.$type['id'].'.assets'), false, -1, false);                    
@@ -17,7 +17,7 @@ echo $icon_asset.'/'.$type['icon']; ?>"><br />
 <?php endforeach; ?>
 
 <li>
-<a href="<?php echo bu().'/admin/page/create'; ?>" class="shortcut-button">
+<a href="<?php echo bu().'/page/create'; ?>" class="shortcut-button">
 <span>
 <img alt="icon" src="<?php 
 		
@@ -28,7 +28,7 @@ echo bu().'/images/paper.png'; ?>"><br />
 
 
 <li>
-<a href="<?php echo bu().'/admin/resource/create'; ?>" class="shortcut-button">
+<a href="<?php echo bu().'/resource/create'; ?>" class="shortcut-button">
 <span>
 <img alt="icon" src="<?php                     
 echo bu().'/images/upload_file.png'; ?>"><br />

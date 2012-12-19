@@ -22,7 +22,6 @@ class BlockRenderWidget extends CWidget
         
     }
  
- 
     public function run()
     {
         if($this->visible)
@@ -34,16 +33,20 @@ class BlockRenderWidget extends CWidget
     protected function renderContent()
     {       
         if (isset($this->page)) {                       
-			$blocks=Yii::app()->cache->get($this->page->page_id.'-'.$this->region);
-			if($blocks===false){								
-				   //get all blocks of current region, order by 'order'
-		            $blocks = PageBlock::model()->findAll(array(
-		                'condition'=>'page_id=:paramId and region=:regionId and status=:status',
-		                'params'=>array(':paramId'=>$this->page->page_id, ':regionId'=>$this->region,':status'=>  ConstantDefine::PAGE_BLOCK_ACTIVE),                
-		                'order'=>'block_order ASC'
-		            ));
+			$blocks=Yii::app()->cache->get($this->page['page_id'].'-'.$this->region);
+			if($blocks===false){												   
+		            $connection=Yii::app()->db;
+		            $command=$connection->createCommand('SELECT b.block_id,b.name,b.type,b.params FROM 
+		            	{{page_block}} pb INNER JOIN {{block}} b ON
+		            	pb.block_id=b.block_id  
+		            	WHERE page_id=:paramId and pb.region=:regionId and pb.status=:status 
+		            	order by pb.block_order ASC limit 20');
+		            $command->bindValue(':paramId',$this->page['page_id'],PDO::PARAM_INT); 
+		            $command->bindValue(':regionId',$this->region,PDO::PARAM_INT); 
+		            $command->bindValue(':status',ConstantDefine::PAGE_BLOCK_ACTIVE,PDO::PARAM_INT); 
+		            $blocks=$command->queryAll();          		            
 					if($blocks){
-						Yii::app()->cache->set($this->page->page_id.'-'.$this->region,$blocks,300);
+						Yii::app()->cache->set($this->page['page_id'].'-'.$this->region,$blocks,1800);						
 						$this->workWithBlocks($blocks);
 					} else {
 						echo '';
@@ -51,36 +54,24 @@ class BlockRenderWidget extends CWidget
 			} else {
 				$this->workWithBlocks($blocks);
 			}                            	                	   	 
-        }
-        
+        }       
     }   
 
-	public function workWithBlocks($blocks){
-		foreach($blocks as $page_block) {
-			$block=Yii::app()->cache->get('block-render-'.$page_block->block_id);
-			if($block===false){
-				$block =GxcHelpers::loadDetailModel('Block', $page_block->block_id);                                                                		
-				if($block){
-					Yii::app()->cache->set('block-render-'.$page_block->block_id,$block,300);
-					$this->blockRender($block);
-				}						
-			} else {
-				$this->blockRender($block);
-			}
-			
-		                                       	                        
+	public function workWithBlocks($blocks){		
+		foreach($blocks as $block) {			
+			$this->blockRender($block);                               	                        
 		}
+
 	}
 	
-	public function blockRender($block){
-		$block_ini=parse_ini_file(Yii::getPathOfAlias('common.blocks.'.$block->type).DIRECTORY_SEPARATOR.'info.ini');                                                   
+	public function blockRender($block){		
+		$block_ini=parse_ini_file(Yii::getPathOfAlias('common.blocks.'.$block['type']).DIRECTORY_SEPARATOR.'info.ini');                                                   		
         //Include the class            
-        Yii::import('common.blocks.'.$block->type.'.'.$block_ini['class']);                                        					
+        Yii::import('common.blocks.'.$block['type'].'.'.$block_ini['class']);                                        					
         if($this->data!=null)
-        	$this->widget('common.blocks.'.$block->type.'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset,'data'=>$this->data));
+        	$this->widget('common.blocks.'.$block['type'].'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset,'data'=>$this->data));
 		else  	     
-			$this->widget('common.blocks.'.$block->type.'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset));
-			
+			$this->widget('common.blocks.'.$block['type'].'.'.$block_ini['class'], array('block'=>$block,'page'=>$this->page,'layout_asset'=>$this->layout_asset));						
 	}
     
     public static function setRenderOutput($obj){                     

@@ -22,6 +22,8 @@ Yii::setPathOfAlias('cmswidgets',CMS_WIDGETS);
 	
 Yii::createWebApplication($environment->getConfig())->run();
 
+//echo(memory_get_peak_usage());
+
 // Stop checking script execution time
 //$end = (float) array_sum(explode(' ',microtime()));
 //echo "Processing time: ". sprintf("%.4f", ($end-$start))." seconds";  
