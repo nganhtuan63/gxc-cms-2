@@ -8,6 +8,9 @@ define('SALT','23ms8207x');
 define('SECURITY_STRING','cxzjczxhy2mbalsywn2987mxmxzcczxc');
 define('SALT_SEPERATOR',':');
 
+// Clear Cache Key
+define('CLEAR_CACHE_KEY','dfsw21zc');
+
 //StripSlashes all GET, POST, COOKIE
 if (get_magic_quotes_gpc()) 
 {
@@ -21,6 +24,9 @@ if (get_magic_quotes_gpc())
 }
 
 // Define EMAIL INFORMATION
+define('ADMIN_EMAIL','admin@localhost.com'); // 1 byte
+
+
 define('AMAZON_SES_ACCESS_KEY','');  
 define('AMAZON_SES_SECRET_KEY','');
 define('AMAZON_SES_EMAIL','');
@@ -168,37 +174,35 @@ class Environment {
                 //Import from CMS
     		        'cms.components.*',
                 'cms.components.user.*',
-    		        'cms.extensions.*',    		            		        
+    		        'cms.extensions.*',                
     				    'cmswidgets.*',
+
+                //Import from CMS Models
+                'cms.models.user.*',                                                                    
+                'cms.models.object.*',  
+                'cms.models.resource.*',  
+                'cms.models.page.*',  
 
                 //Import MODULES
 
                 //Import Rights Module                
                 'cms.modules.rights.components.*',
                 'cms.modules.rights.RightsModule',                 
-
-                //Import Admin Module                           
-                'cms.modules.admin.components.*',
-                'cms.modules.admin.AdminModule',    
 				      
             ),
 
 				   'modules'=>array(
-                'admin'=>array(
-                    'class'=>'cms.modules.admin.AdminModule',
-                    'css_files'=>array('css/custom.css'),                    
-                ),                            
+                                        
                 'rights'=>array(
                     'class'=>'cms.modules.rights.RightsModule',
                      'install'=>false,  // Enables the installer.
-                     'appLayout'=>'admin.views.layouts.main',
+                     'appLayout'=>'application.views.layouts.main',
                      'superuserName'=>'Admin',                     
                 ),                          
+                                     
                 'error'=>array(
                     'class'=>'cms.modules.error.ErrorModule',                    
-                ),
-
-                
+                ),                                            
           ),
 				
             // Application components
@@ -233,14 +237,7 @@ class Environment {
                      // URLs in path-format
                      'urlManager'=>array(
                        	'urlFormat'=>'path',                        
-                        'showScriptName'=>false,
-                        /*
-                        'rules'=>array(
-                                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
-                                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-                                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>'
-                         ),
-                         */
+                        'showScriptName'=>false,                        
                      ),
       						
       						   'session' => array(
@@ -266,9 +263,7 @@ class Environment {
 
                       'messages' => array(
                           'class'=>'cms.components.PhpMessageSource',
-                          'cachingDuration'=>86400,
-                          //'basePath'=>'/Applications/MAMP/htdocs/cms2/apps/common/messages'
-                          //'basePath'=>dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.
+                          'cachingDuration'=>86400,                          
                       )
 
                ),
@@ -308,6 +303,9 @@ class Environment {
                                    'newFileMode'=>0666,
                                    'newDirMode'=>0777,
                            ),
+                           'cache'=>array(
+                                'class'=>'cms.modules.cache.CacheModule',                    
+                           ), 
                    ),
 
                    // Application components
@@ -457,14 +455,11 @@ class Environment {
         * - Standard production error pages (404,500, etc.)
         */
        private function _production() {
-	
 			// Define hosts of all web apps
 		   define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
        define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
-       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
-		
+       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');		
            return array(
-
                    // Application components
                    'components' => array(
 
@@ -477,26 +472,24 @@ class Environment {
 			                'password' => 'root',
 			                'charset' => 'utf8',
 			                'tablePrefix' => 'gxc_'
-                           ),
+                      ),
+                      // Application Log
+                       'log'=>array(
+                               'class'=>'CLogRouter',
+                               'routes'=>array(
+                                       array(
+                                               'class'=>'CFileLogRoute',
+                                               'levels'=>'error, warning',
+                                       ),
 
-
-                           // Application Log
-                           'log'=>array(
-                                   'class'=>'CLogRouter',
-                                   'routes'=>array(
-                                           array(
-                                                   'class'=>'CFileLogRoute',
-                                                   'levels'=>'error, warning',
-                                           ),
-
-                                           // Send errors via email to the system admin
-                                           array(
-                                                   'class'=>'CEmailLogRoute',
-                                                   'levels'=>'error, warning',
-                                                   'emails'=>'admin@example.com',
-                                           ),
-                                   ),
-                           ),
+                                       // Send errors via email to the system admin
+                                       array(
+                                               'class'=>'CEmailLogRoute',
+                                               'levels'=>'error, warning',
+                                               'emails'=>ADMIN_EMAIL,
+                                       ),
+                               ),
+                       ),
                    ),
            );
        }

@@ -1,9 +1,11 @@
+
 <?php
 
-class ErrorModule extends CWebModule
+class CacheModule extends CWebModule
 {
 		
-	public $baseUrl = '/error';	
+	public $baseUrl = '/cache';
+	public $apps=array();	
 	public $appLayout  = 'cms.modules.error.views.layouts.main';
 
 	public function init()

@@ -22,7 +22,7 @@ echo $icon_asset.'/'.$type['icon']; ?>"><br />
 <img alt="icon" src="<?php 
 		
 		                    
-echo Yii::app()->getModule('admin')->AssetsUrl.'/images/paper.png'; ?>"><br />
+echo bu().'/images/paper.png'; ?>"><br />
 <?php echo t('cms','Create new Page');?>
 </span></a></li>
 
@@ -31,7 +31,7 @@ echo Yii::app()->getModule('admin')->AssetsUrl.'/images/paper.png'; ?>"><br />
 <a href="<?php echo bu().'/admin/resource/create'; ?>" class="shortcut-button">
 <span>
 <img alt="icon" src="<?php                     
-echo Yii::app()->getModule('admin')->AssetsUrl.'/images/upload_file.png'; ?>"><br />
+echo bu().'/images/upload_file.png'; ?>"><br />
 <?php echo t('cms','Upload a File');?>
 </span></a></li>
 

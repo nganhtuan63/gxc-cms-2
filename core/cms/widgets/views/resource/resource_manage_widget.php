@@ -58,7 +58,7 @@
 			(
 			    'label'=>t('cms','Edit'),
 			    'imageUrl'=>false,
-			    'url'=>'Yii::app()->createUrl("admin/'.app()->controller->id.'/update", array("id"=>$data->resource_id))',
+			    'url'=>'Yii::app()->createUrl("'.app()->controller->id.'/update", array("id"=>$data->resource_id))',
 			),
 		    ),
 		),

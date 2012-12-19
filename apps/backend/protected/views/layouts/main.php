@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>    
 	<?php 	        		
-		$this->renderPartial('admin.views.layouts.header',array());         
+		$this->renderPartial('application.views.layouts.header',array());       
     ?>
 </head>
 <body>
@@ -12,9 +12,9 @@
 		<div class="wrap">
 				<ul class="right">				
 					<li><?php echo t('cms','Welcome'); ?>, <strong><?php echo user()->getModel('display_name'); ?></strong>&nbsp;|&nbsp;</li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl?>/admin/user/updatesettings"><?php echo t('cms','Settings'); ?></a>&nbsp;|&nbsp;</li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl?>/admin/user/changepass"><?php echo t('cms','Change Password'); ?></a>&nbsp;|&nbsp;</li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl?>/admin/default/logout"><?php echo t('cms','Sign out'); ?></a></li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl?>/user/updatesettings"><?php echo t('cms','Settings'); ?></a>&nbsp;|&nbsp;</li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl?>/user/changepass"><?php echo t('cms','Change Password'); ?></a>&nbsp;|&nbsp;</li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl?>/site/logout"><?php echo t('cms','Sign out'); ?></a></li>
 				</ul>
 				
 		</div>
@@ -22,7 +22,7 @@
 	</div>
 	<div id="header">
 		<div style="float:left; padding-left:45px">
-		<a href="<?php echo bu(); ?>"><img src="<?php echo Yii::app()->getModule('admin')->AssetsUrl; ?>/images/logo2.png"; /></a>
+		<a href="<?php echo bu(); ?>"><img src="<?php echo bu(); ?>/images/logo2.png"; /></a>
 		</div>
 		<form id="search-box" method="get" action="#" target="_blank" style="float:left;">
 			<input class="topSearchBox" id="topSearchBox" autocomplete="off" type="text" maxlength="2048" name="q" label="Search" placeholder="" aria-haspopup="true" />
@@ -33,7 +33,7 @@
 
 	<div id="site-content">
 		<div id="left-sidebar">
-            <?php $this->renderPartial(Yii::app()->getModule('admin')->menu); ?>
+            <?php $this->renderPartial('application.views.layouts.menu'); ?>
 		</div>
 		<div id="main-content-zone">
                         <?php if(isset($this->menu)) :?>
@@ -50,7 +50,7 @@
                         <?php endif; ?>
 			<div class="page-content">                                
 					<div id="inner" style="width:100%;float:left;">
-                        <h2><?php echo (isset($this->titleImage)&&($this->titleImage!=''))? '<img src="'. Yii::app()->getModule('admin')->AssetsUrl.'/'.$this->titleImage.'" />' : ''; ?><?php echo isset($this->pageTitle)? $this->pageTitle : '';  ?></h2>
+                        <h2><?php echo (isset($this->titleImage)&&($this->titleImage!=''))? '<img src="'. bu().'/'.$this->titleImage.'" />' : ''; ?><?php echo isset($this->pageTitle)? $this->pageTitle : '';  ?></h2>
                         <?php if (isset($this->pageHint)&&($this->pageHint!='')) : ?>
                             <p><?php echo $this->pageHint; ?></p>
                   		<?php endif; ?>

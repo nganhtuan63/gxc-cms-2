@@ -5,7 +5,7 @@
     	var next_resource_count=current_resource_count+1;
     							    	
     	<?php
- 			 $backend_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('admin.assets'),false,-1,YII_DEBUG);
+ 			 $backend_asset=bu();
 		?>						    	
     	var link_resource_icon='<?php echo $backend_asset;?>/images/content_icons/'+file_type+'.png';
     	if(file_type=='image'){
@@ -20,7 +20,7 @@
 	            '<div class="item_div_wrapper">'+                                                             
 	                '<span class="item_name"><img style="background:#fff;padding:5px; border:1px dotted #CCC" src="'+link_resource_icon+'" width="50" /></span>'+                                                								                               							                
 	                '<div class="item_buttons" style="margin-top:3px; margin-left:5px">'+
-	                '<a href="<?php echo bu();?>/beresource/update/'+id+'" target="_blank"  name="editItem"><img alt="<?php echo  t('cms','Edit'); ?>" src="<?php echo $backend_asset; ?>/images/edit.png" /></a>&nbsp;'+							                                            
+	                '<a href="<?php echo bu();?>/resource/update/'+id+'" target="_blank"  name="editItem"><img alt="<?php echo  t('cms','Edit'); ?>" src="<?php echo $backend_asset; ?>/images/edit.png" /></a>&nbsp;'+							                                            
 	                '<a href="javascript:void(0)" onclick="fnRemoveResourceItem(\'list_id_resource_upload_'+key+'_'+next_resource_count+'\',\''+key+'\');" name="removeItem"><img alt="<?php echo  t('cms','Delete'); ?>" src="<?php echo $backend_asset;?>/images/disabled.png" /></a>'+  
 	                '</div>'+                                
 	            '</div>'+							                                                                                 
@@ -61,7 +61,7 @@ function doUploadResource(type){
 	var current_resource_max=parseInt($('#resource_upload_'+type+'_current_upload_max').val());
 	var next_resource_count=current_resource_count+1;    	
 	if(next_resource_count<=current_resource_max){
-		$.prettyPhoto.open('<?php echo bu();?>/beresource/createframe?content_type=<?php echo $type;?>&parent_call=true&type='+type+'&iframe=true&height=400','<?php echo  t('cms','Upload Resource');?>','');
+		$.prettyPhoto.open('<?php echo bu();?>/resource/createframe?content_type=<?php echo $type;?>&parent_call=true&type='+type+'&iframe=true&height=400','<?php echo  t('cms','Upload Resource');?>','');
 	} else {
 		alert('<?php echo  t('cms','Max file Upload Reached!'); ?>');
 		return false;

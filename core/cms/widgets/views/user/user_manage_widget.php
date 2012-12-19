@@ -24,7 +24,7 @@
 			'htmlOptions'=>array('class'=>'gridLeft'),
 			'value'=>'CHtml::link($data->username,array("'.app()->controller->id.'/view","id"=>$data->user_id))',
 		    ),
-                array(
+        array(
 			'name'=>'display_name',
 			'type'=>'raw',
 			'htmlOptions'=>array('class'=>'gridLeft'),
@@ -37,12 +37,12 @@
 			'value'=>'$data->email',
 		    ),
             
-		 array(
+		array(
             'name'=>'status',
 			'type'=>'image',   
             'htmlOptions'=>array('class'=>'gridmaxwidth'),
 			'value'=>'User::convertUserState($data)',
-                        'filter'=>false
+            'filter'=>false
 		    ),
         array(
             'header'=>t('cms','Roles'),
@@ -60,7 +60,7 @@
 			(
 			    'label'=>t('cms','Edit'),
 			    'imageUrl'=>false,
-			    'url'=>'Yii::app()->createUrl("admin/'.app()->controller->id.'/update", array("id"=>$data->user_id))',
+			    'url'=>'Yii::app()->createUrl("'.app()->controller->id.'/update", array("id"=>$data->user_id))',
 			),
 		    ),
 		),

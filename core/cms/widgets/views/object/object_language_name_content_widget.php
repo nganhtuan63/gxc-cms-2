@@ -33,11 +33,8 @@
 </div>
 
 <div id="small_buttons_insert" align="right">
-		<span><?php echo  t('cms','Insert'); ?></span>
-		<?php
-			 $backend_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('admin.assets'),false,-1,YII_DEBUG);		     
-		?>
-		<img valign="top" alt="Image" title="Image" onClick="insertFileToContent('image');" src="<?php echo $backend_asset; ?>/images/insert_image.png" />
+		<span><?php echo  t('cms','Insert'); ?></span>		
+		<img valign="top" alt="Image" title="Image" onClick="insertFileToContent('image');" src="<?php echo bu(); ?>/images/insert_image.png" />
 				
 </div>
 <div id="bodywrap">		

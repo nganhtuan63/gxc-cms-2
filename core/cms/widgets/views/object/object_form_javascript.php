@@ -1,12 +1,9 @@
 <?php
 	//Need to add the jwplayer for embedding video
-		if(YII_DEBUG)
-            $player_asset=Yii::app()->assetManager->publish(Yii::getPathOfAlias('cms.assets.player'), false, -1, true);
-         else 
-            $player_asset=Yii::app()->assetManager->publish(Yii::getPathOfAlias('cms.assets.player'), false, -1, false);
-		 
-		 $cs=Yii::app()->clientScript;
-		 $cs->registerScriptFile($player_asset.'/jwplayer.js', CClientScript::POS_HEAD);	
+	     $cs=Yii::app()->clientScript;
+         $player_asset=bu().'/js/player/';
+         $cs->registerScriptFile($player_asset.'/jwplayer.js', CClientScript::POS_HEAD); 
+		 		
 ?> 
 <script type='text/javascript'>
 		var player_path='<?php echo $player_asset; ?>';
@@ -99,7 +96,7 @@
     $('#resource-box-content div.tab-content:first').addClass('default-tab').show();
     
     function insertFileToContent(file_type){    			    	
-    	$.prettyPhoto.open('<?php echo bu();?>/admin/resource/createframe?parent_call=true&ckeditor='+file_type+'&iframe=true&height=400','<?php echo  t('cms','Upload Resource');?>','');    	
+    	$.prettyPhoto.open('<?php echo bu();?>/resource/createframe?parent_call=true&ckeditor='+file_type+'&iframe=true&height=400','<?php echo  t('cms','Upload Resource');?>','');    	
     }
     
     

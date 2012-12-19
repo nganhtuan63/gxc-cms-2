@@ -9,8 +9,8 @@ $this->widget('zii.widgets.CMenu',array(
 		//Dasboard Menu 
 		array(
 			'label'=>'<span id="menu_dashboard" class="micon"></span>'.t('cms','Dashboard'), 
-			'url'=>array('/admin/default/index') ,'linkOptions'=>array('class'=>'menu_0'),
-			'active'=> ((Yii::app()->controller->id=='default') && (in_array(Yii::app()->controller->action->id,array('index'))) ? true : false)
+			'url'=>array('/site/index') ,'linkOptions'=>array('class'=>'menu_0'),
+			'active'=> ((Yii::app()->controller->id=='site') && (in_array(Yii::app()->controller->action->id,array('index'))) ? true : false)
 			),                               
 
 		//Content Menu 
@@ -21,27 +21,27 @@ $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array(
 					'label'=>t('cms','Create Content'), 
-					'url'=>array('/admin/object/create'),
+					'url'=>array('/object/create'),
 					'active'=>Yii::app()->controller->id=='object' && Yii::app()->controller->action->id=='create'
 					),
 				array(
 					'label'=>t('cms','Draft Content'), 
-					'url'=>array('/admin/object/draft'),
+					'url'=>array('/object/draft'),
 					'active'=>Yii::app()->controller->id=='object' && Yii::app()->controller->action->id=='draft'
 					),
 				array(
 					'label'=>t('cms','Pending Content'), 
-					'url'=>array('/admin/object/pending'),
+					'url'=>array('/object/pending'),
 					'active'=>Yii::app()->controller->id=='object' && Yii::app()->controller->action->id=='pending'
 					),
 				array(
 					'label'=>t('cms','Published Content'), 
-					'url'=>array('/admin/object/published'),
+					'url'=>array('/object/published'),
 					'active'=>Yii::app()->controller->id=='object' && Yii::app()->controller->action->id=='published'
 					),
 				array(
 					'label'=>t('cms','Manage Content'), 
-					'url'=>array('/admin/object/admin'),
+					'url'=>array('/object/admin'),
 					'visible'=>user()->isAdmin ? true : false,
 					'active'=> ((Yii::app()->controller->id=='object') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false)
 					)
@@ -56,22 +56,22 @@ $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array(
 					'label'=>t('cms','Create Term'), 
-					'url'=>array('/admin/term/create'),
+					'url'=>array('/term/create'),
 					'active'=>Yii::app()->controller->id=='term' && Yii::app()->controller->action->id=='create'
 				),
 				array(
 					'label'=>t('cms','Manage Terms'), 
-					'url'=>array('/admin/term/admin'),
+					'url'=>array('/term/admin'),
 					'active'=> ((Yii::app()->controller->id=='term') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false)                                                                                           
 				),
 				array(
 					'label'=>t('cms','Create Taxonomy'), 
-					'url'=>array('/admin/taxonomy/create'),
+					'url'=>array('/taxonomy/create'),
 					'active'=>Yii::app()->controller->id=='taxonomy' && Yii::app()->controller->action->id=='create'
 				),
 				array(
 					'label'=>t('cms','Mangage Taxonomy'), 
-					'url'=>array('/admin/taxonomy/admin'),
+					'url'=>array('/taxonomy/admin'),
 					'active'=> ((Yii::app()->controller->id=='taxonomy') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index')))) ? true : false)                                                                                     
 				),
 				
@@ -86,23 +86,23 @@ $this->widget('zii.widgets.CMenu',array(
       		'items'=>array(
       			array(
       				'label'=>t('cms','Create Menu'), 
-      				'url'=>array('/admin/menu/create'),
+      				'url'=>array('/menu/create'),
       				'active'=>Yii::app()->controller->id=='menu' && Yii::app()->controller->action->id=='create'
       			),
       			array(
       				'label'=>t('cms','Manage Menus'), 
-      				'url'=>array('/admin/menu/admin'),
+      				'url'=>array('/menu/admin'),
       				'active'=> ((Yii::app()->controller->id=='menu') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false)
       			),
       			array(
       				'label'=>t('cms','Create Queue'), 
-      				'url'=>array('/admin/contentlist/create'),
+      				'url'=>array('/contentlist/create'),
       				'active'=>Yii::app()->controller->id=='contentlist' && Yii::app()->controller->action->id=='create'
       				
       			),
       			array(
       				'label'=>t('cms','Manage Queues'), 
-      				'url'=>array('/admin/contentlist/admin'),
+      				'url'=>array('/contentlist/admin'),
       				'active'=> ((Yii::app()->controller->id=='contentlist') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false)
       			),
       			array(
@@ -112,17 +112,17 @@ $this->widget('zii.widgets.CMenu',array(
       			),
       			array(
       				'label'=>t('cms','Manage Blocks'), 
-      				'url'=>array('/admin/block/admin'),
+      				'url'=>array('/block/admin'),
       				'active'=> ((Yii::app()->controller->id=='block') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index'))) ? true : false)
       			),
       			array(
       				'label'=>t('cms','Create Page'), 
-      				'url'=>array('/admin/page/create'),
+      				'url'=>array('/page/create'),
       				'active'=>Yii::app()->controller->id=='page' && Yii::app()->controller->action->id=='create'
       			),
       			array(
       				'label'=>t('cms','Manage Pages'), 
-      				'url'=>array('/admin/page/admin'),
+      				'url'=>array('/page/admin'),
       				'active'=> ((Yii::app()->controller->id=='page') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index')))) ? true : false
       			)
       		)
@@ -137,12 +137,12 @@ $this->widget('zii.widgets.CMenu',array(
       		'items'=>array(
       			array(
       				'label'=>t('cms','Create Resource'), 
-      				'url'=>array('/admin/resource/create'),
+      				'url'=>array('/resource/create'),
       				'active'=>Yii::app()->controller->id=='resource' && Yii::app()->controller->action->id=='create'      				
       			),
       			array(
       				'label'=>t('cms','Manage Resource'), 
-      				'url'=>array('/admin/resource/admin'),
+      				'url'=>array('/resource/admin'),
       				'active'=> ((Yii::app()->controller->id=='resource') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index')))) ? true : false
       			)
       		)
@@ -157,7 +157,7 @@ $this->widget('zii.widgets.CMenu',array(
       		'items'=>array(
       			array(
       				'label'=>t('cms','Comments'), 
-      				'url'=>array('/admin/comments/admin'),
+      				'url'=>array('/comments/admin'),
       				'active'=>Yii::app()->controller->id=='comments' ? true : false
       			),
       		)
@@ -172,12 +172,12 @@ $this->widget('zii.widgets.CMenu',array(
       	'items'=>array(
       		array(
       			'label'=>t('cms','Create User'), 
-      			'url'=>array('/admin/user/create'),
+      			'url'=>array('/user/create'),
       			'active'=>Yii::app()->controller->id=='user' && Yii::app()->controller->action->id=='create'
       		),
       		array(
       			'label'=>t('cms','Manage Users'), 
-      			'url'=>array('/admin/user/admin'),
+      			'url'=>array('/user/admin'),
       			'active'=> ((Yii::app()->controller->id=='user') && (in_array(Yii::app()->controller->action->id,array('update','view','admin','index')))) ? true : false
       		),
       		array(
@@ -197,12 +197,12 @@ $this->widget('zii.widgets.CMenu',array(
       	'items'=>array(
       		array(
       			'label'=>t('cms','General'), 
-      			'url'=>array('/admin/settings/index/type/general'),
+      			'url'=>array('/settings/index/type/general'),
       			'active'=>Yii::app()->controller->id=='settings' && isset($_GET['type']) && $_GET['type']=='general'
       		),
       		array(
       			'label'=>t('cms','System'), 
-      			'url'=>array('/admin/settings/index/type/system'),
+      			'url'=>array('/settings/index/type/system'),
       			'active'=>Yii::app()->controller->id=='settings' && isset($_GET['type']) && $_GET['type']=='system'
       		),
 
@@ -213,7 +213,7 @@ $this->widget('zii.widgets.CMenu',array(
       //Caching Menu 
       array(
       	'label'=>'<span id="menu_caching" class="micon"></span>'.t('cms','Caching'), 
-      	'url'=>array('/admin/caching/clear'),'linkOptions'=>array('id'=>'menu_8','class'=>'menu_8'), 
+      	'url'=>array('/caching/clear'),'linkOptions'=>array('id'=>'menu_8','class'=>'menu_8'), 
       	'itemOptions'=>array('id'=>'menu_8'), 
       	'items'=>array(
       	),

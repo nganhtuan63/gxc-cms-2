@@ -1,10 +1,9 @@
  <?php
-                    $mycs=Yii::app()->getClientScript();                    
-                    $ckeditor_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('cms.assets.ckeditor'),false,-1,YII_DEBUG);                                     
-                    $urlScript_ckeditor= $ckeditor_asset.'/ckeditor.js';
-                    $urlScript_ckeditor_jquery=$ckeditor_asset.'/adapters/jquery.js';
-                    $mycs->registerScriptFile($urlScript_ckeditor, CClientScript::POS_HEAD);
-                    $mycs->registerScriptFile($urlScript_ckeditor_jquery, CClientScript::POS_HEAD);                    
+    $mycs=Yii::app()->getClientScript();                                        
+    $urlScript_ckeditor= bu().'/js/ckeditor/ckeditor.js';
+    $urlScript_ckeditor_jquery=bu().'/js/ckeditor/adapters/jquery.js';
+    $mycs->registerScriptFile($urlScript_ckeditor, CClientScript::POS_HEAD);
+    $mycs->registerScriptFile($urlScript_ckeditor_jquery, CClientScript::POS_HEAD);                    
 ?>
 
 <div class="form">
@@ -21,13 +20,13 @@
     </div>
     <div id="form-body">
             <div id="form-body-content">
-            	
-            		<!-- //Render Partial for Object Language Zone & Name & Content-->
+                
+                    <!-- //Render Partial for Object Language Zone & Name & Content-->
                     <?php $this->render('cmswidgets.views.object.object_language_name_content_widget',array('model'=>$model,'type'=>$type,'form'=>$form,'versions'=>$versions,'lang_exclude'=>$lang_exclude)); ?>
   
                     <div class="row">
-                    		<!-- //Render Partial for Resource Binding -->
-                    		<?php $this->render('cmswidgets.views.object.object_resource_form_widget',array('model'=>$model,'type'=>$type,'content_resources'=>$content_resources)); ?>                    	
+                            <!-- //Render Partial for Resource Binding -->
+                            <?php $this->render('cmswidgets.views.object.object_resource_form_widget',array('model'=>$model,'type'=>$type,'content_resources'=>$content_resources)); ?>                     
                     </div>
                     
                     <div class="row">
@@ -47,15 +46,15 @@
                     
                     <!--Start the Summary and SEO Box -->
                     <div class="content-box ">
-							<!-- //Render Partial for SEO -->
-  							<?php $this->render('cmswidgets.views.object.object_seo_form_widget',array('model'=>$model,'form'=>$form)); ?>
+                            <!-- //Render Partial for SEO -->
+                            <?php $this->render('cmswidgets.views.object.object_seo_form_widget',array('model'=>$model,'form'=>$form)); ?>
                     </div>
                     <!-- End Summary and SEO Box -->                            
                     </div>
 
             </div>
     </div>
-						
+                        
 </div>
 <br class="clear" />
 <?php $this->endWidget(); ?>

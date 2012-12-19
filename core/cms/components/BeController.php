@@ -13,10 +13,8 @@ class BeController extends RController
 		public $menu=array();
 	                 
         
-        public function init(){
-            $this->layout = Yii::app()->getModule('admin')->main_layout;
-            // Register the scripts
-            Yii::app()->getModule('admin')->registerScripts();    
+        public function init(){            
+            // Register the scripts            
         }
 
         public function __construct($id,$module=null)
@@ -43,7 +41,7 @@ class BeController extends RController
          */
         public function allowedActions()
         {
-               return 'login,logout';
+               return 'login,logout,error';
         }
 
 		

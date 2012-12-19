@@ -45,7 +45,7 @@
 			(
 			   'label'=>t('cms','Translate'),
 			    'imageUrl'=>false,
-			    'url'=>'Yii::app()->createUrl("admin/'.app()->controller->id.'/create", array("guid"=>$data->guid))',
+			    'url'=>'Yii::app()->createUrl("'.app()->controller->id.'/create", array("guid"=>$data->guid))',
 			),
 		    ),
 		),                 			
@@ -59,7 +59,7 @@
 			(
 			    'label'=>t('cms','Edit'),
 			    'imageUrl'=>false,
-			    'url'=>'Yii::app()->createUrl("admin/'.app()->controller->id.'/update", array("id"=>$data->menu_id))',
+			    'url'=>'Yii::app()->createUrl("'.app()->controller->id.'/update", array("id"=>$data->menu_id))',
 			),
 		    ),
 		),
