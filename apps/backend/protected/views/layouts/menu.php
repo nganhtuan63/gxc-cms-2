@@ -213,7 +213,7 @@ $this->widget('zii.widgets.CMenu',array(
       //Caching Menu 
       array(
       	'label'=>'<span id="menu_caching" class="micon"></span>'.t('cms','Caching'), 
-      	'url'=>array('/caching/clear'),'linkOptions'=>array('id'=>'menu_8','class'=>'menu_8'), 
+      	'url'=>array('cache/default'),'linkOptions'=>array('id'=>'menu_8','class'=>'menu_8','target'=>'_blank'), 
       	'itemOptions'=>array('id'=>'menu_8'), 
       	'items'=>array(
       	),
