@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Helpers Class for whole CMS
  * 
@@ -201,14 +200,14 @@ class GxcHelpers {
 	public static function publishAsset($path,$hashByName=false,$level=-1) 
 	{
 		
-		$cache_id= YII_DEBUG ? false : 'asset'.$path.'-1';		
-		if($cache_id){
+		$cache_id=YII_DEBUG ? false : 'asset'.$path.'-1';		
+		if($cache_id && file_exists($cache_id)){
 			$cache=Yii::app()->cache->get($cache_id);
 			if($cache===false){
 				$cache=Yii::app()->assetManager->publish($path,$hashByName,-1,YII_DEBUG);			
 				Yii::app()->cache->set($cache_id,$cache,7200);
 			} 
-		} else {
+		} else {			
 			$cache=Yii::app()->assetManager->publish($path,$hashByName,-1,YII_DEBUG);			
 		}
 		
@@ -490,10 +489,10 @@ class GxcHelpers {
 	/**
 	* Function to get Object Content List
 	**/
-	public static function getContentList($model, $max=null, $paging=null, $return_type=ConstantDefine::CONTENT_LIST_RETURN_ACTIVE_RECORD) {
-        		
+	public static function getContentList($cl_id, $max=null, $paging=null, $return_type=ConstantDefine::CONTENT_LIST_RETURN_ACTIVE_RECORD) {
+        	$model=ContentList::model()->findByPk($cl_id);
 			//Find the content list model first	
-        		$condition = 't.object_status = :status and t.object_date < :time';
+        	$condition = 't.object_status = :status and t.object_date < :time';
 			$params = array(':status'=>ConstantDefine::OBJECT_STATUS_PUBLISHED, ':time'=>time()) ;
 			if($paging == 0) $page_number = 1;
 			else $page_number = $model->paging;

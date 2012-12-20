@@ -64,7 +64,7 @@ class DefaultController extends CController{
 					// Not support Cache for APC Cache
 					user()->setFlash('error',t('cms','Not support for APC Cache!'));   
 				}
-				else if (Yii::app()->$cache->flush())
+				else if (Yii::app()->cache->flush())
 				{
 					user()->setFlash('success',t('cms','Cache cleared!'));   
 				}

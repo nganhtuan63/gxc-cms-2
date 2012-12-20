@@ -187,6 +187,7 @@ class Environment {
 
                 //Import Rights Module                
                 'cms.modules.rights.components.*',
+                'cms.modules.rights.models.*',
                 'cms.modules.rights.RightsModule',                 
 				      
             ),

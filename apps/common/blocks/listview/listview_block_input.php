@@ -27,7 +27,7 @@
 <p><?php echo '<b>'.t('site','Note:').'</b> '.t('site','When you create a content list here, it will appear on the above Content list box'); ?></p>
 <div class="row" style="border:1px dotted #CCC">
         
-      <iframe id='contentlist_iframe'  src="<?php echo Yii::app()->request->baseUrl;?>/admin/contentlist/create/embed/iframe" frameborder="0" onLoad="autoResize(this);" height="30px" width="100%"></iframe>
+      <iframe id='contentlist_iframe'  src="<?php echo Yii::app()->request->baseUrl;?>/contentlist/create/embed/iframe" frameborder="0" onLoad="autoResize(this);" height="30px" width="100%"></iframe>
 </div>           
 <script type="text/javascript">
      <?php  if ((is_array($block_model->content_list)) && (!empty($block_model->content_list))) : ?>               
@@ -71,12 +71,12 @@
      $('#content_list').sortable();
      
      function updateContentList(id) {
-        $('#contentlist_iframe').attr('src','<?php echo Yii::app()->request->baseUrl;?>/becontentlist/update/id/'+id+'/embed/iframe');
+        $('#contentlist_iframe').attr('src','<?php echo Yii::app()->request->baseUrl;?>/contentlist/update/id/'+id+'/embed/iframe');
      }
      
       //Function to handle close Iframe from  Tree Form, update item when adding 
      function resetIframe() {         
-        $('#contentlist_iframe').attr('src','<?php echo Yii::app()->request->baseUrl;?>/becontentlist/create/embed/iframe');
+        $('#contentlist_iframe').attr('src','<?php echo Yii::app()->request->baseUrl;?>/contentlist/create/embed/iframe');
      } 
 
 

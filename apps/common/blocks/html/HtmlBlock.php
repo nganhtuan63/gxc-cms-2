@@ -29,8 +29,10 @@ class HtmlBlock extends CWidget
     }
     
     public function run()
-    {        
-            $this->renderContent();
+    {    
+        $this->renderContent();                
+        
+        
     }       
  
  

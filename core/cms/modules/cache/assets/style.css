@@ -45,3 +45,98 @@ line-height: 20px;
 color: inherit;
 text-rendering: optimizelegibility;
 }
+
+
+.grid-view table.items th {
+background: none repeat scroll 0 0 transparent !important;
+color: #333333 !important;
+text-align: left !important;
+padding-left:0.6em !important;
+}
+
+.grid-view table.items th a {
+color: #333333 !important;
+}
+
+.grid-view table.items tr.odd, table.detail-view tr.odd  {
+background: none repeat scroll 0 0 #F3F3F3 !important;
+}
+
+
+.grid-view table.items tr.even, table.detail-view tr.even {
+background: none repeat scroll 0 0 #FFF !important;
+}
+
+.grid-view table.items td {    
+padding: 0.7em !important;
+}
+
+.grid-view table.items tr.filters td {    
+padding: 0.7em !important;
+}
+
+.grid-view table.items a{
+color:#333 !important;
+text-decoration: none !important;
+font-weight:bold;
+}
+
+
+.grid-view table.items tr:hover a{
+color:#DD4B39 !important;
+text-decoration: none !important;
+}
+
+.grid-view table.items tr:hover {
+background: transparent !important;
+}
+
+.grid-view table.items tr.filters:hover {    
+background: #E3E3E3 !important;
+}
+
+.grid-view table.items tr.odd:hover {
+background: #F3F3F3 !important;
+}
+
+.grid-view table.items tr.even:hover {
+background: #FFF !important;
+}
+
+.gridLeft {
+text-align: left !important;
+}
+
+.gridCenter{
+text-align: center !important;
+}
+.gridmaxwidth {
+width: 80px !important;
+}
+
+tr.filters{
+background: #E3E3E3;
+}
+
+.grid-view .filters input, .grid-view .filters select {    
+height: 19px;  
+}
+
+ul.yiiPager a:link, ul.yiiPager a:visited {
+border: 1px solid #E3E3E3 !important;
+color: #DD4B39 !important;
+}
+
+ul.yiiPager .selected a {
+background: none repeat scroll 0 0 #DD4B39 !important;   
+color : #FFF !important;
+}
+
+ul.yiiPager a:hover {
+border: 1px solid #DD4B39 !important;   
+}
+
+table.detail-view th, table.detail-view td {
+padding:0.7em 0.6em !important;
+border: 1px solid #e5e5e5 !important;
+}

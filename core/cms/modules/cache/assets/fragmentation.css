@@ -1,0 +1,22 @@
+div.fragmentation-container {
+	height: 10px;
+	width: 100%;
+	border: solid grey 1px;
+	padding: 1px;
+	overflow: hidden;
+	content-align: center;
+}
+
+div.fragmentation-container div {
+	height: 10px;
+	float: left;
+	min-width: 0.5%;
+}
+
+div.fragmentation-container div.used {
+	background-color: #808080;
+}
+
+div.fragmentation-container div.free {
+	background-color: #f0f0f0;
+}

@@ -204,7 +204,10 @@ class Environment {
                 'cache'=>array(
                     'class'=>'cms.modules.cache.CacheModule',
                     'password'=>'123456',                    
-                ),                                     
+                ),
+                'apcinfo'=>array(
+                    'class'=>'cms.modules.apcinfo.ApcinfoModule',
+                )                                     
           ),
         
             // Application components
@@ -266,7 +269,9 @@ class Environment {
                       'messages' => array(
                           'class'=>'cms.components.PhpMessageSource',
                           'cachingDuration'=>86400,                          
-                      )
+                      ),
+
+                     
 
                ),
 
@@ -473,7 +478,7 @@ class Environment {
                       'tablePrefix' => 'gxc_'
                       ),
                       // Application Log
-                       'log'=>array(
+                      'log'=>array(
                                'class'=>'CLogRouter',
                                'routes'=>array(
                                        array(

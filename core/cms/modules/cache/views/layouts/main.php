@@ -5,6 +5,13 @@
 <?php $assetsUrl=GxcHelpers::publishAsset(Yii::getPathOfAlias('cms.modules.cache.assets'),false,-1, YII_DEBUG); ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $assetsUrl; ?>/style.css" />
 <title><?php echo t('cms','Cache Management'); ?></title>
+<script type="text/javascript">
+function autoResize(object){
+        var newheight;        
+        newheight=object.contentWindow.document.body.scrollHeight+100;         
+        object.height= (newheight) + "px";
+}
+</script>
 </head>
 <body>
 <div id="content">

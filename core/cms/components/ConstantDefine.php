@@ -9,9 +9,7 @@
  * @package common.components
  */
 
-class ConstantDefine{
-        
-    
+class ConstantDefine{        
 
     
     public static function fileTypes(){

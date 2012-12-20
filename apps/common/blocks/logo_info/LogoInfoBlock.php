@@ -37,7 +37,7 @@ class LogoInfoBlock extends CWidget
     {
 	if(isset($this->block) && ($this->block!=null)){	    
             //Set Params from Block Params
-            $params=unserialize($this->block->params);
+            $params=unserialize($this->block['params']);
 	    	$this->setParams($params);                            
             $this->render(BlockRenderWidget::setRenderOutput($this),array());
 	} else {

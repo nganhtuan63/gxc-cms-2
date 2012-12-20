@@ -32,8 +32,8 @@ class BlockRenderWidget extends CWidget
  
     protected function renderContent()
     {       
-        if (isset($this->page)) {                       
-			$blocks=Yii::app()->cache->get($this->page['page_id'].'-'.$this->region);
+        if (isset($this->page)) {                               	
+			$blocks=Yii::app()->cache->get('pb-'.$this->page['page_id'].'-'.$this->region);					
 			if($blocks===false){												   
 		            $connection=Yii::app()->db;
 		            $command=$connection->createCommand('SELECT b.block_id,b.name,b.type,b.params FROM 
@@ -43,10 +43,10 @@ class BlockRenderWidget extends CWidget
 		            	order by pb.block_order ASC limit 20');
 		            $command->bindValue(':paramId',$this->page['page_id'],PDO::PARAM_INT); 
 		            $command->bindValue(':regionId',$this->region,PDO::PARAM_INT); 
-		            $command->bindValue(':status',ConstantDefine::PAGE_BLOCK_ACTIVE,PDO::PARAM_INT); 
-		            $blocks=$command->queryAll();          		            
-					if($blocks){
-						Yii::app()->cache->set($this->page['page_id'].'-'.$this->region,$blocks,1800);						
+		            $command->bindValue(':status',ConstantDefine::PAGE_BLOCK_ACTIVE,PDO::PARAM_INT); 		            
+		            $blocks=$command->queryAll();          		            		            		            		            
+					if($blocks!==false){						
+						Yii::app()->cache->set('pb-'.$this->page['page_id'].'-'.$this->region,$blocks,1800);						
 						$this->workWithBlocks($blocks);
 					} else {
 						echo '';
