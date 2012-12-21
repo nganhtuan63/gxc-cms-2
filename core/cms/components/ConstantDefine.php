@@ -99,9 +99,11 @@ class ConstantDefine{
     const MENU_TYPE_CONTENT=5;
     const MENU_TYPE_URL=3;  
     const MENU_TYPE_STRING=4;
+    const MENU_TYPE_HOME=6;
     
     public static function getMenuType(){
         return array(
+                 self::MENU_TYPE_HOME=>t("cms","Link to Homepage"),
                  self::MENU_TYPE_URL=>t("cms","Link to URL"),                 
                  self::MENU_TYPE_PAGE=>t("cms","Link to Page"),
                  self::MENU_TYPE_CONTENT=>t("cms","Link to a Content Object"),

@@ -123,6 +123,11 @@
        <div class="type_form" id="type_form_div_<?php echo ConstantDefine::MENU_TYPE_STRING; ?>" style="display: none">
            <input type="text" name="type_form_<?php echo ConstantDefine::MENU_TYPE_STRING; ?>" id="type_form_<?php echo ConstantDefine::MENU_TYPE_STRING; ?>" value="" class="text_type_form simple_text_type_form" />
        </div>
+
+              <!-- Start for the form of HOME  -->
+       <div class="type_form" id="type_form_div_<?php echo ConstantDefine::MENU_TYPE_HOME; ?>" style="display: none">
+           <input type="hidden" name="type_form_<?php echo ConstantDefine::MENU_TYPE_HOME; ?>" id="type_form_<?php echo ConstantDefine::MENU_TYPE_HOME; ?>" value="" class="text_type_form simple_text_type_form" />
+       </div>
         
         
         <?php echo $form->hiddenField($model,'value', array('id'=>'menu_value')); ?>

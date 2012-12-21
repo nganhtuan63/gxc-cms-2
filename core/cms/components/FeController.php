@@ -107,7 +107,7 @@ class FeController extends CController
 			Yii::app()->clientScript->registerMetaTag($this->keywords, 'keywords');
 			//Check if change Title, we will replace content in <title> with new Title
 			if($this->change_title){				
-				$output=replaceTags('<title>', '</title>', $this->pageTitle.' | '.SITE_NAME, $output);								
+				$output=replaceTags('<title>', '</title>', $this->pageTitle.' | '.settings()->get('general', 'site_name'), $output);								
 			}	
 	    }       
 }

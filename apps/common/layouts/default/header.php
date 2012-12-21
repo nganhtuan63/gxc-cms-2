@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?php echo $layout_asset; ?>/css/print.css" type="text/css" media="print" />
     <!--[if IE]><link rel="stylesheet" href="<?php echo $layout_asset; ?>/css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
 	<!-- custom stylesheet -->
-    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $layout_asset; ?>/css/custom.css" />    
+    <link rel="stylesheet" type="text/css" media="all" href="<?php echo $layout_asset; ?>/css/main.css" />    
     <title><?php echo $this->pageTitle; ?></title>
         
     <?php    

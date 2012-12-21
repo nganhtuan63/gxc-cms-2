@@ -116,7 +116,7 @@ class Environment {
            'components' => array(
 							
                     'cache'=>array(
-                        'class'=>'system.caching.CApcCache'
+                        'class'=>'system.caching.CFileCache'
                     ),
       							
        			        //User Componenets

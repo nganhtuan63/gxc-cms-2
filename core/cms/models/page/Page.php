@@ -219,7 +219,8 @@ class Page extends CActiveRecord
                             $temp['region']=$pb->region;
                             $temp['id']=$pb->block_id;
                             $temp['status']=$pb->status;
-                            $temp['title']=$pb->block->name;                            
+                            $temp['title']=$pb->block->name;    
+                            $temp['type']=$pb->block->type;                        
                             $result['blocks'][]=$temp;
                         }
                 }
@@ -262,7 +263,7 @@ class Page extends CActiveRecord
                             $temp['id']=$pb->block_id;
                             $temp['status']=$pb->status;
                             $temp['title']=$pb->block->name; 
-                            $temp['type']=$pb->type; 
+                            $temp['type']=$pb->block->type; 
                             
                             $result['blocks'][]=$temp;
                         }

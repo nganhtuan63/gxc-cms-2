@@ -122,7 +122,7 @@ class Environment {
            'components' => array(
               
                     'cache'=>array(
-                        'class'=>'system.caching.CApcCache'
+                        'class'=>'system.caching.CFileCache'
                     ),
                     
                     //User Componenets
@@ -205,7 +205,7 @@ class Environment {
           // Set Time Zone
           date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
           define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
           define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
 
@@ -278,7 +278,7 @@ class Environment {
           // Set Time Zone
           date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
           define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
           define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
 
@@ -350,7 +350,7 @@ class Environment {
           // Set Time Zone
           date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
           define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
           define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
 
@@ -403,7 +403,7 @@ class Environment {
            // Set Time Zone
           date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('SITE_PATH','http://'.'localhost/cms2/apps/web'.'/');
           define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
           define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
 

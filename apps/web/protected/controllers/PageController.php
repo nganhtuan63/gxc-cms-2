@@ -1,6 +1,6 @@
 <?php
 
-class PageController extends CController
+class PageController extends FeController
 {
 	public $defaultAction='render';
 
@@ -11,7 +11,7 @@ class PageController extends CController
 
 	public function actionRender()
 	{				
-		$slug=isset($_GET['slug'])? plaintext($_GET['slug']) : false;
+		$slug=isset($_GET['slug'])? plaintext($_GET['slug']) : false;		
 		if($slug){
 			parent::renderPageSlug($slug);  	
 		} else {
