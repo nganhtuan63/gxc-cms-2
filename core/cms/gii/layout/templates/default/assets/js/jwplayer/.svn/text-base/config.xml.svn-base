@@ -1,0 +1,28 @@
+<config>
+   <ova.title>
+       TVO Advertisement
+   </ova.title>
+   <ova.json>
+       {
+             "debug": {
+                   "levels": "fatal, config, vast_template",
+                   "debugger": "firebug"
+               },
+            "ads": {
+                   "servers": [
+                    {
+                        "type": "OpenX",
+                        "apiAddress": "http://localhost/ova/openx/www/delivery/fc.php"
+                    }
+                ],
+                "schedule": [
+                    {
+                        "zone": "1",
+                        "position": "pre-roll"
+                    }
+                ]
+            },
+
+        }
+   </ova.json>
+</config>

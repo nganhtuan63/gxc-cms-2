@@ -200,7 +200,7 @@ class GxcHelpers {
 	public static function publishAsset($path,$hashByName=false,$level=-1) 
 	{
 		
-		$cache_id=YII_DEBUG ? false : 'asset'.$path.'-1';		
+		$cache_id=YII_DEBUG ? false : 'asset'.$path.'-1';				
 		if($cache_id && file_exists($cache_id)){
 			$cache=Yii::app()->cache->get($cache_id);
 			if($cache===false){
@@ -443,6 +443,40 @@ class GxcHelpers {
 			}
             return $langs;            
     }	
+
+	/**
+	 * Encode the text into a string which all white spaces will be replaced by $rplChar
+	 * @param string $text	text to be encoded
+	 * @param Char $rplChar character to replace all the white spaces
+	 * @param boolean upWords	set True to uppercase the first character of each word, set False otherwise
+	 */
+	public static function encode($text, $rplChar='', $upWords=true)
+	{
+		$encodedText = null;
+		if($upWords)
+		{
+			$encodedText = ucwords($text);
+		}
+		else 
+		{
+			$encodedText = strtolower($text);
+		}
+		
+		if($rplChar=='')
+		{
+			$encodedText = preg_replace('/\s[\s]+/','',$encodedText);    // Strip off multiple spaces
+			$encodedText = preg_replace('/[\s\W]+/','',$encodedText);    // Strip off spaces and non-alpha-numeric
+		}
+		else
+		{
+			$encodedText = preg_replace('/\s[\s]+/',$rplChar, $encodedText);    // Strip off multiple spaces
+			$encodedText = preg_replace('/[\s\W]+/',$rplChar, $encodedText);    // Strip off spaces and non-alpha-numeric
+			$encodedText = preg_replace('/^[\\'.$rplChar.']+/','', $encodedText); // Strip off the starting $rplChar
+			$encodedText = preg_replace('/[\\'.$rplChar.']+$/','',$encodedText); // // Strip off the ending $rplChar
+		}
+		return $encodedText;
+		
+	}
 
 	/**
      * Load Items Language

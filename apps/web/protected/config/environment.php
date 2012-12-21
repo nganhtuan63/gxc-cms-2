@@ -158,7 +158,8 @@ class Environment {
                         'connectionID' => 'db',
                         'autoCreateSessionTable'=>false,
                         'sessionTableName'=>'gxc_session',
-                        'sessionName'=>'gxc_session_id_front' //Should Change for Different Apps
+                        'sessionName'=>'gxc_session_id_front',
+                        'timeout' => 86400, //Should Change for Different Apps
                      ),
                 
                       //Use the Settings Extension and Store value in Database

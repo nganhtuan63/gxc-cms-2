@@ -152,7 +152,8 @@ class Environment {
       	                'connectionID' => 'db',
       	                'autoCreateSessionTable'=>false,
       	                'sessionTableName'=>'gxc_session',
-      									'sessionName'=>'gxc_session_id' //Should Change for Different Apps
+      									'sessionName'=>'gxc_session_id', //Should Change for Different Apps
+                        'timeout' => 86400,
       					     ),
       					
       			          //Use the Settings Extension and Store value in Database
@@ -217,6 +218,7 @@ class Environment {
                                    'ipFilters'=>array('127.0.0.1','::1'),
                                    'newFileMode'=>0666,
                                    'newDirMode'=>0777,
+                                   'generatorPaths'=>array('cms.gii',),
                            ),                          
                    ),
 
