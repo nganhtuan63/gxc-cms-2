@@ -80,8 +80,8 @@ class <?php echo $this->contentClass;?> extends Object
 				array(                      		   	                  
 					'video'=>array('type'=>'video',
 		              'name'=>'Video',
-		              'maxSize'=>ConstantDefine::UPLOAD_MAX_SIZE, 
-		              'minSize'=>ConstantDefine::UPLOAD_MIN_SIZE,
+		              'maxSize'=>UPLOAD_MAX_SIZE, 
+		              'minSize'=>UPLOAD_MIN_SIZE,
 		              'max'=>1,
 		              'allow'=>array('flv',
 		                             'mp4',)))
@@ -95,7 +95,7 @@ class <?php echo $this->contentClass;?> extends Object
         
         public static function buildLink($obj){						
 		if($obj->object_id)
-			return FRONT_SITE_URL."/post?id=".$obj->object_id."&slug=".$obj->object_slug;
+			return SITE_PATH."/post?id=".$obj->object_id."&slug=".$obj->object_slug;
 		else 
 			return null;
 			}
