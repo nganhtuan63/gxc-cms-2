@@ -4,9 +4,8 @@ class SiteController extends FeController
 {
 	
 	public function actionIndex()
-	{		
+	{						
 		$slug=Yii::app()->settings->get('general', 'homepage');                      
-
         parent::renderPageSlug($slug);  	
 	}		
 

@@ -15,6 +15,8 @@ class FeController extends CController
 		public $description;
 		public $keywords;			
 		public $change_title=false;
+
+        public $data=array();
         
         public function __construct($id,$module=null)
 		{
@@ -38,13 +40,39 @@ class FeController extends CController
             $command->bindValue(':slug',$slug,PDO::PARAM_STR); 
             $page=$command->queryRow();                                          
             if($page){
-                $this->layout='main';
-				$this->pageTitle=$page['title'];
-				$this->description=$page['description'];
-				$this->keywords=$page['keywords'];	    
-                //depend on the layout of the page, use the corresponding file to render  
-                
-                $this->renderPage('common.layouts.'.$page['layout'].'.'.$page['display_type'],array('page'=>$page));  
+                //We first need to check if having Ajax Request
+                if(isset($_REQUEST['ajax'])) {  
+                    $ajax=explode(ConstantDefine::AJAX_BLOCK_SEPERATOR,plaintext($_REQUEST['ajax']));                    
+                    $block_id=$ajax[2];
+                    $id=$ajax[1];
+                    $block_ini=parse_ini_file(Yii::getPathOfAlias('common.blocks.'.$id).DIRECTORY_SEPARATOR.'info.ini');                                                                             
+                    
+                    //Include the class            
+                    Yii::import('common.blocks.'.$id.'.'.$block_ini['class']);                         
+                    $layout_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('common.layouts.'.$page['layout'].'.assets'));                                        
+                    //Get the Block
+                    $command=$connection->createCommand('SELECT b.block_id,b.name,b.type,b.params FROM 
+                        {{block}} b                        
+                        WHERE b.block_id=:bid
+                        Limit 1');
+                    $command->bindValue(':bid',$block_id,PDO::PARAM_INT);                                       
+                    $block=$command->queryRow();                         
+                    if($block!==false){                        
+                         $this->widget('common.blocks.'.$id.'.'.$block_ini['class'], array('block'=>$block,'page'=>$page,'layout_asset'=>$layout_asset));                                         
+                    } else {
+                        echo '';
+                    }                  
+                    Yii::app()->end();
+                } else {
+                    $this->layout='main';
+                    $this->pageTitle=$page['title'];
+                    $this->description=$page['description'];
+                    $this->keywords=$page['keywords'];      
+                    //depend on the layout of the page, use the corresponding file to render                  
+                    $this->renderPage('common.layouts.'.$page['layout'].'.'.$page['display_type'],array('page'=>$page));       
+                }
+
+               
 
                 
             } else {            	  

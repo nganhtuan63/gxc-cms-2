@@ -17,10 +17,7 @@ class LogoInfoBlock extends CWidget
     public $block=null;     
     public $errors=array();
     public $page=null;
-    public $layout_asset='';    
-    
-   
-    
+    public $layout_asset='';           
     
     
     public function setParams($params){

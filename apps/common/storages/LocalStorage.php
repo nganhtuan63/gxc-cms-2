@@ -15,7 +15,7 @@ class LocalStorage
 	  
 	  const RESOURCE_URL=RESOURCE_URL;
 	  const RESOURCES_FOLDER=RESOURCES_FOLDER;
-
+	 
 	  public $max_file_size=UPLOAD_MAX_SIZE;
 	  public $min_file_size=UPLOAD_MIN_SIZE;
 	  public $allow_types=array();
@@ -50,7 +50,7 @@ class LocalStorage
 				}
 			}
 	  		$filename=$resource->resource_name=$model->upload->name;			
-			if(settings()->get('cms','system','keep_file_name_upload')=='0'){				
+			if(settings()->get('system','keep_file_name_upload')=='0'){				
 				$filename=gen_uuid();	
 			} else {
 				$filename=str_replace(" ","-",$filename) ;
@@ -70,7 +70,9 @@ class LocalStorage
 				     $filename .= rand(10, 99);
 				 }
 			}			
-			$filename=$filename.'.'.strtolower(CFileHelper::getExtension($model->upload->name));
+			if(settings()->get('system','keep_file_name_upload')=='0'){				
+				$filename=$filename.'.'.strtolower(CFileHelper::getExtension($model->upload->name));
+			}
 			$path=$folder.$filename;
 			if($model->upload->saveAs(self::RESOURCES_FOLDER.DIRECTORY_SEPARATOR.$path)){				
 			    $resource->resource_path=$path;			    

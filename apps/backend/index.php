@@ -1,7 +1,6 @@
 <?php
 // Start checking script execution time
 //$start = (float) array_sum(explode(' ',microtime()));
-
 require_once(dirname(__FILE__).'/protected/config/environment.php');
 $environment = new Environment(Environment::DEVELOPMENT) ;
  

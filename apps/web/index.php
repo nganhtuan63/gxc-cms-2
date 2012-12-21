@@ -3,7 +3,7 @@
 //$start = (float) array_sum(explode(' ',microtime()));
 
 require_once(dirname(__FILE__).'/protected/config/environment.php');
-$environment = new Environment(Environment::DEVELOPMENT) ;
+$environment = new Environment(Environment::PRODUCTION) ;
  
 // change the following paths if necessary
 $yii=CORE_FOLDER.'/yii/framework/yii.php';

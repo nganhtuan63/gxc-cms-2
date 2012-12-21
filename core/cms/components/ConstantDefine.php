@@ -11,7 +11,8 @@
 
 class ConstantDefine{        
 
-    
+    const AJAX_BLOCK_SEPERATOR='---';    
+
     public static function fileTypes(){
         return array(
             'image'=>array('jpg','gif','png','bmp','jpeg'),

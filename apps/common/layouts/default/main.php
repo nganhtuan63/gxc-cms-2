@@ -2,10 +2,8 @@
 	$layout_asset=GxcHelpers::publishAsset(Yii::getPathOfAlias('common.layouts.default.assets')); 	
 ?>
 <?php $this->renderPartial('common.layouts.default.header',array('page'=>$page,'layout_asset'=>$layout_asset)); ?>      
-	<body>
-		
+	<body>		
 		<div class="container" id="page">
-
 			<div id="header">
 				<?php 
 				//Render Widget for Header Region
@@ -23,7 +21,6 @@
 				//Render Widget for Footer Region
 				$this->widget('BlockRenderWidget',array('page'=>$page,'region'=>'2','layout_asset'=>$layout_asset)); ?>
 			</div><!-- footer -->
-
 		</div><!-- page -->					
 	<?php 
 		//Render Widget for Footer Script

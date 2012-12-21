@@ -1,15 +1,14 @@
 <?php
-
-// Set Time Zone
-date_default_timezone_set('Asia/Ho_Chi_Minh');
-
 // Defint Web SALT & Secret String
 define('SALT','23ms8207x');
 define('SECURITY_STRING','cxzjczxhy2mbalsywn2987mxmxzcczxc');
 define('SALT_SEPERATOR',':');
 
-// Clear Cache Key
-define('CLEAR_CACHE_KEY','dfsw21zc');
+// You need to specify the path to CORE FOLDER CORRECTLY
+define('CORE_FOLDER',dirname(dirname(dirname(dirname(dirname(__FILE__))))).DIRECTORY_SEPARATOR.'core');
+define('CMS_FOLDER',CORE_FOLDER.DIRECTORY_SEPARATOR.'cms');
+define('CMS_WIDGETS',CMS_FOLDER.DIRECTORY_SEPARATOR.'widgets');
+define('COMMON_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'common');
 
 //StripSlashes all GET, POST, COOKIE
 if (get_magic_quotes_gpc()) 
@@ -22,26 +21,6 @@ if (get_magic_quotes_gpc())
     array_walk_recursive($_POST, 'stripslashes_gpc');
     array_walk_recursive($_COOKIE, 'stripslashes_gpc');
 }
-
-// Define EMAIL INFORMATION
-define('ADMIN_EMAIL','admin@localhost.com'); // 1 byte
-
-
-define('AMAZON_SES_ACCESS_KEY','');  
-define('AMAZON_SES_SECRET_KEY','');
-define('AMAZON_SES_EMAIL','');
-define('SUPPORT_EMAIL','');
-
-// You need to specify the path to CORE FOLDER CORRECTLY
-define('CORE_FOLDER',dirname(dirname(dirname(dirname(dirname(__FILE__))))).DIRECTORY_SEPARATOR.'core');
-define('CMS_FOLDER',CORE_FOLDER.DIRECTORY_SEPARATOR.'cms');
-define('CMS_WIDGETS',CMS_FOLDER.DIRECTORY_SEPARATOR.'widgets');
-define('COMMON_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'common');
-
-
-// Define Related to Upload File Size
-define('UPLOAD_MAX_SIZE',10485760); //10mb
-define('UPLOAD_MIN_SIZE',1); // 1 byte
 
 
 /**
@@ -69,78 +48,7 @@ class Environment {
        private $_mode = 0;
        private $_debug;
        private $_trace_level;
-       private $_config;
-
-
-       /**
-        * Returns the debug mode
-        * @return Bool
-        */
-       public function getDebug() {
-           return $this->_debug;
-       }
-
-       /**
-        * Returns the trace level for YII_TRACE_LEVEL
-        * @return int
-        */
-       public function getTraceLevel() {
-           return $this->_trace_level;
-       }
-
-       /**
-        * Returns the configuration array depending on the mode
-        * you choose
-        * @return array
-        */
-       public function getConfig() {
-           return $this->_config;
-       }
-
-
-       /**
-        * Initilizes the Environment class with the given mode
-        * @param constant $mode
-        */
-       function __construct($mode) {
-           $this->_mode = $mode;
-           $this->setConfig();
-       }
-
-       /**
-        * Sets the configuration for the choosen environment
-        * @param constant $mode
-        */
-       private function setConfig() {
-           switch($this->_mode) {
-               case self::DEVELOPMENT:
-                   $this->_config      = array_merge_recursive ($this->_main(), $this->_development());
-                   $this->_debug       = TRUE;
-                   $this->_trace_level = 3;
-                   break;
-               case self::TEST:
-                   $this->_config      = array_merge_recursive ($this->_main(), $this->_test());
-                   $this->_debug       = FALSE;
-                   $this->_trace_level = 0;
-                   break;
-               case self::STAGE:
-                   $this->_config      = array_merge_recursive ($this->_main(), $this->_stage());
-                   $this->_debug       = TRUE;
-                   $this->_trace_level = 0;
-                   break;
-               case self::PRODUCTION:
-                   $this->_config      = array_merge_recursive ($this->_main(), $this->_production());
-                   $this->_debug       = FALSE;
-                   $this->_trace_level = 0;
-                   break;
-               default:
-                   $this->_config      = $this->_main();
-                   $this->_debug       = TRUE;
-                   $this->_trace_level = 0;
-                   break;
-           }
-       }
-
+       private $_config; 
 
        /**
         * Main configuration
@@ -152,7 +60,7 @@ class Environment {
             // Project Name                    
             'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
             'id'=> 'web', 
-            'name'=> 'Frontend' ,            
+            'name'=> 'CMS Frontend' ,            
             'sourceLanguage'=>'en_us',        
             'language'=>'en_us',        
             
@@ -292,14 +200,23 @@ class Environment {
         * - Gii module enabled
         */
        private function _development () {
-
-      // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
-       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
-       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
-         
            
-       return array(
+          // Set Time Zone
+          date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+          define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
+
+          // Define EMAIL INFORMATION
+          define('ADMIN_EMAIL','admin@localhost.com'); 
+
+          // Define Related to Upload File Size
+          define('UPLOAD_MAX_SIZE',10485760); //10mb
+          define('UPLOAD_MIN_SIZE',1); // 1 byte
+
+
+            return array(
 
                    // Modules
                    'modules'=>array(
@@ -356,11 +273,22 @@ class Environment {
         * @var array
         */
        private function _test() {
-  
-      // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
-       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
-       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
+
+          // Set Time Zone
+          date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+          define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
+
+          // Define EMAIL INFORMATION
+          define('ADMIN_EMAIL','admin@localhost.com'); 
+
+          // Define Related to Upload File Size
+          define('UPLOAD_MAX_SIZE',10485760); //10mb
+          define('UPLOAD_MIN_SIZE',1); // 1 byte
+
+          
     
            return array(
 
@@ -417,11 +345,22 @@ class Environment {
         * - All details on error
         */
        private function _stage() {
-  
-      // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
-       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
-       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');
+
+          // Set Time Zone
+          date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+          define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
+
+          // Define EMAIL INFORMATION
+          define('ADMIN_EMAIL','admin@localhost.com'); 
+
+          // Define Related to Upload File Size
+          define('UPLOAD_MAX_SIZE',10485760); //10mb
+          define('UPLOAD_MIN_SIZE',1); // 1 byte
+
+          
     
            return array(
 
@@ -459,10 +398,23 @@ class Environment {
         * - Standard production error pages (404,500, etc.)
         */
        private function _production() {
-      // Define hosts of all web apps
-       define('SITE_PATH','http://'.'localhost/cms2/apps/frontend'.'/');
-       define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
-       define('RESOURCES_FOLDER','/Applications/MAMP/htdocs/cms2/apps/resources/');   
+           
+           // Set Time Zone
+          date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+          define('SITE_PATH','http://'.'localhost/cms2/apps/backend'.'/');
+          define('RESOURCE_URL','http://'.'localhost/cms2/apps/resources'.'/');
+          define('RESOURCES_FOLDER',dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR.'resources');
+
+          // Define EMAIL INFORMATION
+          define('ADMIN_EMAIL','admin@localhost.com'); 
+
+          // Define Related to Upload File Size
+          define('UPLOAD_MAX_SIZE',10485760); //10mb
+          define('UPLOAD_MIN_SIZE',1); // 1 byte
+
+          
+           
            return array(
                    // Application components
                    'components' => array(
@@ -497,4 +449,75 @@ class Environment {
                    ),
            );
        }
+
+
+             /**
+        * Returns the debug mode
+        * @return Bool
+        */
+       public function getDebug() {
+           return $this->_debug;
+       }
+
+       /**
+        * Returns the trace level for YII_TRACE_LEVEL
+        * @return int
+        */
+       public function getTraceLevel() {
+           return $this->_trace_level;
+       }
+
+       /**
+        * Returns the configuration array depending on the mode
+        * you choose
+        * @return array
+        */
+       public function getConfig() {
+           return $this->_config;
+       }
+
+
+       /**
+        * Initilizes the Environment class with the given mode
+        * @param constant $mode
+        */
+       function __construct($mode) {
+           $this->_mode = $mode;
+           $this->setConfig();
+       }
+
+       /**
+        * Sets the configuration for the choosen environment
+        * @param constant $mode
+        */
+       private function setConfig() {
+           switch($this->_mode) {
+               case self::DEVELOPMENT:
+                   $this->_config      = array_merge_recursive ($this->_main(), $this->_development());
+                   $this->_debug       = TRUE;
+                   $this->_trace_level = 3;
+                   break;
+               case self::TEST:
+                   $this->_config      = array_merge_recursive ($this->_main(), $this->_test());
+                   $this->_debug       = FALSE;
+                   $this->_trace_level = 0;
+                   break;
+               case self::STAGE:
+                   $this->_config      = array_merge_recursive ($this->_main(), $this->_stage());
+                   $this->_debug       = TRUE;
+                   $this->_trace_level = 0;
+                   break;
+               case self::PRODUCTION:
+                   $this->_config      = array_merge_recursive ($this->_main(), $this->_production());
+                   $this->_debug       = FALSE;
+                   $this->_trace_level = 0;
+                   break;
+               default:
+                   $this->_config      = $this->_main();
+                   $this->_debug       = TRUE;
+                   $this->_trace_level = 0;
+                   break;
+           }
+       }
+
    }// END Environment Class

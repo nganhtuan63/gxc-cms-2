@@ -17,8 +17,7 @@
 					<li><a href="<?php echo Yii::app()->request->baseUrl?>/site/logout"><?php echo t('cms','Sign out'); ?></a></li>
 				</ul>
 				
-		</div>
-			
+		</div>			
 	</div>
 	<div id="header">
 		<div style="float:left; padding-left:45px">
