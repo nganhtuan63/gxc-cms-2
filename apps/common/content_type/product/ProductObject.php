@@ -1,8 +1,10 @@
 <?php
 
-class ArticleObject extends Object
+class ProductObject extends Object
 {
-	
+
+	public $price;
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Object the static model class
@@ -23,9 +25,8 @@ class ArticleObject extends Object
 	/**
 	 * @return array validation rules for model attributes.
 	 */
-	public function rules()
-	{
-		return CMap::mergeArray(array(),Object::extraRules());
+	public function rules() {
+		return CMap::mergeArray(array( array('price', 'required')), Object::extraRules());
 	}
 
 	/**
@@ -36,12 +37,13 @@ class ArticleObject extends Object
 		return CMap::mergeArray(array(),Object::extraRelationships());
 	}
 
-        /**
+     /**
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels()
 	{
-		return CMap::mergeArray(array(),Object::extraLabel());
+		return CMap::mergeArray(array('price'=> t('site','Price')),Object::extraLabel(			
+		));
 	}
 
 	/**
@@ -53,28 +55,32 @@ class ArticleObject extends Object
 		return Object::extraSearch($this);
 	}
         
-    protected function beforeSave()
-	{
-		if(parent::beforeSave())
-		{
-			if($this->isNewRecord)
-			{				
-				$this->object_type='article';
-                Object::extraBeforeSave('create',$this);
-                                
+    protected function beforeSave() {
+		if (parent::beforeSave()) {
+			if ($this -> isNewRecord) {
+				$this -> object_type = 'product';
+				Object::extraBeforeSave('create', $this);
+
 			} else {
-				Object::extraBeforeSave('update',$this);
-												
+				Object::extraBeforeSave('update', $this);
+
 			}
 			return true;
-		}
-		else
+		} else
 			return false;
 	}
-    
-    public static function Resources(){
-    	
-			return CMap::mergeArray(Object::Resources(),
+
+	protected function afterSave() {
+		parent::afterSave();
+		if ($this -> isNewRecord) {
+			Object::saveMetaValue('price', $this->price, $this, true);			
+		} else {
+			Object::saveMetaValue('price', $this->price, $this, false);			
+		}
+	}
+        
+    public static function Resources(){    
+              return CMap::mergeArray(Object::Resources(),
 				array(                      		   	                  
 					'video'=>array('type'=>'video',
 		              'name'=>'Video',
@@ -82,28 +88,19 @@ class ArticleObject extends Object
 		              'minSize'=>UPLOAD_MIN_SIZE,
 		              'max'=>1,
 		              'allow'=>array('flv',
-		                             'mp4',)),
-					 'image'=>array('type'=>'image',
-							              'name'=>'Image',
-							              'maxSize'=>UPLOAD_MAX_SIZE, 
-							              'minSize'=>UPLOAD_MIN_SIZE,
-							              'max'=>10,
-							              'allow'=>array('jpg',
-							                             'gif',
-							                             'png')),
-		)
-			);
-           
-    }
-    
-    public static function Permissions(){
-          return Object::Permissions();
-    }
-	
-	public static function buildLink($obj){						
+		                             'mp4',)))
+				);
+
+        }
+        
+        public static function Permissions(){
+              return Object::Permissions();
+        }
+        
+        public static function buildLink($obj){						
 		if($obj->object_id)
-			return bu()."/page?slug=post&id=".$obj->object_id."&pslug=".$obj->object_slug;
+			return SITE_PATH."/post?id=".$obj->object_id."&slug=".$obj->object_slug;
 		else 
 			return null;
-	}
+			}
 }

@@ -3,7 +3,7 @@
 class SiteController extends BeController
 {
 	public function actionIndex()
-	{
+	{		
 		$this->render('index');
 	}
 	

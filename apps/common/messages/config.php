@@ -4,7 +4,7 @@
  * for the Yii framework. It is used by the 'yiic message' command.
  */
 return array(
-	'sourcePath'=>dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.'common',
+	'sourcePath'=>dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.'backend',
 	'messagePath'=>dirname(__FILE__),
 	'languages'=>array('vi_vn'),
 	'fileTypes'=>array('php'),
