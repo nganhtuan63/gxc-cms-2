@@ -364,10 +364,11 @@ class AuthItemController extends RController
 						//Tuan Implement to add App ID here
 						//Get App ID
 						$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : strtolower(Yii::app()->id);
+
 						if( strpos($itemname, '*')!==false )
-							$items['tasks'][] = $app.'.'.$itemname;
+							$items['tasks'][] = $itemname;
 						else
-							$items['operations'][] = $app.'.'.$itemname;
+							$items['operations'][] = $itemname;
 					}
 				}
 

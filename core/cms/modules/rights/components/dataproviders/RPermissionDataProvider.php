@@ -122,6 +122,7 @@ class RPermissionDataProvider extends CDataProvider
 		{
 			$row = array();
 			$row['description'] = $item->getNameLink();
+			$row['name'] = $item->name;
 
 			foreach( $this->_roles as $roleName=>$role )
 			{
@@ -152,16 +153,16 @@ class RPermissionDataProvider extends CDataProvider
 		
 		//Tuan implement to show Item based on App only
 		//Get App Path
-		$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : strtolower(app()->id);
-		foreach($data as $key=>$item){			
-			if(strpos($item['description'],$app)===false){
+		$app=isset($_GET['app'])? strtolower(plaintext($_GET['app'])) : strtolower(app()->id);									
+		$data_filter=array();
+		foreach($data as $key=>$item){		
+			if(strpos($item['name'],$app)!==false){								
 				//Strip Item that is not based on current app
-				unset($data[$key]);
+				$data_filter[]=$data[$key];
 			}
 		}
-		
 
-		$this->setData($data);
+		$this->setData($data_filter);
 	}
 
 	/**
