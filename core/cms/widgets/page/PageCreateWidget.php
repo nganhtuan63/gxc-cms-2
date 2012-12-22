@@ -44,11 +44,12 @@ class PageCreateWidget extends CWidget
         // If the guid is not empty, it means we are creating a translated version of a content
         // We will exclude the translated language and include the name of the translated content to $versions
         if($guid!=''){
-                $page_object=  Page::model()->with('language')->findAll('guid=:gid',array(':gid'=>$guid));
+                $page_object=  Page::model()->findAll('guid=:gid',array(':gid'=>$guid));
                 if(count($page_object)>0){
+                        $langs=GxcHelpers::getAvailableLanguages();
                         foreach($page_object as $obj){
                                 $lang_exclude[]=$obj->lang;
-                                $versions[]=$obj->name.' - '.$obj->language->lang_desc;
+                                $versions[]=$obj->name.' - '.$langs[$obj->lang]['name'];
                         }
                 }
                 $model->guid=$guid;

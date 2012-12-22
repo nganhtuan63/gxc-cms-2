@@ -38,7 +38,7 @@
 		(
 		    'class'=>'CButtonColumn',
 		    'template'=>'{translate}',
-		    'visible'=>Yii::app()->settings->get('system','language_number') > 1,
+		    'visible'=>count((GxcHelpers::getAvailableLanguages())>1),
 		    'buttons'=>array
 		    (
 			'translate' => array

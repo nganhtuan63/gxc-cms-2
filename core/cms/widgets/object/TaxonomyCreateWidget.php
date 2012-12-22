@@ -53,11 +53,12 @@ class TaxonomyCreateWidget extends CWidget
                 // If the guid is not empty, it means we are creating a translated version of a content
                 // We will exclude the translated language and include the name of the translated content to $versions
                 if($guid!=''){
-                        $taxonomy_object=  Taxonomy::model()->with('language')->findAll('guid=:gid',array(':gid'=>$guid));
+                        $taxonomy_object=  Taxonomy::model()->findAll('guid=:gid',array(':gid'=>$guid));
+                        $langs=GxcHelpers::getAvailableLanguages();
                         if(count($taxonomy_object)>0){
                                 foreach($taxonomy_object as $obj){
                                         $lang_exclude[]=$obj->lang;
-                                        $versions[]=$obj->name.' - '.$obj->language->lang_desc;
+                                        $versions[]=$obj->name.' - '.$langs[$obj->lang]['name'];
                                 }
                         }
                         $model->guid=$guid;

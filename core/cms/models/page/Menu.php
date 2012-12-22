@@ -123,11 +123,12 @@ class Menu extends CActiveRecord
 	}
         
          public static function getMenu(){
-            $menus=Menu::model()->with('language')->findAll();                        
+            $menus=Menu::model()->findAll();                        
             $data=array(0=>t('cms',"None"));
+            $langs=GxcHelpers::getAvailableLanguages();
             if($menus && count($menus) > 0 ){
                foreach($menus as $t){
-                    $data[$t->menu_id]=$t->menu_name.' - '.$t->language->lang_desc ;
+                    $data[$t->menu_id]=$t->menu_name.' - '.$langs[$t->lang]['name'] ;
                 }
             }
             

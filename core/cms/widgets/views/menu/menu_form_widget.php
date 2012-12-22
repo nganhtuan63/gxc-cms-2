@@ -11,7 +11,7 @@
 <?php if($model->isNewRecord) : ?>
     <?php if(count($versions)>0) : ?>
     <div class="row">
-            <?php echo "<strong style='color:#DD4B39'>".t("Translated Version of :")."</strong><br />" ?>    
+            <?php echo "<strong style='color:#DD4B39'>".t("cms","Translated Version of :")."</strong><br />" ?>    
 
                 <?php foreach($versions as $version) :?>
                 <?php  echo "<br /><b>- ".$version."</b>"; ?>

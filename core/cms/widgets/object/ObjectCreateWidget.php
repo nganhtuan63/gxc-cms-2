@@ -66,11 +66,12 @@ class ObjectCreateWidget extends CWidget
                     // If the guid is not empty, it means we are creating a translated version of a content
                     // We will exclude the translated language and include the name of the translated content to $versions
                     if($guid!=''){
-                            $temp_object=Object::model()->with('language')->findAll('guid=:gid',array(':gid'=>$guid));
+                            $temp_object=Object::model()->findAll('guid=:gid',array(':gid'=>$guid));
                             if(count($temp_object)>0){
                                     foreach($temp_object as $obj){
                                             $lang_exclude[]=$obj->lang;
-                                            $versions[]=$obj->object_name.' - '.$obj->language->lang_desc;
+                                            $langs=GxcHelpers::getAvailableLanguages();
+                                            $versions[]=$obj->object_name.' - '.$langs[$obj->lang]['name'];
 
                                     }
                             }
