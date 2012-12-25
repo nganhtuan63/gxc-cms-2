@@ -271,6 +271,40 @@ CREATE TABLE `gxc_object_meta` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gxc_comment`
+--
+
+CREATE TABLE `gxc_comment` (
+  `comment_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `comment_author` tinytext NOT NULL,
+  `comment_author_email` varchar(255) NOT NULL DEFAULT '',
+  `comment_author_url` varchar(255) NOT NULL DEFAULT '',
+  `comment_author_IP` varchar(100) NOT NULL DEFAULT '',
+  `comment_date` int(11) NOT NULL,
+  `comment_date_gmt` int(11) NOT NULL,
+  `comment_content` text NOT NULL,
+  `comment_karma` int(11) NOT NULL DEFAULT '0',
+  `comment_approved` varchar(20) NOT NULL DEFAULT '1',
+  `comment_agent` varchar(255) NOT NULL DEFAULT '',
+  `comment_type` varchar(20) NOT NULL DEFAULT '',
+  `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `userid` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `comment_title` text,
+  `comment_modified_content` text,
+  PRIMARY KEY (`comment_id`),
+  KEY `comment_approved` (`comment_approved`),
+  KEY `comment_post_ID` (`object_id`),
+  KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
+  KEY `comment_date_gmt` (`comment_date_gmt`),
+  KEY `comment_parent` (`comment_parent`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `gxc_object_resource`
 --
 
