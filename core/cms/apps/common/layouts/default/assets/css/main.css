@@ -1,0 +1,107 @@
+body
+{
+margin: 0;
+padding: 0;
+color: #555;
+font: normal 10pt Arial,Helvetica,sans-serif;
+background: #fff;
+}
+
+.container {
+width: 750px;
+}
+
+#page
+{
+margin-top: 5px;
+margin-bottom: 5px;
+background: white;	
+}
+
+#header
+{
+margin: 0;
+padding: 0;		
+}
+
+h1.logo-info{
+color:#005CB8;
+font-weight: bold;
+font-size:25px;
+padding:10px 0;
+}
+
+#header-menu{
+background-color: #005CB8;	
+}	
+#header ul{
+list-style-type:none;
+padding:10px 0px;
+}
+
+#header ul li{
+display:inline;
+margin-right:10px;
+}
+
+#header ul li a{
+color:#fff;
+text-decoration: none;
+}
+
+#header ul li a:hover{
+text-decoration: underline;
+}
+
+#content
+{
+float:left;
+width:530px;
+padding-right:20px;
+border-right:1px dotted #ccc;
+}
+#sidebar
+{
+float:left;
+width:158px;
+padding-left:20px;
+}
+
+h2.post-title{
+margin-bottom: 0.2em;
+}
+h2.post-title, h2.post-title a{
+color: #EC5800;
+text-decoration: none;
+font-size: 1.1em;
+font-weight: bold;
+}
+
+h2.post-title a:hover{
+text-decoration: underline;
+}
+
+div.date-author{
+color:#666;
+}
+
+div.desc,div.post-content{
+color:#333;
+}
+
+div.info-blog{
+margin-bottom: 20px;
+}
+
+div.info-blog p{
+margin:0 0 .5em;
+}
+
+#footer
+{
+padding: 10px;
+margin: 20px 0;
+font-size: 0.8em;
+text-align: center;
+border-top:1px dotted #ccc;	
+}
