@@ -34,9 +34,10 @@ class MenuBlock extends CWidget
     {     
        if (isset($this->block) && ($this->block!=null)) {           
                 $params=unserialize($this->block['params']);
-                $this->setParams($params);   
-                $menu_r0_items=Yii::app()->cache->get('menu_r0_'.$this->menu_id);
-                                
+                $this->setParams($params);                   
+                
+                $menu_r0_items=Yii::app()->cache->get('menu_r0_'.$this->menu_id);                                
+                
                 if($menu_r0_items===false){
                     $menu_r0_items = self::getMenuItems(0,$this->menu_id);      
                     Yii::app()->cache->set('menu_r0_'.$this->menu_id,$menu_r0_items,7200);  

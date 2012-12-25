@@ -159,10 +159,16 @@ class GxcUser extends CWebUser{
                         $uid=$this->getId();
                         if($this->executeBizRule($permissions[$operation]['users'][$uid]['bizrule'],$params,$permissions[$operation]['users'][$uid]['data']))
                             return true;
-                    }           
-                    //Check if allow user id for current operation  
-                    $check_roles = array_intersect($this->getState('current_roles'),$permissions[$operation]['roles']);                   
-                    return count($check_roles)>0;
+                    } 
+                    if($this->getState('current_roles')){
+                        //Check if allow user id for current operation  
+                        $check_roles = array_intersect($this->getState('current_roles'),$permissions[$operation]['roles']);                   
+                        return count($check_roles)>0;    
+                    } else {
+                        return false;
+                    }
+                    
+                    
                     
                 }
             } else {

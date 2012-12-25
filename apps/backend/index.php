@@ -1,6 +1,4 @@
 <?php
-// Start checking script execution time
-//$start = (float) array_sum(explode(' ',microtime()));
 require_once(dirname(__FILE__).'/protected/config/environment.php');
 $environment = new Environment(Environment::DEVELOPMENT) ;
  
@@ -20,10 +18,3 @@ Yii::setPathOfAlias('cms',CMS_FOLDER);
 Yii::setPathOfAlias('cmswidgets',CMS_WIDGETS);
 	
 Yii::createWebApplication($environment->getConfig())->run();
-
-//echo(memory_get_peak_usage());
-
-// Stop checking script execution time
-//$end = (float) array_sum(explode(' ',microtime()));
-//echo "Processing time: ". sprintf("%.4f", ($end-$start))." seconds";  
-//echo memory_get_usage() . "\n"; 
