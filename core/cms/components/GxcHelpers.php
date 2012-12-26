@@ -176,7 +176,7 @@ class GxcHelpers {
 	* Function to Get All Apps Available
 	**/
 	
-	public static function getAllApps(){		
+	public static function getAllApps($return_path=false){		
 		$cache_id='gxchelpers-apps';
     	$apps=Yii::app()->cache->get($cache_id);		
 		if($apps===false){
@@ -184,8 +184,12 @@ class GxcHelpers {
 			$folders_app = get_subfolders_name(Yii::getPathOfAlias('common').DIRECTORY_SEPARATOR.'..') ;    
 	        foreach($folders_app as $folder){	 	        	
 	        	if(file_exists(Yii::getPathOfAlias('common').DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.$folder.DIRECTORY_SEPARATOR.'protected'
-	        		.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'environment.php'))
-	        		$apps[]=$folder;         	        	
+	        		.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'environment.php')){
+	        		if(!$return_path) $apps[]=$folder; 
+	        		else
+	        			$apps[]=realpath(Yii::getPathOfAlias('common').DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.$folder); 
+	        	}
+	        		         	        	
 	        }  	        
 			Yii::app()->cache->set($cache_id,$apps,7200);
 		}

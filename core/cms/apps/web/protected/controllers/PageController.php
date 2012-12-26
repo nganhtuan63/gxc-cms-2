@@ -5,9 +5,9 @@ class PageController extends FeController
 	public $defaultAction='render';
 
 	public function allowedActions()
-    {
-       	return 'render';
-    }               
+	{
+	   	return 'render';
+	}               
 
 	public function actionRender()
 	{				
@@ -17,7 +17,7 @@ class PageController extends FeController
 		} else {
 			throw new CHttpException('404',t('cms','Oops! Page not found!'));
 		}
-        
+	    
 	}		
-	
+
 }

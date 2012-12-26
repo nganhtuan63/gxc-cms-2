@@ -11,7 +11,7 @@
 class GeneralSettingsForm extends CFormModel
 {
 	public $site_name;
-	public $slogan;
+
     public $site_title;
     public $site_description;    
     public $homepage;
@@ -25,8 +25,7 @@ class GeneralSettingsForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('site_name, homepage', 'required'),                      		
-            array('site_title, site_description, slogan', 'safe'), 
+			array('site_name, homepage,site_title, site_description', 'required'),                      		            
 		);
 	}
 
@@ -36,8 +35,7 @@ class GeneralSettingsForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'site_name'=>t('cms','Site name'),
-			'slogan'=>t('cms','Slogan'),
+			'site_name'=>t('cms','Site name'),			
             'site_title'=>t('cms','Site title'),
             'site_description'=>t('cms','Site description'),
             'homepage'=>t('cms','Page name used as Homepage'),

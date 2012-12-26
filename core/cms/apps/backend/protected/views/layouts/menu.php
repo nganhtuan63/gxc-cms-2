@@ -157,8 +157,8 @@ $this->widget('zii.widgets.CMenu',array(
       		'items'=>array(
       			array(
       				'label'=>t('cms','Comments'), 
-      				'url'=>array('/comments/admin'),
-      				'active'=>Yii::app()->controller->id=='comments' ? true : false
+      				'url'=>array('/comment/admin'),
+      				'active'=>Yii::app()->controller->id=='comment' ? true : false
       			),
       		)
       ),

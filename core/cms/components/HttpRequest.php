@@ -8,6 +8,15 @@ class HttpRequest extends CHttpRequest  {
  
 	   public function getCsrfToken()
 		{
+			$url=Yii::app()->getUrlManager()->parseUrl($this);
+            foreach($this->noCsrfValidationRoutes as $route)
+            {                    	    	
+                if(strpos($url,$route)===0)
+                {
+                	return 'nocsrf_check';
+                	exit;
+                }
+            }
 		    if($this->_csrfToken===null)
 		    {
 		        $session = Yii::app()->session;
@@ -49,9 +58,9 @@ class HttpRequest extends CHttpRequest  {
 		        {
 		                $url=Yii::app()->getUrlManager()->parseUrl($this);
 		                foreach($this->noCsrfValidationRoutes as $route)
-		                {
-		                        if(strpos($url,$route)===0)
-		                                Yii::app()->detachEventHandler('onBeginRequest',array($this,'validateCsrfToken'));
+		                {		 		                	            	
+		                    if(strpos($url,$route)===0)
+		                        Yii::app()->detachEventHandler('onBeginRequest',array($this,'validateCsrfToken'));
 		                }
 		        }
 		}
