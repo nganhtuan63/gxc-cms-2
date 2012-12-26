@@ -9,7 +9,7 @@ class InstallForm extends CFormModel
 	public $db_password;
 	public $url_path;
 	public $url_resource_path;
-	public $timezone;
+	public $timezone;	
 
 	public $site_title;		
 	public $site_description;		
