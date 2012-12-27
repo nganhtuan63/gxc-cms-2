@@ -70,7 +70,7 @@ class BlockCreateWidget extends CWidget
                              }                             
                          } else {                                
                                                                
-                                $model->params=serialize($block_params);
+                                $model->params=b64_serialize($block_params);
                                 $block_model->beforeBlockSave();
                                 if($model->save()){
                                         $block_model->afterBlockSave();

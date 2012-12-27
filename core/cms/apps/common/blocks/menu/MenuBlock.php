@@ -33,7 +33,7 @@ class MenuBlock extends CWidget
     protected function renderContent()
     {     
        if (isset($this->block) && ($this->block!=null)) {           
-                $params=unserialize($this->block['params']);
+                $params=b64_unserialize($this->block['params']);
                 $this->setParams($params);                   
                 
                 $menu_r0_items=Yii::app()->cache->get('menu_r0_'.$this->menu_id);                                

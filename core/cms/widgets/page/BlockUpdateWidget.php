@@ -47,7 +47,7 @@ class BlockUpdateWidget extends CWidget
             $block_model=new $block_ini['class'](); 
             
             //We re-init the params of the attributes
-            $block_model->setParams(unserialize($model->params));
+            $block_model->setParams(b64_unserialize($model->params));
             
             
             // collect user input data
@@ -70,7 +70,7 @@ class BlockUpdateWidget extends CWidget
                                  $model->addError($key,$message);
                              }                             
                          } else {                                                                                               
-                                $model->params=serialize($block_params);
+                                $model->params=b64_serialize($block_params);
                                 $block_model->beforeBlockSave();
                                 if($model->save()){
                                         $block_model->afterBlockSave();

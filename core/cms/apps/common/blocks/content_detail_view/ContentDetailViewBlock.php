@@ -32,7 +32,7 @@ class ContentDetailViewBlock extends CWidget
     {     
        if(isset($this->block) && ($this->block!=null)){     
                 //Set Params from Block Params
-                $params=unserialize($this->block['params']);
+                $params=b64_unserialize($this->block['params']);
                 $this->setParams($params);              
                 $post_id=(int)$_GET['id'];              
                 if($post_id){

@@ -12,7 +12,7 @@ function app()
 {
     return Yii::app();
 }
- 
+
 /**
  * This is the shortcut to Yii::app()->clientScript
  */
@@ -702,6 +702,16 @@ function recursive_remove_directory($directory, $empty=FALSE)
         }
         // return success
         return TRUE;
-    }
+    }   
+
+
+}
+
+function b64_serialize($data){
+    return base64_encode(serialize($data));
+}
+
+function b64_unserialize($data){
+    return unserialize(base64_decode($data));          
 }
 
