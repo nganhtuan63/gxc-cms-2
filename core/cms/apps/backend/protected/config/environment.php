@@ -56,7 +56,7 @@ class Environment {
         // Project Name                    
 				'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 				'id'=> 'backend',	
-				'name'=> 'CMS Backend' ,            
+				'name'=> '{{site_name}} - Backend' ,            
 				'sourceLanguage'=>'en_us',				
         'language'=>'en_us',        
 				
@@ -356,13 +356,16 @@ class Environment {
                // Application components
                'components' => array(
                // Database
-                       'db'=>array(
-                        	   'connectionString' => 'mysql:host=localhost;dbname=gxc_cms2',
-                               'emulatePrepare' => false,
-                               'username' => 'admin',
-                               'password' => 'password',
-                               'charset' => 'utf8',
-                       ),
+                       // Database
+                      'db'=>array(
+                      'connectionString' => '{{db_connect_string}}',
+                      'schemaCachingDuration' => 3600,
+                      'emulatePrepare' => true,
+                      'username' => '{{db_username}}',
+                      'password' => '{{db_password}}',
+                      'charset' => 'utf8',
+                      'tablePrefix' => 'gxc_'
+                      ),
 
                        // Application Log
                        'log'=>array(

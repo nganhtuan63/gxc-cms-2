@@ -84,7 +84,7 @@ class RunController extends CController{
                         $command->execute();
 
                         $command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
-                        $command->bindValue(':c','system',PDO::PARAM_STR);
+                        $command->bindValue(':c','general',PDO::PARAM_STR);
                         $command->bindValue(':k','homepage',PDO::PARAM_STR);
                         $command->bindValue(':v',b64_serialize('home'),PDO::PARAM_STR);                                                
                         $command->execute();
@@ -110,6 +110,7 @@ class RunController extends CController{
 								//Web, Apply its environment
 								$env=str_replace('{{site_path}}',$web_path,$env);
 							}
+							$env=str_replace('{{site_name}}',$model->app_name,$env);
 							$env=str_replace('{{resource_url}}',$model->url_resource_path,$env);
 							$env=str_replace('{{timezone}}',$model->timezone,$env);
 							$env=str_replace('{{admin_email}}',$model->admin_email,$env);

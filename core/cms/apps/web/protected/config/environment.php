@@ -56,7 +56,7 @@ class Environment {
         // Project Name                    
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
         'id'=> 'backend', 
-        'name'=> 'CMS Backend' ,            
+        'name'=> '{{site_name}}' ,            
         'sourceLanguage'=>'en_us',        
         'language'=>'en_us',        
         
@@ -97,12 +97,6 @@ class Environment {
         ),
 
        'modules'=>array(                                        
-            'rights'=>array(
-                'class'=>'cms.modules.rights.RightsModule',
-                 'install'=>false,  // Enables the installer.
-                 'appLayout'=>'application.views.layouts.main',
-                 'superuserName'=>'Admin',                     
-            ),                                                               
             'error'=>array(
                 'class'=>'cms.modules.error.ErrorModule',                    
             ),     
@@ -110,10 +104,7 @@ class Environment {
                 'class'=>'cms.modules.cache.CacheModule',
                 'password'=>'123456',                    
             ),  
-            'install'=>array(
-                'class'=>'cms.modules.install.InstallModule',
-                'defaultController' => 'run',                      
-            ),                                     
+
       ),
     
         // Application components
@@ -130,7 +121,7 @@ class Environment {
                     'allowAutoLogin'=>true,     
                     'autoRenewCookie'=>true,
                     'loginUrl'=>array('site/login'),                  
-                    'stateKeyPrefix'=>'gxc_u_', //Should Change for Different Apps
+                    'stateKeyPrefix'=>'gxc_u_front_', //Should Change for Different Apps
 
                 ),
 
@@ -156,7 +147,7 @@ class Environment {
                     'connectionID' => 'db',
                     'autoCreateSessionTable'=>false,
                     'sessionTableName'=>'gxc_session',
-                    'sessionName'=>'gxc_session_id', //Should Change for Different Apps
+                    'sessionName'=>'gxc_session_id_front', //Should Change for Different Apps
                     'timeout' => 86400,
                  ),
             
@@ -355,13 +346,16 @@ class Environment {
                // Application components
                'components' => array(
                // Database
-                       'db'=>array(
-                             'connectionString' => 'mysql:host=localhost;dbname=gxc_cms2',
-                               'emulatePrepare' => false,
-                               'username' => 'admin',
-                               'password' => 'password',
-                               'charset' => 'utf8',
-                       ),
+                       // Database
+                      'db'=>array(
+                      'connectionString' => '{{db_connect_string}}',
+                      'schemaCachingDuration' => 3600,
+                      'emulatePrepare' => true,
+                      'username' => '{{db_username}}',
+                      'password' => '{{db_password}}',
+                      'charset' => 'utf8',
+                      'tablePrefix' => 'gxc_'
+                      ),
 
                        // Application Log
                        'log'=>array(
