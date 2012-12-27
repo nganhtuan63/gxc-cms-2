@@ -256,7 +256,7 @@ class CmsSettings extends CApplicationComponent
 
             $items=array();
             foreach($result AS $row)
-                $items[$row['key']] = @unserialize($row['value']);
+                $items[$row['key']] = b64_unserialize($row['value']);
             $this->getCacheComponent()->set($category.'_'.$this->getCacheId(), $items, $this->getCacheTime()); 
         }
 
@@ -415,7 +415,7 @@ class CmsSettings extends CApplicationComponent
         $command->bindParam(':cat', $category);
         $command->bindParam(':key', $key);
         $result=$command->queryRow();
-        $value=@serialize($value);
+        $value=b64_serialize($value);
         
         if(!empty($result))
             $command=$connection->createCommand('UPDATE '.$this->getTableName().' SET `value`=:value WHERE `category`=:cat AND `key`=:key');

@@ -27,8 +27,8 @@ class RunController extends CController{
 			$model->db_host='localhost';						
 			$path=Yii::app()->getbaseUrl(true);
 			$new_path=str_replace('/backend', '', $path);			
-			$backend_path=$new_path.'/backend';
-			$web_path=$new_path.'/web';
+			$backend_path=$new_path.'/backend'.'/';
+			$web_path=$new_path.'/web'.'/';
 
 			$model->url_path=$path;
 			$model->url_resource_path=$new_path.'/resources';
@@ -55,27 +55,46 @@ class RunController extends CController{
 						$command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
                         $command->bindValue(':c','general',PDO::PARAM_STR);
                         $command->bindValue(':k','site_name',PDO::PARAM_STR);
-                        $command->bindValue(':v',serialize($model->app_name),PDO::PARAM_STR);                                                
+                        $command->bindValue(':v',b64_serialize($model->app_name),PDO::PARAM_STR);                                                
                         $command->execute();
 
 						$command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
                         $command->bindValue(':c','general',PDO::PARAM_STR);
                         $command->bindValue(':k','site_title',PDO::PARAM_STR);
-                        $command->bindValue(':v',serialize($model->site_title),PDO::PARAM_STR);                                                
+                        $command->bindValue(':v',b64_serialize($model->site_title),PDO::PARAM_STR);                                                
                         $command->execute();
 
 
                       	$command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
                         $command->bindValue(':c','general',PDO::PARAM_STR);
                         $command->bindValue(':k','site_description',PDO::PARAM_STR);
-                        $command->bindValue(':v',serialize($model->site_description),PDO::PARAM_STR);                                                
+                        $command->bindValue(':v',b64_serialize($model->site_description),PDO::PARAM_STR);                                                
                         $command->execute();
 
 						$command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
                         $command->bindValue(':c','system',PDO::PARAM_STR);
                         $command->bindValue(':k','support_email',PDO::PARAM_STR);
-                        $command->bindValue(':v',serialize($model->admin_email),PDO::PARAM_STR);                                                
+                        $command->bindValue(':v',b64_serialize($model->admin_email),PDO::PARAM_STR);                                                
                         $command->execute();
+
+                        $command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
+                        $command->bindValue(':c','system',PDO::PARAM_STR);
+                        $command->bindValue(':k','page_size',PDO::PARAM_STR);
+                        $command->bindValue(':v',b64_serialize('10'),PDO::PARAM_STR);                                                
+                        $command->execute();
+
+                        $command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
+                        $command->bindValue(':c','system',PDO::PARAM_STR);
+                        $command->bindValue(':k','homepage',PDO::PARAM_STR);
+                        $command->bindValue(':v',b64_serialize('home'),PDO::PARAM_STR);                                                
+                        $command->execute();
+
+                        $command=$connection->createCommand("UPDATE gxc_settings SET `value` = :v where `category` = :c and `key` = :k ");
+                        $command->bindValue(':c','system',PDO::PARAM_STR);
+                        $command->bindValue(':k','keep_file_name_upload',PDO::PARAM_STR);
+                        $command->bindValue(':v',b64_serialize('0'),PDO::PARAM_STR);                                                
+                        $command->execute();                        
+
 
 						// Modify Environments						
 						$apps=GxcHelpers::getAllApps(true);

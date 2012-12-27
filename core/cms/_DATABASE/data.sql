@@ -116,13 +116,12 @@ CREATE TABLE `gxc_block` (
 -- Dumping data for table `gxc_block`
 --
 
-INSERT INTO `gxc_block` VALUES(32, 'About us Block', 'html', 1356098306, 1, 1356098306, 'a:1:{s:4:"html";s:47:"<h2>About us</h2>\r\n<p>This is About us page</p>";}');
-INSERT INTO `gxc_block` VALUES(33, 'Contact us Block', 'html', 1356098332, 1, 1356098332, 'a:1:{s:4:"html";s:51:"<h2>Contact us</h2>\r\n<p>This is Contact us page</p>";}');
-INSERT INTO `gxc_block` VALUES(31, 'Content Detail View Block', 'content_detail_view', 1356097065, 1, 1356097065, 'a:0:{}');
-INSERT INTO `gxc_block` VALUES(30, 'Introduce HTML Block', 'html', 1356096647, 1, 1356096647, 'a:1:{s:4:"html";s:143:"<div class="info-blog">\r\n       <p><strong>What is this site?</strong></p>\r\n          This is the default page of GXC-CMS. Let''t change it! \r\n     </div>";}');
-INSERT INTO `gxc_block` VALUES(27, 'Latest Posts in Homepage', 'listview', 1356084539, 1, 1356084539, 'a:2:{s:12:"content_list";a:1:{i:0;s:1:"4";}s:12:"display_type";s:1:"0";}');
-INSERT INTO `gxc_block` VALUES(28, 'Header Menu Block', 'menu', 1356095503, 1, 1356095503, 'a:1:{s:7:"menu_id";s:1:"1";}');
-INSERT INTO `gxc_block` VALUES(29, 'Make Better HTML Block', 'html', 1356096441, 1, 1356096441, 'a:1:{s:4:"html";s:367:"<div class="info-blog">\r\n       <p><strong>Make this source better</strong></p>\r\n         If you have any ideas or suggestions to make this site better, please do not hestitate to contact me directly at <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=nganhtuan63@gmail.com" target="_blank">nganhtuan63@gmail.com</a>. All ideas are welcome.\r\n     </div>";}');
+INSERT INTO `gxc_block` VALUES(45, 'Contact us Block', 'html', 1356601994, 1, 1356601994, 'YToxOntzOjQ6Imh0bWwiO3M6NTE6IjxoMj5Db250YWN0IHVzPC9oMj4NCjxwPlRoaXMgaXMgQ29udGFjdCB1cyBwYWdlPC9wPiI7fQ==');
+INSERT INTO `gxc_block` VALUES(42, 'News in Homepage', 'listview', 1356601771, 1, 1356601771, 'YToyOntzOjEyOiJjb250ZW50X2xpc3QiO2E6MTp7aTowO3M6MToiNyI7fXM6MTI6ImRpc3BsYXlfdHlwZSI7czoxOiIwIjt9');
+INSERT INTO `gxc_block` VALUES(44, 'About us Block', 'html', 1356601967, 1, 1356601967, 'YToxOntzOjQ6Imh0bWwiO3M6NDc6IjxoMj5BYm91dCB1czwvaDI+DQo8cD5UaGlzIGlzIEFib3V0IHVzIHBhZ2U8L3A+Ijt9');
+INSERT INTO `gxc_block` VALUES(39, 'Menu Block', 'menu', 1356600993, 1, 1356600993, 'YToxOntzOjc6Im1lbnVfaWQiO3M6MToiMSI7fQ==');
+INSERT INTO `gxc_block` VALUES(40, 'Logo and Info Block', 'logo_info', 1356601131, 1, 1356601131, 'YTowOnt9');
+INSERT INTO `gxc_block` VALUES(41, 'Make Better HTML Block', 'html', 1356601717, 1, 1356601717, 'YToxOntzOjQ6Imh0bWwiO3M6MzY3OiI8ZGl2IGNsYXNzPSJpbmZvLWJsb2ciPg0KCQkJCTxwPjxzdHJvbmc+TWFrZSB0aGlzIHNvdXJjZSBiZXR0ZXI8L3N0cm9uZz48L3A+DQoJCQkJCUlmIHlvdSBoYXZlIGFueSBpZGVhcyBvciBzdWdnZXN0aW9ucyB0byBtYWtlIHRoaXMgc2l0ZSBiZXR0ZXIsIHBsZWFzZSBkbyBub3QgaGVzdGl0YXRlIHRvIGNvbnRhY3QgbWUgZGlyZWN0bHkgYXQgPGEgaHJlZj0iaHR0cHM6Ly9tYWlsLmdvb2dsZS5jb20vbWFpbC8/dmlldz1jbSZhbXA7ZnM9MSZhbXA7dGY9MSZhbXA7dG89bmdhbmh0dWFuNjNAZ21haWwuY29tIiB0YXJnZXQ9Il9ibGFuayI+bmdhbmh0dWFuNjNAZ21haWwuY29tPC9hPi4gQWxsIGlkZWFzIGFyZSB3ZWxjb21lLg0KCQkJPC9kaXY+Ijt9');
 
 -- --------------------------------------------------------
 
@@ -179,7 +178,7 @@ CREATE TABLE `gxc_content_list` (
 -- Dumping data for table `gxc_content_list`
 --
 
-INSERT INTO `gxc_content_list` VALUES(4, 'Content list in Homeplage', 'a:9:{s:4:"type";s:1:"2";s:4:"lang";a:1:{i:0;s:1:"0";}s:12:"content_type";a:1:{i:0;s:3:"all";}s:5:"terms";a:1:{i:0;s:1:"0";}s:4:"tags";s:0:"";s:6:"paging";s:1:"0";s:6:"number";s:2:"10";s:8:"criteria";s:1:"1";s:11:"manual_list";a:0:{}}', 1356084535);
+INSERT INTO `gxc_content_list` VALUES(7, 'News Content List in Homepage', 'a:9:{s:4:"type";s:1:"2";s:4:"lang";a:1:{i:0;s:1:"0";}s:12:"content_type";a:1:{i:0;s:7:"article";}s:5:"terms";a:1:{i:0;s:1:"0";}s:4:"tags";s:0:"";s:6:"paging";s:1:"0";s:6:"number";s:2:"10";s:8:"criteria";s:1:"1";s:11:"manual_list";a:0:{}}', 1356601769);
 
 -- --------------------------------------------------------
 
@@ -394,22 +393,20 @@ CREATE TABLE `gxc_page_block` (
 -- Dumping data for table `gxc_page_block`
 --
 
-INSERT INTO `gxc_page_block` VALUES(1, 27, 1, 1, 1);
-INSERT INTO `gxc_page_block` VALUES(5, 30, 1, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(5, 28, 1, 1, 0);
-INSERT INTO `gxc_page_block` VALUES(5, 32, 1, 1, 1);
-INSERT INTO `gxc_page_block` VALUES(6, 30, 1, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(6, 28, 1, 1, 0);
-INSERT INTO `gxc_page_block` VALUES(6, 33, 1, 1, 1);
-INSERT INTO `gxc_page_block` VALUES(3, 28, 1, 1, 0);
-INSERT INTO `gxc_page_block` VALUES(3, 31, 1, 1, 1);
-INSERT INTO `gxc_page_block` VALUES(3, 30, 1, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(3, 29, 2, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(5, 29, 2, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(6, 29, 2, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(1, 28, 1, 1, 0);
-INSERT INTO `gxc_page_block` VALUES(1, 29, 2, 1, 2);
-INSERT INTO `gxc_page_block` VALUES(1, 30, 1, 1, 2);
+INSERT INTO `gxc_page_block` VALUES(1, 40, 1, 1, 0);
+INSERT INTO `gxc_page_block` VALUES(3, 40, 1, 1, 0);
+INSERT INTO `gxc_page_block` VALUES(5, 39, 1, 1, 0);
+INSERT INTO `gxc_page_block` VALUES(1, 39, 2, 1, 0);
+INSERT INTO `gxc_page_block` VALUES(3, 41, 1, 1, 2);
+INSERT INTO `gxc_page_block` VALUES(1, 42, 1, 1, 1);
+INSERT INTO `gxc_page_block` VALUES(3, 39, 2, 1, 0);
+INSERT INTO `gxc_page_block` VALUES(6, 45, 1, 1, 1);
+INSERT INTO `gxc_page_block` VALUES(6, 39, 1, 1, 0);
+INSERT INTO `gxc_page_block` VALUES(5, 41, 1, 1, 2);
+INSERT INTO `gxc_page_block` VALUES(1, 41, 1, 1, 2);
+INSERT INTO `gxc_page_block` VALUES(5, 44, 1, 1, 1);
+INSERT INTO `gxc_page_block` VALUES(6, 41, 1, 1, 2);
+
 
 -- --------------------------------------------------------
 
