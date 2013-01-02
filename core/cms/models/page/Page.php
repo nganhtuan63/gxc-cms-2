@@ -46,7 +46,7 @@ class Page extends CActiveRecord
 			array('parent', 'length', 'max'=>20),
             array('guid','safe'),
             array('display_type','safe'),
-            array('display_device','safe'),
+            array('display_app','safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('page_id, name, title, description, parent, layout, slug, lang', 'safe', 'on'=>'search'),
@@ -85,7 +85,7 @@ class Page extends CActiveRecord
             'allow_index' =>  t('cms','Allow index page'),
             'allow_follow' =>  t('cms','Allow follow page'),
             'display_type' =>  t('cms','Display type'),
-            'display_device' => t('cms','Display device')
+            'display_app' => t('cms','Display For App')
 		);
 	}
 

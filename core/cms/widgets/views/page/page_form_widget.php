@@ -147,11 +147,20 @@
        </div> 
        <div class="left" style="margin-left:20px">
            
-                    <?php echo $form->labelEx($model,'display_device',array()); ?>
-                    <?php echo $form->dropDownList($model,'display_device', ConstantDefine::getPageDisplayDevice(),
-                           array('id'=>'display_device_option')
+                    <?php echo $form->labelEx($model,'display_app',array()); ?>
+
+                    <?php 
+                        //Prepare for Allps Display
+                        $get_app_folders=GxcHelpers::getAllApps();
+                        $apps['all']=t('cms','All');                        
+                        foreach ($get_app_folders as $key => $value) {
+                            $apps[$value]=ucfirst($value);
+                        }
+                    ?>
+                    <?php echo $form->dropDownList($model,'display_app', $apps,
+                           array('id'=>'display_app_option')
                             ); ?>
-                    <?php echo $form->error($model,'display_device'); ?>
+                    <?php echo $form->error($model,'display_app'); ?>
            
        </div> 
        <div class="clear"></div>

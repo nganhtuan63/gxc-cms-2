@@ -360,7 +360,7 @@ CREATE TABLE `gxc_page` (
   `allow_index` tinyint(1) NOT NULL DEFAULT '1',
   `allow_follow` tinyint(1) NOT NULL DEFAULT '1',
   `display_type` varchar(50) NOT NULL DEFAULT 'main',
-  `display_device` varchar(50) NOT NULL DEFAULT 'web',
+  `display_app` varchar(50) NOT NULL DEFAULT 'all',
   PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
