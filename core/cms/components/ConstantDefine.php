@@ -208,6 +208,16 @@ class ConstantDefine{
                  self::PAGE_BLOCK_DISABLE=>t("cms","Disable"),                 
                 );
     }
+
+
+    public static function authTypes(){
+        return array(
+            CAuthItem::TYPE_OPERATION=>t('cms','Operation'),
+            CAuthItem::TYPE_TASK=>t('cms','Task'),
+            CAuthItem::TYPE_ROLE=>t('cms','Role'),          
+        );
+    }
+    
     
     /**
      * Constant related to Avatar Size
