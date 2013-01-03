@@ -19,4 +19,8 @@ For example: I checked out source code at /Applications/MAMP/htdocs/gxccms
 http://localhost/project1/backend/install to install.
 (The installer will check if .locked file existed in common folder or not before installing).
 
-For more information, please visit gxc forum: http://forum.gxccms.com/index.php
+For more information, please check document at:
+
+https://docs.google.com/document/d/1EBDb7WpepBfwV6LjOfx-UdvcoVxQDSZARx_lZnnfe3E/edit
+
+and visit gxc forum: http://forum.gxccms.com/index.php
