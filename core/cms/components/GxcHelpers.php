@@ -204,13 +204,15 @@ class GxcHelpers {
 	public static function publishAsset($path,$hashByName=false,$level=-1) 
 	{
 		
-		$cache_id=YII_DEBUG ? false : 'asset'.$path.'-1';				
+		$cache_id= YII_DEBUG ? false : 'asset'.$path.'-1';						
 		if($cache_id && file_exists($cache_id)){
 			$cache=Yii::app()->cache->get($cache_id);
 			if($cache===false){
+
 				$cache=Yii::app()->assetManager->publish($path,$hashByName,-1,YII_DEBUG);			
 				Yii::app()->cache->set($cache_id,$cache,7200);
 			} 
+
 		} else {			
 			$cache=Yii::app()->assetManager->publish($path,$hashByName,-1,YII_DEBUG);			
 		}

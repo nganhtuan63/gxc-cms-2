@@ -98,12 +98,13 @@ class YiiDebugToolbarRoute extends CLogRoute
                 'class'=>'YiiDebugToolbar',
                 'panels'=> $this->panels
             ), $this);
-        }
+        }        
         return $this->_toolbarWidget;
     }
 
     public function init()
     {
+
         $this->_startTime=microtime(true);
 
         parent::init();
@@ -111,8 +112,10 @@ class YiiDebugToolbarRoute extends CLogRoute
         $this->enabled && $this->enabled = ($this->allowIp(Yii::app()->request->userHostAddress)
                 && !Yii::app()->getRequest()->getIsAjaxRequest() && (Yii::app() instanceof CWebApplication));
 
+
         if ($this->enabled)
         {
+
             Yii::app()->attachEventHandler('onBeginRequest', array($this, 'onBeginRequest'));
             Yii::app()->attachEventHandler('onEndRequest', array($this, 'onEndRequest'));
             Yii::setPathOfAlias('yii-debug-toolbar', dirname(__FILE__));
@@ -122,11 +125,18 @@ class YiiDebugToolbarRoute extends CLogRoute
             ));
             $this->categories = '';
             $this->levels='';
+
+
+
+
         }
+
+        
     }
 
     protected function onBeginRequest(CEvent $event)
     {
+
         $this->initComponents();
 
         $this->getToolbarWidget()
@@ -158,6 +168,7 @@ class YiiDebugToolbarRoute extends CLogRoute
      */
     private function processRequest()
     {
+
         if(is_array(Yii::app()->catchAllRequest) && isset(Yii::app()->catchAllRequest[0]))
         {
             $route=Yii::app()->catchAllRequest[0];
@@ -166,6 +177,7 @@ class YiiDebugToolbarRoute extends CLogRoute
         }
         else
             $route=Yii::app()->getUrlManager()->parseUrl(Yii::app()->getRequest());
+
         Yii::app()->runController($route);
     }
 

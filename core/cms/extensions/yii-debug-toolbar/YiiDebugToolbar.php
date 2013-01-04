@@ -75,10 +75,9 @@ class YiiDebugToolbar extends CWidget
      */
     public function getAssetsUrl()
     {
+
         if (null === $this->_assetsUrl && 'cli' !== php_sapi_name())
-            $this->_assetsUrl = Yii::app()
-                ->getAssetManager()
-                ->publish(dirname(__FILE__) . '/assets', false, -1, YII_DEBUG);
+            $this->_assetsUrl = GxcHelpers::publishAsset(dirname(__FILE__) . '/assets'); 
         return $this->_assetsUrl;
     }
 
@@ -103,13 +102,14 @@ class YiiDebugToolbar extends CWidget
      */
     public function init()
     {
+
         if (false === ($this->owner instanceof CLogRoute))
         {
             throw new CException(YiiDebug::t('YiiDebugToolbar owner must be instance of CLogRoute'));
         }
 
         $this->createPanels()
-             ->registerClientScripts();
+             ->registerClientScripts();             
     }
 
     /**
@@ -134,11 +134,16 @@ class YiiDebugToolbar extends CWidget
         $cs->registerCoreScript('cookie');
 
         if (false !== $this->cssFile)
-        {
-            if (null === $this->cssFile)
+        {            
+            if ($this->cssFile===null){
+                
                 $this->cssFile = $this->assetsUrl . '/yii.debugtoolbar.css';
+
+            }
+
             $cs->registerCssFile($this->cssFile);
         }
+
 
         $cs->registerScriptFile($this->assetsUrl . '/yii.debugtoolbar.js',
                 CClientScript::POS_END);
@@ -186,7 +191,7 @@ class YiiDebugToolbar extends CWidget
                 $panel->init();
                 $this->_panels[$id] = $panel;
             }
-        }
+        }        
         return $this;
     }
 }
