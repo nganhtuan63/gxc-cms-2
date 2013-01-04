@@ -207,7 +207,7 @@ class User extends CActiveRecord
 	            //Add only some neccessary field
 	            if($user){             
 	                // Set User States here
-	                $this->setState('current_user', $user);  
+	                Yii::app()->user->setState('current_user', $user);  
 		        }
 		    }
 		}
