@@ -37,7 +37,7 @@ class UserIdentityDb extends CUserIdentity{
 				$this->errorCode=self::ERROR_USERNAME_INVALID;                
 		    }
 			else {
-					if(!VieHashing::authenticate($this->password,$user->password)){
+					if(!PassHash::authenticate($this->password,$user->password)){
 						$this->errorCode=self::ERROR_PASSWORD_INVALID;                
 					} else {
 						if($user->status==ConstantDefine::USER_STATUS_ACTIVE){
@@ -48,7 +48,7 @@ class UserIdentityDb extends CUserIdentity{
 	                    //If the site allow auto Login, create token to recheck for Cookies
 	                    if(Yii::app()->user->allowAutoLogin)
 	                    {
-	                        $autoLoginToken=sha1(uniqid(mt_rand(),true).SALT);
+	                        $autoLoginToken=sha1(uniqid(mt_rand(),true));
 	                        $this->setState('autoLoginToken',$autoLoginToken);                        
 	                        $connection=Yii::app()->db;                       
 	                        //delete old keys

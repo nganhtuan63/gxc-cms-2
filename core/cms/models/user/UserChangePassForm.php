@@ -39,7 +39,7 @@ class UserChangePassForm extends CFormModel
 	{
                $u=User::model()->findbyPk(user()->id);
                if($u!=null){
-                    if($u->password!==$u->hashPassword($this->old_password,$u->salt)){
+                    if(!PassHash::authenticate($this->old_password,$u->password)){                        
                         $this->addError($attribute,t('Old password is not correct!'));
                         return false;
                     }

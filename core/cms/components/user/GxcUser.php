@@ -46,7 +46,7 @@ class GxcUser extends CWebUser{
 
                     //Re-generate Autologin Token
                     if(!empty($row) && $row['token']===$autoLoginKey){
-                        $autoLoginToken=sha1(uniqid(mt_rand(),true).SALT);
+                        $autoLoginToken=sha1(uniqid(mt_rand(),true));
                         $this->setState('autoLoginToken',$autoLoginToken);                        
                         $connection=Yii::app()->db;                       
                         //delete old keys

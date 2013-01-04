@@ -1,8 +1,4 @@
 <?php
-// Defint Web SALT & Secret String
-define('SALT','23ms8207x');
-define('SECURITY_STRING','cxzjczxhy2mbalsywn2987mxmxzcczxc');
-define('SALT_SEPERATOR',':');
 
 // You need to specify the path to CORE FOLDER CORRECTLY
 define('CORE_FOLDER',dirname(dirname(dirname(dirname(dirname(__FILE__))))).DIRECTORY_SEPARATOR.'core');

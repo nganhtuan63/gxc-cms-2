@@ -46,7 +46,7 @@ class UserChangePassWidget extends CWidget
                     if($model->validate()){
                             $u=User::model()->findbyPk(user()->id);
                             if($u!==null){
-                                    $u->password=VieHashing::hash($model->new_password_1);                                    
+                                    $u->password=PassHash::hash($model->new_password_1);                                    
                                     if($u->save()){               
                                         user()->setFlash('success',t('cms','Changed Password Successfully!'));                                        
                                     }

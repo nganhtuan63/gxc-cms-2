@@ -93,7 +93,17 @@ class RunController extends CController{
                         $command->bindValue(':c','system',PDO::PARAM_STR);
                         $command->bindValue(':k','keep_file_name_upload',PDO::PARAM_STR);
                         $command->bindValue(':v',b64_serialize('0'),PDO::PARAM_STR);                                                
-                        $command->execute();                        
+                        $command->execute();         
+
+                        $command=$connection->createCommand("UPDATE gxc_user SET `password` = :p where `username` = :n ");
+                        $command->bindValue(':p',PassHash::hash('123456'),PDO::PARAM_STR);
+                        $command->bindValue(':n','admin',PDO::PARAM_STR);                        
+                        $command->execute(); 
+
+                        $command=$connection->createCommand("UPDATE gxc_user SET `password` = :p where `username` = :n ");
+                        $command->bindValue(':p',PassHash::hash('123456'),PDO::PARAM_STR);
+                        $command->bindValue(':n','reporter',PDO::PARAM_STR);                        
+                        $command->execute();                                       
 
 
 						// Modify Environments						

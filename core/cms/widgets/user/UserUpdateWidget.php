@@ -43,7 +43,7 @@ class UserUpdateWidget extends CWidget
             {
                     $model->attributes=$_POST['User'];
                     if($model->password!=$old_pass){
-			$model->password=$model->hashPassword($model->password, USER_SALT);
+			             $model->password=PassHash::hash($model->password);                         
                     }
                     $model->scenario='update';
 		    if($model->save()){
