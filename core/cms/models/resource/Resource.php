@@ -155,8 +155,9 @@ class Resource extends CActiveRecord
 				$class_storage=$storages[$this->where];	    
 				Yii::app()->cache->set('get-storages-cache-'.$this->where,$class_storage,0);									
 			}	
-
-			return call_user_func(array($class_storage,'getFilePath'),array($this->resource_path));			
+			$r=new $class_storage;
+			return $r->getFilePath($this->resource_path);
+			
 	}
 	
 	
