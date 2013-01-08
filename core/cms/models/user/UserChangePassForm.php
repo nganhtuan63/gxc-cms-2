@@ -40,11 +40,11 @@ class UserChangePassForm extends CFormModel
                $u=User::model()->findbyPk(user()->id);
                if($u!=null){
                     if(!PassHash::authenticate($this->old_password,$u->password)){                        
-                        $this->addError($attribute,t('Old password is not correct!'));
+                        $this->addError($attribute,t('cms','Old password is not correct!'));
                         return false;
                     }
                } else {
-                    $this->addError($attribute,t('No User Found!'));
+                    $this->addError($attribute,t('cms','No User Found!'));
                     return false;
                }
 	      
@@ -59,7 +59,7 @@ class UserChangePassForm extends CFormModel
 	public function checkNewPass($attribute,$params)
 	{
               if($this->new_password_1!=$this->new_password_2){
-                        $this->addError($attribute,t('Password does not match!'));
+                        $this->addError($attribute,t('cms','Password does not match!'));
                         return false;
               }
 	      

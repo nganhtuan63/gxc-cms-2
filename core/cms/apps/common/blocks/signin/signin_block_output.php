@@ -4,7 +4,7 @@
         <h1><?php echo t('site','Sign into your Account'); ?></h1>
     </div>    
     <?php $form=$this->beginWidget('CActiveForm', array(
-       'id'=>'login-content'.ConstantDefine::AJAX_BLOCK_SEPERATOR.$this->id.ConstantDefine::AJAX_BLOCK_SEPERATOR.$this->block['block_id'],
+       'id'=>$this->id.ConstantDefine::AJAX_BLOCK_SEPERATOR.$this->block['block_id'].ConstantDefine::AJAX_BLOCK_SEPERATOR.'login-content',
 	   'enableAjaxValidation'=>true,
 	   'clientOptions'=>array(
 	       'validateOnSubmit'=>true,

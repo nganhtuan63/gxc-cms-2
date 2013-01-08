@@ -41,10 +41,10 @@ class FeController extends CController
             $page=$command->queryRow();                                          
             if($page){
                 //We first need to check if having Ajax Request
-                if(isset($_REQUEST['ajax'])) {  
+                if(isset($_REQUEST['ajax']) && strpos($_REQUEST['ajax'],ConstantDefine::AJAX_BLOCK_SEPERATOR)!==false){  
                     $ajax=explode(ConstantDefine::AJAX_BLOCK_SEPERATOR,plaintext($_REQUEST['ajax']));                    
-                    $block_id=$ajax[2];
-                    $id=$ajax[1];
+                    $block_id=$ajax[1];
+                    $id=$ajax[0];
                     $block_ini=parse_ini_file(Yii::getPathOfAlias('common.blocks.'.$id).DIRECTORY_SEPARATOR.'info.ini');                                                                             
                     
                     //Include the class            
