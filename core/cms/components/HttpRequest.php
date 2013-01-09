@@ -5,7 +5,14 @@ class HttpRequest extends CHttpRequest  {
        public $noCsrfValidationRoutes = array();
 
        private $_csrfToken;
+
+       public $_session;
  
+	   public function init()
+	   {
+		    parent::init();
+		    $this->_session=Yii::app()->session;
+	   }
 	   public function getCsrfToken()
 		{
 			$url=Yii::app()->getUrlManager()->parseUrl($this);
@@ -19,7 +26,8 @@ class HttpRequest extends CHttpRequest  {
             }
 		    if($this->_csrfToken===null)
 		    {
-		        $session = Yii::app()->session;
+		        $session =  $this->_session;
+		        //var_dump($session->sessionName);
 		        $csrfToken=$session->itemAt($this->csrfTokenName);
 		        if($csrfToken===null)
 		        {
@@ -37,11 +45,11 @@ class HttpRequest extends CHttpRequest  {
 		    if($this->getIsPostRequest())
 		    {
 		        // only validate POST requests
-		        $session=Yii::app()->session;
+		        $session=Yii::app()->session;		        
 		        if($session->contains($this->csrfTokenName) && isset($_POST[$this->csrfTokenName]))
 		        {
 		            $tokenFromSession=$session->itemAt($this->csrfTokenName);
-		            $tokenFromPost=$_POST[$this->csrfTokenName];
+		            $tokenFromPost=$_POST[$this->csrfTokenName];		            
 		            $valid=$tokenFromSession===$tokenFromPost;
 		        }
 		        else

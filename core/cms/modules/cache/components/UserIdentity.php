@@ -8,11 +8,12 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$password=Yii::app()->getModule('gii')->password;
+		$password=Yii::app()->getModule('cache')->password;
 		if($password===null)
-			throw new CException('Please configure the "password" property of the "gii" module.');
-		else if($password===false || $password===$this->password)
+			throw new CException('Please configure the "password" property of the "cache" module.');
+		else if($password===false || $password===$this->password){			
 			$this->errorCode=self::ERROR_NONE;
+		}
         else
             $this->errorCode=self::ERROR_UNKNOWN_IDENTITY;
 		return !$this->errorCode;

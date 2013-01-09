@@ -3,11 +3,9 @@
 class CacheModule extends CWebModule
 {
 
-	public $password;
-
-	
-
+	public $password;	
 	private $_assetsUrl;
+	private $_user;
 
 	/**
 	 * Initializes the gii module.
@@ -15,6 +13,8 @@ class CacheModule extends CWebModule
 	public function init()
 	{
 		parent::init();
+		$this->_user=Yii::app()->user;			
+		
 		Yii::app()->setComponents(array(
 			'errorHandler'=>array(
 				'class'=>'CErrorHandler',
@@ -22,9 +22,17 @@ class CacheModule extends CWebModule
 			),
 			'user'=>array(
 				'class'=>'CWebUser',
-				'stateKeyPrefix'=>'cache_manage_gxc',
+				'stateKeyPrefix'=>'cache',
 				'loginUrl'=>Yii::app()->createUrl($this->getId().'/default/login'),
 			),
+			'session' => array(
+  	                'class' => 'CDbHttpSession',
+  	                'connectionID' => 'db',
+  	                'autoCreateSessionTable'=>false,
+  	                'sessionTableName'=>'gxc_session',
+  					'sessionName'=>'gxc_session_cache_id', //Should Change for Different Apps
+                    'timeout' => 86400,
+  			),
 		), false);
 		
 	}
@@ -48,7 +56,7 @@ class CacheModule extends CWebModule
 	}
 
 	/**
-	 * Performs access check to gii.
+	 * Performs access check to cache.
 	 * This method will check to see if user IP and password are correct if they attempt
 	 * to access actions other than "default/login" and "default/error".
 	 * @param CController $controller the controller to be accessed.
@@ -63,11 +71,12 @@ class CacheModule extends CWebModule
 			$publicPages=array(
 				'default/login',
 				'default/error',
-			);			
-			if($this->password!==false && Yii::app()->user->isGuest && !in_array($route,$publicPages)){				
+			);				
+			
+			if($this->password!==false && $this->_user->isGuest && !in_array($route,$publicPages)){								
 				Yii::app()->user->loginRequired();				
 			}				
-			else{				
+			else{															
 				return true;
 			}
 				

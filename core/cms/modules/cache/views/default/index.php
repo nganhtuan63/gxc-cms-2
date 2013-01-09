@@ -1,4 +1,4 @@
-<h1><?php echo t('cms','Cache Management')?></h1>
+ <h1><?php echo t('cms','Cache Management')?></h1>
 <p>
 	You can clear Cache and Asset Files cache here:
 </p>
