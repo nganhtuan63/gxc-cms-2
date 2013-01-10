@@ -5,7 +5,6 @@ class CacheModule extends CWebModule
 
 	public $password;	
 	private $_assetsUrl;
-	private $_user;
 
 	/**
 	 * Initializes the gii module.
@@ -13,7 +12,7 @@ class CacheModule extends CWebModule
 	public function init()
 	{
 		parent::init();
-		$this->_user=Yii::app()->user;			
+
 		
 		Yii::app()->setComponents(array(
 			'errorHandler'=>array(
@@ -25,15 +24,8 @@ class CacheModule extends CWebModule
 				'stateKeyPrefix'=>'cache',
 				'loginUrl'=>Yii::app()->createUrl($this->getId().'/default/login'),
 			),
-			'session' => array(
-  	                'class' => 'CDbHttpSession',
-  	                'connectionID' => 'db',
-  	                'autoCreateSessionTable'=>false,
-  	                'sessionTableName'=>'gxc_session',
-  					'sessionName'=>'gxc_session_cache_id', //Should Change for Different Apps
-                    'timeout' => 86400,
-  			),
 		), false);
+
 		
 	}
 
@@ -73,7 +65,7 @@ class CacheModule extends CWebModule
 				'default/error',
 			);				
 			
-			if($this->password!==false && $this->_user->isGuest && !in_array($route,$publicPages)){								
+			if($this->password!==false && Yii::app()->user->isGuest && !in_array($route,$publicPages)){								
 				Yii::app()->user->loginRequired();				
 			}				
 			else{															
