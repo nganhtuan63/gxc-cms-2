@@ -128,6 +128,10 @@ class ObjectUpdateWidget extends CWidget
 
                     //Selected Terms
                     $selected_terms=array();
+
+                    //Get Term Order
+
+                    $term_orders=ConstantDefine::getTermOrder();
                     
                     
                     //Get available Taxonomy and Terms for this Object
@@ -177,10 +181,12 @@ class ObjectUpdateWidget extends CWidget
                                          'condition'=>'object_id=:id',                                         
                                          'params'=>array(':id'=>$object->object_id)
                                      ));
-                            if($sl_terms){
+                            if($sl_terms){                                
                                 foreach($sl_terms as $sl_term) {                
                                     if(isset($terms[$t->taxonomy_id]['terms']['item_'.$sl_term->term_id])){
                                         $selected_temp['terms']['item_'.$sl_term->term_id]=$terms[$t->taxonomy_id]['terms']['item_'.$sl_term->term_id];
+                                        $selected_temp['terms']['item_'.$sl_term->term_id]['data']=$sl_term->data;
+                                        $selected_temp['terms']['item_'.$sl_term->term_id]['data_name']=$term_orders[$sl_term->data];
                                     }
                                 }
                             }
@@ -189,7 +195,7 @@ class ObjectUpdateWidget extends CWidget
 
 
                         }
-                    }
+                    }                    
                   
                     //IF having the Post Method - Start to working to save it
                     if(isset($_POST[$types[$type]['class']]))                        
@@ -219,6 +225,8 @@ class ObjectUpdateWidget extends CWidget
                                         $selected_temp['terms']['item_'.$t[0]]['id']=$t[0];                                                                        
                                         $selected_temp['terms']['item_'.$t[0]]['name']=$terms[$t[1]]['terms']['item_'.$t[0]]['name'];
                                         $selected_temp['terms']['item_'.$t[0]]['parent']=$terms[$t[1]]['terms']['item_'.$t[0]]['parent'];
+                                        $selected_temp['terms']['item_'.$t[0]]['data']=$t[2];                                                                        
+                                        $selected_temp['terms']['item_'.$t[0]]['data_name']=$term_orders[$t[2]];                                                                                                                
 
                                         $selected_terms[$t[1]]=$selected_temp;
                                     } else {
@@ -226,6 +234,8 @@ class ObjectUpdateWidget extends CWidget
                                             $selected_terms[$t[1]]['terms']['item_'.$t[0]]['id']=$t[0];                                                                        
                                             $selected_terms[$t[1]]['terms']['item_'.$t[0]]['name']=$terms[$t[1]]['terms']['item_'.$t[0]]['name'];
                                             $selected_terms[$t[1]]['terms']['item_'.$t[0]]['parent']=$terms[$t[1]]['terms']['item_'.$t[0]]['parent'];                                                                                        
+                                            $selected_terms[$t[1]]['terms']['item_'.$t[0]]['data']=$t[2];     
+                                            $selected_terms[$t[1]]['terms']['item_'.$t[0]]['data_name']=$term_orders[$t[2]];                                                                                                                                           
                                         }
                                     }                                                                                                                                                
                                 }
@@ -246,6 +256,8 @@ class ObjectUpdateWidget extends CWidget
                                                !isset($t['terms']['item_'.$current_term['parent']])
                                                 )){
                                              $array_parent_selected_terms['item_'.$current_term['parent']]=$terms[$tx_key]['terms']['item_'.$current_term['parent']];
+                                             $array_parent_selected_terms['item_'.$current_term['parent']]['data']=key($term_orders);
+                                             $array_parent_selected_terms['item_'.$current_term['parent']]['data_name']=$term_orders[key($term_orders)];
                                         }
 
                                         $current_term=$terms[$tx_key]['terms']['item_'.$current_term['parent']];

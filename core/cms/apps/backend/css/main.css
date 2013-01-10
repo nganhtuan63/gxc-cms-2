@@ -705,3 +705,8 @@ line-height: 20px;
 color: inherit;
 text-rendering: optimizelegibility;
 }
+
+a.term_order{
+font-size:10px;
+text-decoration: none;
+}

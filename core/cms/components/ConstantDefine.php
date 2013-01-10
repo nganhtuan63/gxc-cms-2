@@ -231,6 +231,21 @@ class ConstantDefine{
             self::AVATAR_SIZE_23=>t("cms","23"),
             self::AVATAR_SIZE_96=>t("cms","96"));
     }
+
+    /**
+     * Constant term order 
+     */    
+    
+    const TERM_ORDER_NORMAL=0;
+    const TERM_ORDER_PRIMARY=1;
+
+    public static function getTermOrder(){
+        return array(
+            self::TERM_ORDER_NORMAL=>t('cms','normal'),
+            self::TERM_ORDER_PRIMARY=>t('cms',"primary")
+        );
+
+    }
     
     
     

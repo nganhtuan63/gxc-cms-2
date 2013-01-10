@@ -14,7 +14,9 @@
         $urlScript =  bu().'/js/backend.js';
 	$prettyPhotoScript = bu().'/js/jquery.prettyPhoto.js';
         $cs->registerScriptFile($urlScript, CClientScript::POS_HEAD);
-	$cs->registerScriptFile($prettyPhotoScript, CClientScript::POS_HEAD);   
+	$cs->registerScriptFile($prettyPhotoScript, CClientScript::POS_HEAD);  
+        $cs->registerScriptFile(bu().'/js/jquery.ui.position.js', CClientScript::POS_HEAD);   
+        $cs->registerScriptFile(bu().'/js/jquery.contextMenu.js', CClientScript::POS_HEAD);   
 
 ?>
 <!-- blueprint CSS framework -->
@@ -27,6 +29,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/main.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/form.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/prettyPhoto.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo bu(); ?>/css/jquery.contextMenu.css" />
 
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 

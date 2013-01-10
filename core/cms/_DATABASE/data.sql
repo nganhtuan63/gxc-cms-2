@@ -330,6 +330,7 @@ CREATE TABLE `gxc_object_resource` (
 CREATE TABLE `gxc_object_term` (
   `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `data` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`object_id`,`term_id`),
   KEY `term_id` (`term_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

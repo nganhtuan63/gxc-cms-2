@@ -135,14 +135,14 @@ class GxcUser extends CWebUser{
         * @return boolean whether the operations can be performed by this user.
         */
         public function checkAccess($operation, $params=array(), $allowCaching=true)
-        {               
-
+        {                           
             return $this->isSuperuser===true ? true : $this->checkAccessWithCache($operation, $params, $allowCaching);                         
         }
 
         public function checkAccessWithCache($operation, $params=array(), $allowCaching=true){
             
             $permissions=Yii::app()->cache->get('permission-cache');                                 
+
             if($permissions!==false){                
                 if(!array_key_exists($operation,$permissions)){
                     return false;

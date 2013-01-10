@@ -53,7 +53,9 @@ class ObjectCreateWidget extends CWidget
         //Selected Terms
         $selected_terms=array();
 		
-		
+		//Get Term Order
+
+        $term_orders=ConstantDefine::getTermOrder();
 		
         
         
@@ -174,6 +176,7 @@ class ObjectCreateWidget extends CWidget
                                 $trans=new Transfer;
                                 
                                 
+
                                 // Get the Terms that the User Choose
                                 //
                                 $post_terms=isset($_POST['terms']) ? $_POST['terms'] : array();                                                            
@@ -190,6 +193,8 @@ class ObjectCreateWidget extends CWidget
                                             $selected_temp['terms']['item_'.$t[0]]['id']=$t[0];                                                                        
                                             $selected_temp['terms']['item_'.$t[0]]['name']=$terms[$t[1]]['terms']['item_'.$t[0]]['name'];
                                             $selected_temp['terms']['item_'.$t[0]]['parent']=$terms[$t[1]]['terms']['item_'.$t[0]]['parent'];
+                                            $selected_temp['terms']['item_'.$t[0]]['data']=$t[2];                                                                        
+                                            $selected_temp['terms']['item_'.$t[0]]['data_name']=$term_orders[$t[2]];                                                                        
 
                                             $selected_terms[$t[1]]=$selected_temp;
                                         } else {
@@ -197,6 +202,8 @@ class ObjectCreateWidget extends CWidget
                                                 $selected_terms[$t[1]]['terms']['item_'.$t[0]]['id']=$t[0];                                                                        
                                                 $selected_terms[$t[1]]['terms']['item_'.$t[0]]['name']=$terms[$t[1]]['terms']['item_'.$t[0]]['name'];
                                                 $selected_terms[$t[1]]['terms']['item_'.$t[0]]['parent']=$terms[$t[1]]['terms']['item_'.$t[0]]['parent'];                                                                                        
+                                                $selected_terms[$t[1]]['terms']['item_'.$t[0]]['data']=$t[2];     
+                                                $selected_terms[$t[1]]['terms']['item_'.$t[0]]['data_name']=$term_orders[$t[2]];                                                                                                                                           
                                             }
                                         }                                                                                                                                                
                                     }
@@ -216,7 +223,10 @@ class ObjectCreateWidget extends CWidget
                                             if((!isset($array_parent_selected_terms['item_'.$current_term['parent']])) && ( 
                                                !isset($t['terms']['item_'.$current_term['parent']])
                                                 )){
-                                             $array_parent_selected_terms['item_'.$current_term['parent']]=$terms[$tx_key]['terms']['item_'.$current_term['parent']];
+                                                $array_parent_selected_terms['item_'.$current_term['parent']]=$terms[$tx_key]['terms']['item_'.$current_term['parent']];
+                                                $array_parent_selected_terms['item_'.$current_term['parent']]['data']=key($term_orders);
+                                                $array_parent_selected_terms['item_'.$current_term['parent']]['data_name']=$term_orders[key($term_orders)];
+
                                             }
                                             
                                             $current_term=$terms[$tx_key]['terms']['item_'.$current_term['parent']];
@@ -304,9 +314,9 @@ class ObjectCreateWidget extends CWidget
                                                 $obj_term=new ObjectTerm();
                                                 $obj_term->object_id=$model->object_id;
                                                 $obj_term->term_id=$st_terms['id'];
+                                                $obj_term->order=$st_terms['data'];
                                                 $obj_term->save();
-                                                
-                                               
+                                                                                               
                                                 unset($obj_term);
                                             }
                                         }

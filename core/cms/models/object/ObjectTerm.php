@@ -36,10 +36,10 @@ class ObjectTerm extends CActiveRecord
 		// will receive user inputs.
 		return array(
 		
-			array('object_id, term_id', 'length', 'max'=>20),
+			array('object_id, term_id', 'length', 'max'=>20),			
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('object_id, term_id', 'safe', 'on'=>'search'),
+			array('object_id, term_id, data', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,7 +66,7 @@ class ObjectTerm extends CActiveRecord
 		return array(
 			'object_id' =>  t('cms','Object'),
 			'term_id' =>  t('cms','Term'),
-			
+			'data' =>  t('cms','Data'),			
 		);
 	}
 
@@ -83,6 +83,7 @@ class ObjectTerm extends CActiveRecord
 
 		$criteria->compare('object_id',$this->object_id,true);
 		$criteria->compare('term_id',$this->term_id,true);
+		$criteria->compare('data',$this->data,true);
 		
 
 		return new CActiveDataProvider($this, array(
