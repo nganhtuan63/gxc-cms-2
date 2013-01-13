@@ -10,8 +10,7 @@ class HttpRequest extends CHttpRequest  {
  
 	   public function init()
 	   {
-		    parent::init();
-		    $this->_session=Yii::app()->session;
+		    parent::init();		    
 	   }
 	   public function getCsrfToken()
 		{
@@ -26,7 +25,7 @@ class HttpRequest extends CHttpRequest  {
             }
 		    if($this->_csrfToken===null)
 		    {
-		        $session =  $this->_session;
+		        $session = Yii::app()->session;
 		        //var_dump($session->sessionName);
 		        $csrfToken=$session->itemAt($this->csrfTokenName);
 		        if($csrfToken===null)
@@ -45,7 +44,7 @@ class HttpRequest extends CHttpRequest  {
 		    if($this->getIsPostRequest())
 		    {
 		        // only validate POST requests
-		        $session=Yii::app()->session;		        
+		        $session= Yii::app()->session;		        
 		        if($session->contains($this->csrfTokenName) && isset($_POST[$this->csrfTokenName]))
 		        {
 		            $tokenFromSession=$session->itemAt($this->csrfTokenName);
