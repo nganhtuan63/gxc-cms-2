@@ -33,7 +33,7 @@ $mycs=Yii::app()->getClientScript();
                     <!--Start the Meta Box -->
                     <div class="closed-box content-box">
                             <div class="content-box-header">
-                            <h3><?php echo "<?php"; ?> echo t('Content Extra');?></h3>                             
+                            <h3><?php echo "<?php"; ?> echo t('site','Content Extra');?></h3>                             
                             </div> 
                             <div class="content-box-content" style="display: block;">
 

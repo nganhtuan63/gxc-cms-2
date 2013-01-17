@@ -2,7 +2,7 @@
 	'data'=>$model,
 	'attributes'=>array(
             
-                array('name'=>'block_id',
+            array('name'=>'page_id',
 			'type'=>'raw',			
 			'value'=>$model->page_id,
 		    ),

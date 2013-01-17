@@ -78,11 +78,18 @@
 		),
 	),
 )); ?>
-
-<script type="text/javascript">
-function selectAllText(textbox) {
-    textbox.focus();
-    textbox.select();
-}
-$('.pathResource').click(function() { selectAllText(jQuery(this)) });
-</script>
+<?php
+//in your view where you want to include JavaScripts
+$cs = Yii::app()->getClientScript();  
+$cs->registerScript(
+  'resource-field-handle',
+  '
+		function selectAllText(textbox) {
+		    textbox.focus();
+		    textbox.select();		    
+		}
+		$(".pathResource").click(function() { selectAllText(jQuery(this)) });
+  ',
+  CClientScript::POS_END
+);
+?>

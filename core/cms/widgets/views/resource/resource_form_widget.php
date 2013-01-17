@@ -18,7 +18,7 @@
 	                <?php echo $form->error($model,'type'); ?>                
 	        </div>
 	        
-	        <div class="row" style="float:left; margin-left:20px <?php if(!$is_new) : ?> ; display:none<?php endif; ?>">
+	        <div class="row" style="float:left; margin-left:20px!important; <?php if(!$is_new) : ?>display:none;<?php endif; ?>">
 	                <?php echo $form->labelEx($model,'where'); ?>
 	                <?php 
 	                 if($is_new)
@@ -31,7 +31,7 @@
 
        </div>
         <div class="clear"></div>
-        <div style="border:2px dotted #CCC; padding:5px <?php if(!$is_new) : ?> ; display:none<?php endif; ?>">
+        <div style="border:2px dotted #CCC;  background:#fff; padding:5px  ; <?php if(!$is_new) : ?>display:none;<?php endif; ?>">
 	        <div class="row"  <?php if(!$is_new) : ?> style="display:none"<?php endif; ?>>
 	                <?php echo $form->labelEx($model,'upload',array()); ?>
 	                <?php

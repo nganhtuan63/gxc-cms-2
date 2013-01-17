@@ -324,7 +324,7 @@ class GxcHelpers {
 	* Function to Render TextBox of Resource CGridView
 	**/
 	public static function renderTextBoxResourcePath($data){
-		return '<input type="text" class="pathResource" value="'.$data->getFullPath().'" />';
+		return '<input type="text" class="pathResource" onClick="return selectAllText(this);" value="'.$data->getFullPath().'" />';
 	}
 	
 	/**
@@ -516,7 +516,8 @@ class GxcHelpers {
     public static function mainLanguage()
 	{
 		// We return the first language ID
-		return 1;
+		$langs=self::getAvailableLanguages();				
+		return $langs[key($langs)]['id'];		
 	}
         
     public static function convertLanguage($id){

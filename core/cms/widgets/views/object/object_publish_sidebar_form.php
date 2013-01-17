@@ -37,51 +37,6 @@
                         )); ?>
                     <?php endforeach; ?>
                     
-                   
-                    <?php if($model->isNewRecord) : ?>
-                    <script type="text/javascript">
-                     $(document).ready(function() {
-                        // We will hide all the term that not belongs to current language
-                       changeTermsLanguage();
-                       
-                       $("#lang_select").change(function() {
-                          changeTermsLanguage();
-                       });
-                     });
-                     
+                
                     
-				    
-                     function changeTermsLanguage(){
-                         var current_language=$("#lang_select").val();                          
-                         
-                         $('.taxonomy_lang_wrap').each(function() {                             
-                            
-                             var taxonomy=$(this).attr('id');
-                             taxonomy=taxonomy.split('_');
-                             
-                             //lang=taxonomy[2] and id=taxonomy[1]
-                             if(taxonomy[2].toString()!=current_language.toString()){
-                                 $(this).hide();
-                                 
-                                 //We will re-init input checkbox of these terms
-                                 $("#selected_terms_"+taxonomy[1]).empty();
-                                 $("#list_terms_"+taxonomy[1]).children('span').remove();
-                                 
-                                 $.each(window['array_term_'+taxonomy[1]], function(k,v) {   
-                                       if(!$("#selected_terms_"+taxonomy[1]).children().children('#'+k).length>0){
-                                            $('#list_terms_'+taxonomy[1]).append('<span rel="'+v.name+'"><input value="'+v.id+'_'+taxonomy[1]+'" id="'+k+'" onChange="checkATerm'+taxonomy[1]+'(\''+k+'\',this);" type="checkbox" name="terms[]" /> '+v.name+'<br/></span>');
-                                       }
-                                 });      
-
-                             } else {
-                                 $(this).show();
-                             }
-                             
-                             
-                          });
-
-                       
-                     }
-                    </script>
-                    <?php endif; ?>
             </div>

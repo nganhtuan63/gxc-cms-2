@@ -69,9 +69,14 @@ class BlockUpdateWidget extends CWidget
                              foreach($block_model->errors as $key=>$message){
                                  $model->addError($key,$message);
                              }                             
-                         } else {                                                                                               
+                         } else {
+                                $block_model->beforeBlockSave();                               
+                                //Re-set params if needed
+                                foreach($params as $key=>$param){
+                                    $block_params[$key]=$block_model->$key;                                    
+                                }                                                                                                
                                 $model->params=b64_serialize($block_params);
-                                $block_model->beforeBlockSave();
+                                
                                 if($model->save()){
                                         $block_model->afterBlockSave();
                                         user()->setFlash('success',t('cms','Update Block Successfully!'));                                                              

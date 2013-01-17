@@ -124,14 +124,13 @@ class ObjectCreateWidget extends CWidget
                         foreach($get_languages as $key=>$value){
                             $available_languages[]=$key;
                         }
-                        
-                        
+                                                
                         //Get available Taxonomy and Terms for this Object
                         $available_taxonomy=Taxonomy::model()->findAll(' type = :type AND lang IN ('.implode(',',$available_languages).') ',array(':type'=>$type,
                             
                             ));                                               
                         if($available_taxonomy){
-                            foreach($available_taxonomy as $t){
+                            foreach($available_taxonomy as $t){                                
                                 $temp=array();
                                 $temp['id']=$t->taxonomy_id;
                                 $temp['lang']=$t->lang;
