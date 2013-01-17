@@ -313,7 +313,7 @@ class ObjectCreateWidget extends CWidget
                                                 $obj_term=new ObjectTerm();
                                                 $obj_term->object_id=$model->object_id;
                                                 $obj_term->term_id=$st_terms['id'];
-                                                $obj_term->order=$st_terms['data'];
+                                                $obj_term->data=$st_terms['data'];
                                                 $obj_term->save();
                                                                                                
                                                 unset($obj_term);

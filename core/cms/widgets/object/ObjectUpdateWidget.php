@@ -351,6 +351,7 @@ class ObjectUpdateWidget extends CWidget
                                                 $obj_term=new ObjectTerm();
                                                 $obj_term->object_id=$object->object_id;
                                                 $obj_term->term_id=$st_terms['id'];
+                                                $obj_term->data=$st_terms['data'];
                                                 $obj_term->save();                                                                                               
                                                 unset($obj_term);
                                             }
