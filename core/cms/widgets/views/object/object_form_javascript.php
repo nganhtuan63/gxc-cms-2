@@ -1,54 +1,21 @@
 <?php
-	//Need to add the jwplayer for embedding video
-	     $cs=Yii::app()->clientScript;
+    //Need to add the jwplayer for embedding video
+         $cs=Yii::app()->clientScript;
          $player_asset=bu().'/js/player/';
-         $cs->registerScriptFile($player_asset.'/jwplayer.js', CClientScript::POS_HEAD); 
-		 		
+         $cs->registerScriptFile($player_asset.'/jwplayer.js', CClientScript::POS_HEAD);                
 ?> 
 <script type='text/javascript'>
-		var player_path='<?php echo $player_asset; ?>';
-		var media_count=1;
-</script>	
-	
+        var player_path='<?php echo $player_asset; ?>';
+        var media_count=1;
+</script>   
+    
 <script type="text/javascript">
 
-	$(document).ready(function () {
-	var config =
-	    {
-		height: 300,
-		width : '100%',
-		resize_enabled : false,
-
-		toolbar :
-		[
-        ['Format','Bold','Italic','Underline', 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','NumberedList','BulletedList','Superscript'],
-        '-',
-        ['Link','Unlink', 'RemoveFormat','Table','HorizontalRule','SpecialChar'],
-        '-',
-        ['Source'],
-        '-',
-        ['Undo','Redo']
-    	]
-		
-		/*
-		toolbar :
-		[
-		['Source','-','Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','SelectAll','RemoveFormat'],
-		['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-		['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-		['BidiLtr', 'BidiRtl'],
-		['Link','Unlink','Anchor'],
-		['Image', 'Media','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe','-','Save','NewPage','Preview','-','Templates','-','Cut','Copy','Paste','PasteText','PasteFromWord'],
-		'/',
-		['Undo','Redo','-','Find','Replace','-','Styles','Format','Font','FontSize'],
-		['TextColor','BGColor'],
-		['Maximize', 'ShowBlocks','-','About']
-		]
-		*/
-	};
-	
-        //Set for the CKEditor
-		$('#ckeditor_content').ckeditor(config);
+    CKEDITOR.replace( 'ckeditor_content', {
+        toolbar: 'Basic'        
+    });
+    
+    $(document).ready(function () { 
         
         //Set for the Content Box
         $('.content-box .content-box-content div.tab-content').hide(); // Hide the content divs
@@ -68,16 +35,16 @@
 
         //Minimize the Box
         $(".content-box-header h3").css({ "cursor":"s-resize" }); // Give the h3 in Content Box Header a different cursor
-		$(".closed-box .content-box-content").hide(); // Hide the content of the header if it has the class "closed"
-		$(".closed-box .content-box-tabs").hide(); // Hide the tabs in the header if it has the class "closed"
-		
-		$(".content-box-header h3").click( // When the h3 is clicked...
-			function () {
-			  $(this).parent().next().toggle(); // Toggle the Content Box
-			  $(this).parent().parent().toggleClass("closed-box"); // Toggle the class "closed-box" on the content box
-			  $(this).parent().find(".content-box-tabs").toggle(); // Toggle the tabs
-			}
-		);
+        $(".closed-box .content-box-content").hide(); // Hide the content of the header if it has the class "closed"
+        $(".closed-box .content-box-tabs").hide(); // Hide the tabs in the header if it has the class "closed"
+        
+        $(".content-box-header h3").click( // When the h3 is clicked...
+            function () {
+              $(this).parent().next().toggle(); // Toggle the Content Box
+              $(this).parent().parent().toggleClass("closed-box"); // Toggle the class "closed-box" on the content box
+              $(this).parent().find(".content-box-tabs").toggle(); // Toggle the tabs
+            }
+        );
         
         
         
@@ -95,43 +62,43 @@
     
     $('#resource-box-content div.tab-content:first').addClass('default-tab').show();
     
-    function insertFileToContent(file_type){    			    	
-    	$.prettyPhoto.open('<?php echo bu();?>/resource/createframe?parent_call=true&ckeditor='+file_type+'&iframe=true&height=400','<?php echo  t('cms','Upload Resource');?>','');    	
+    function insertFileToContent(file_type){                        
+        $.prettyPhoto.open('<?php echo bu();?>/resource/createframe?parent_call=true&ckeditor='+file_type+'&iframe=true&height=400','<?php echo  t('cms','Upload Resource');?>','');        
     }
     
     
-			
+            
     function afterUploadResourceWithEditor(resource_id,resource_path,file_type,insert_type,width,height,alt){
-    	var add_width='';
-    	var add_height='';
-    	var add_alt='';
-    	if(width!='0') add_width='width="'+width+'"';
-    	if(height!='0') add_height='height="'+height+'"';
-    	if(alt!='') add_alt='alt="'+alt+'"';   
-    	if(file_type=='image'){
-    		CKEDITOR.instances['ckeditor_content'].insertHtml('<img '+add_width+' '+add_height+' '+ add_alt+' src="'+resource_path+'"/>');	
-    	}
-    	if(file_type=='video'){
-    		/*
-    		if(width!='0') add_width="'width': '"+width+"',";
-    		if(height!='0') add_height="'height': '"+height+"',";
-    		
-			var video_insert="<div id='mediaplayer"+media_count+"'></div>"+			
-			 '<script type="text/javascript" src="\'+player_path+\'/jwplayer.js"><'+'/script>'+'<script type="text/javascript">'+
-			  "jwplayer('mediaplayer"+media_count+"').setup({"+
-			    "'flashplayer': '\"+player_path+\"/player.swf',"+
-			    "'id': 'playerID"+media_count+"',"+
-			    add_width+
-			    add_height+
-			    "'file': '"+resource_path+"'"+
-			  '});'+'<'+'/script>';			 
-			  CKEDITOR.instances['ckeditor_content'].insertHtml(video_insert);
-			  media_count++;	
-			  */		
-    	}
-    		
-    	
-    	$.prettyPhoto.close();
+        var add_width='';
+        var add_height='';
+        var add_alt='';
+        if(width!='0') add_width='width="'+width+'"';
+        if(height!='0') add_height='height="'+height+'"';
+        if(alt!='') add_alt='alt="'+alt+'"';   
+        if(file_type=='image'){
+            CKEDITOR.instances['ckeditor_content'].insertHtml('<img '+add_width+' '+add_height+' '+ add_alt+' src="'+resource_path+'"/>');  
+        }
+        if(file_type=='video'){
+            /*
+            if(width!='0') add_width="'width': '"+width+"',";
+            if(height!='0') add_height="'height': '"+height+"',";
+            
+            var video_insert="<div id='mediaplayer"+media_count+"'></div>"+         
+             '<script type="text/javascript" src="\'+player_path+\'/jwplayer.js"><'+'/script>'+'<script type="text/javascript">'+
+              "jwplayer('mediaplayer"+media_count+"').setup({"+
+                "'flashplayer': '\"+player_path+\"/player.swf',"+
+                "'id': 'playerID"+media_count+"',"+
+                add_width+
+                add_height+
+                "'file': '"+resource_path+"'"+
+              '});'+'<'+'/script>';          
+              CKEDITOR.instances['ckeditor_content'].insertHtml(video_insert);
+              media_count++;    
+              */        
+        }
+            
+        
+        $.prettyPhoto.close();
     }
   
 </script>  

@@ -1,9 +1,7 @@
  <?php
     $mycs=Yii::app()->getClientScript();                                        
     $urlScript_ckeditor= bu().'/js/ckeditor/ckeditor.js';
-    $urlScript_ckeditor_jquery=bu().'/js/ckeditor/adapters/jquery.js';
-    $mycs->registerScriptFile($urlScript_ckeditor, CClientScript::POS_HEAD);
-    $mycs->registerScriptFile($urlScript_ckeditor_jquery, CClientScript::POS_HEAD);                    
+    $mycs->registerScriptFile($urlScript_ckeditor, CClientScript::POS_HEAD);    
 ?>
 
 <div class="form">
