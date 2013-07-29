@@ -147,14 +147,14 @@ class Environment {
                     'showScriptName'=>false,                        
                  ),
   						
-  						   'session' => array(
+/*  		'session' => array(
   	                'class' => 'CDbHttpSession',
   	                'connectionID' => 'db',
   	                'autoCreateSessionTable'=>false,
   	                'sessionTableName'=>'gxc_session',
-  									'sessionName'=>'gxc_session_id', //Should Change for Different Apps
-                    'timeout' => 86400,
-  					     ),
+  			'sessionName'=>'gxc_session_id', //Should Change for Different Apps
+                    	'timeout' => 86400,
+		),*/
   					
   			          //Use the Settings Extension and Store value in Database
   		            'settings'=>array(
