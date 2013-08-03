@@ -8,9 +8,9 @@
 class BeController extends RController
 {
 		
-		public $pageHint='';
+	public $pageHint='';
         public $titleImage='';
-		public $menu=array();
+	public $menu=array();
 	                 
         
         public function init(){            
@@ -19,7 +19,7 @@ class BeController extends RController
 
         public function __construct($id,$module=null)
 		{				      	
-		 		parent::__construct($id,$module);		 		
+			parent::__construct($id,$module);		 		
 		}
 
 
