@@ -181,7 +181,7 @@ class User extends CActiveRecord
 				if($this->isNewRecord)
 				{				
 					$this->created_time=$this->updated_time=$this->recent_login=time();		
-					$this->password = VieHashing::hash($this->password);    
+					$this->password = PassHash::hash($this->password);    
 				}
 				else {        
 					$this->updated_time=time();
